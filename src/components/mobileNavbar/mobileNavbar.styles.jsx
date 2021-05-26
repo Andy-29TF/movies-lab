@@ -53,7 +53,7 @@ export const NavbarSearchIcon = styled(SearchIcon)`
     height: auto;
     fill: #F7F7FF;
     cursor: pointer;
-    margin: 0 0.2rem 0 0.5rem;
+    margin: 0 .2rem 0 .5rem;
 
     @media (max-width: 768px) {
         display: inline;

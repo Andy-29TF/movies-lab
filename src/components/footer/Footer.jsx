@@ -5,6 +5,7 @@ import { FooterContainer } from './footer.styles';
 function Footer() {
     return (
         <FooterContainer>
+            <p>&copy; Andy Teodor, 2021</p>
         </FooterContainer>
     )
 }

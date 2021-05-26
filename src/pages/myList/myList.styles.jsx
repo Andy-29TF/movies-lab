@@ -7,10 +7,10 @@ export const MyListContainer = styled.div `
    flex-grow: 1;
 `;
 
+// ?  SectionBar
 export const SectionBar = styled.div `
     position: relative;
-    width: auto;
-    height: 100vh;
+    max-width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -25,6 +25,9 @@ export const SectionBar = styled.div `
         left: 0;
         background-color: #F7CE3E;
 
+    }
+    @media (max-width: 768px) {
+        margin: 1.5rem .2rem 0 .2rem;
     }
 `;
 
@@ -58,6 +61,43 @@ export const SectionSelectorUnselected = css `
         transform: scaleY(1.20) scaleX(1.1);
         transform-origin: bottom center;
         letter-spacing: .3rem;
+    }
+
+    @media (max-width: 768px) {
+        width: 32.5%;
+        
+        & .section-bar-icon {
+            max-width: 2.2rem;
+            max-height: 2.2rem;
+        }
+
+        & p {
+            font-size: 1.4rem;
+            margin: auto .3rem;
+        }
+
+        &:hover {
+            transform: scaleY(1.1) scaleX(1.05);
+            letter-spacing: .15rem;
+        }
+
+    }
+
+    @media (max-width: 545px) {
+        & .section-bar-icon {
+            max-width: 1.6rem;
+            max-height: 1.6rem;
+        }
+
+        & p {
+            font-size: 1.1rem;
+            margin: auto .1rem;
+        }
+
+        &:hover {
+            transform: scaleY(1) scaleX(1);
+            letter-spacing: 0;
+        }
     }
 `;
 
@@ -95,5 +135,24 @@ export const SectionSelectorLoveIt = styled.div `
 
     & p {
         color: #E33B57;
+    }
+`;
+
+//?  saved movie display section
+
+export const SavedMoviesDisplaySection = styled.div ` 
+    max-width: 100%;
+    box-sizing: border-box;
+    border: .4rem solid #F7CE3E;
+    margin: 0 2rem 3rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    background: #0a161281;
+    & p {
+        color: wheat;
+    }
+
+    @media (max-width: 768px) {
+        margin: 0 .2rem 2.5rem .2rem;
     }
 `;

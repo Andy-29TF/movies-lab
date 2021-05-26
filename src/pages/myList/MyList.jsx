@@ -7,7 +7,8 @@ import {
         SectionBar, 
         SectionSelectorWantToSee, 
         SectionSelectorWatched, 
-        SectionSelectorLoveIt 
+        SectionSelectorLoveIt,
+        SavedMoviesDisplaySection 
     } from './myList.styles';
 // 
 import { ReactComponent as ToSee } from '../../assets/icons/movieCard/wantToSee.svg';
@@ -19,7 +20,7 @@ function MyList() {
     return (
         <Layout>
             <MyListContainer className="container-min-max-width">
-                <SectionBar>
+                <SectionBar >
                     <SectionSelectorWantToSee>
                         <ToSee className="section-bar-icon"/>
                         <p>to see</p>
@@ -33,6 +34,9 @@ function MyList() {
                         <p>love it</p>
                     </SectionSelectorLoveIt>
                 </SectionBar>
+                <SavedMoviesDisplaySection className="container-min-max-width">
+                    
+                </SavedMoviesDisplaySection>
             </MyListContainer>
         </Layout>
     )
