@@ -22,6 +22,12 @@ function MobileNavbar() {
         }
     }, [windowWidth, displayModal]);
 
+    const handleCleanup = function(event) {
+        if (window.location.href === event.target.href) {
+            setDisplayModal(state => !state)
+        }
+      }
+
     return (
         <MobileNavbarContainer className="container-min-max-width" >
             <NavbarSearchIcon onClick={() => setDisplayModal(state => state && false)}/>
@@ -35,7 +41,7 @@ function MobileNavbar() {
                         :<NavbarMenuIcon  onClick={() => setDisplayModal(state => !state)}/>
                 }
             </div>
-            <ModalMobileNavbar className="modal-mobile-navbar" displayModal={displayModal} ></ModalMobileNavbar>
+            <ModalMobileNavbar className="modal-mobile-navbar" displayModal={displayModal}  handleCleanup={handleCleanup}></ModalMobileNavbar>
         </MobileNavbarContainer>
     )
 }

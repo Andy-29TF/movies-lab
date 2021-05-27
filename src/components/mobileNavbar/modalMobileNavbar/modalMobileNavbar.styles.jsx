@@ -25,4 +25,10 @@ export const ModalLink = styled(Link)`
     padding: 0;
     width: 100%;
     text-align: center;
+
+    &:visited,
+    &:active {
+        text-decoration: none;
+        color: #F7F7FF;
+    }
 `;
