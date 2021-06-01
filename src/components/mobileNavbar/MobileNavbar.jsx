@@ -24,7 +24,8 @@ function MobileNavbar() {
 
     const handleCleanup = function(event) {
         if (window.location.href === event.target.href) {
-            setDisplayModal(state => !state)
+            setDisplayModal(state => !state);
+            event.preventDefault();
         }
       }
 

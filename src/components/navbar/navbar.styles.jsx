@@ -44,7 +44,7 @@ export const NavbarLink = styled(Link)`
         height: 1.5rem;
         width: 0;
         background-color: #F7F7FF;
-        left: 0;
+        right: 0;
         top: -1.25rem;
         transition: all 0.5s;
     }  
@@ -54,7 +54,7 @@ export const NavbarLink = styled(Link)`
         height: 1.5rem;
         width: 0;
         background-color: #F7F7FF;
-        right: 0;
+        left: 0;
         bottom: -1.27rem;
         transition: all 0.4s;
     }

@@ -1,15 +1,9 @@
 import React, {useState, useEffect} from 'react';
-//* import the stylized  component
-import { MoviesListContainer } from './moviesList.styles';
 // import components
 import MovieItem from '../movieItem/MovieItem'
+//* import the stylized  component
+import { MoviesListContainer } from './moviesList.styles';
 
-
-// Todo
-// Todo
-// ! Sa fac o mica animatie de incarcare ca sa se incarce pozele din timp
-// Todo
-// Todo
 
 function MoviesList(props) {
     const [moviePackage, setMoviePackage] = useState([]);

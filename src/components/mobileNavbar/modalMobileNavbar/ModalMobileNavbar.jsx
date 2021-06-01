@@ -5,7 +5,6 @@ import {ModalContainer, ModalLink} from './modalMobileNavbar.styles';
 
 function ModalMobileNavbar(props) {
 
-
     return (
         <ModalContainer displayModal={props.displayModal}>
             <ModalLink to='/news' onClick={(event) => props.handleCleanup(event)}>News</ModalLink>

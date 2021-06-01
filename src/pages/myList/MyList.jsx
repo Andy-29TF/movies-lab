@@ -34,6 +34,7 @@ function MyList() {
                         <p>love it</p>
                     </SectionSelectorLoveIt>
                 </SectionBar>
+                
                 <SavedMoviesDisplaySection className="container-min-max-width">
                     
                 </SavedMoviesDisplaySection>
