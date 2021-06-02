@@ -14,19 +14,19 @@ function MyListDisplaySection(props) {
     if( displayListCategory === "wantToSee" ) {
         return (
             <MyListDisplayContainer>
-                <WantToSeeSection className="list-section"/>
+                <WantToSeeSection />
             </MyListDisplayContainer>
         )
     }else if(displayListCategory === "watched") {
         return (
             <MyListDisplayContainer>
-                <WatchedSection className="list-section"/>
+                <WatchedSection />
             </MyListDisplayContainer>
         )
     }else {
         return (
             <MyListDisplayContainer>
-                <LoveItSection className="list-section"/>
+                <LoveItSection />
             </MyListDisplayContainer>
         )
     }

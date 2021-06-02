@@ -8,8 +8,6 @@ export const MyListDisplayContainer = styled.div `
     border: .4rem solid #F7CE3E;
     margin: 0 2rem 1.5rem 2rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
     background: #0a161281;
 
     @media (max-width: 768px) {
@@ -28,6 +26,7 @@ export const EmptyListContainer = styled.div `
     text-align: center;
 
     & p {
+        margin: 12rem 0;
         font-size: 5rem;
         text-transform: uppercase;
         color: #F7F7FF;

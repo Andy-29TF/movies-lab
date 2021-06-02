@@ -44,7 +44,7 @@ export const SectionBar = styled.div `
     @media (max-width: 545px) {
         & .selected-category {
             transform: scaleY(1.1) scaleX(1.05);
-            letter-spacing: .15rem;
+            letter-spacing: .05rem;
         }
     }
 `;
@@ -103,8 +103,8 @@ export const SectionSelectorUnselected = css `
 
     @media (max-width: 545px) {
         & .section-bar-icon {
-            max-width: 1.6rem;
-            max-height: 1.6rem;
+            max-width: 1.3rem;
+            max-height: 1.3rem;
         }
 
         & p {

@@ -5,12 +5,13 @@ import { connect } from 'react-redux';
 import MovieItem from '../../movieItem/MovieItem';
 //* import the stylized  component
 import { ItemsListContainer, EmptyListContainer } from '../myListDisplaySection.styles';
+import { WantToSeeContainer } from './wantTooSeeSection.styles';
 
 function WantToSeeSection(props) {
     const {wantToSeeMoviesList} = props;
 
     return (
-        <div>
+        <WantToSeeContainer>
             {
                 wantToSeeMoviesList.length <= 0 
                     ?<EmptyListContainer>
@@ -22,7 +23,7 @@ function WantToSeeSection(props) {
                         }
                      </ItemsListContainer>
             }
-        </div>
+        </WantToSeeContainer>
     )
 }
 
