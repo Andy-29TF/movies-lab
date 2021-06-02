@@ -4,7 +4,6 @@ export const MoviesListContainer = styled.div `
     margin: 2.5rem 0;
     width: 100%;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;

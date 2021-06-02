@@ -14,7 +14,7 @@ function MoviesList(props) {
     }
 
     useEffect(() => {
-        const moviesData = props.rawMovies.reverse();
+        const moviesData = props.rawMovies;
         setMoviePackage(moviesData);
       }, [props]);
 

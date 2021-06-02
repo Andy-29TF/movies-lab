@@ -8,9 +8,12 @@ import { ReactComponent as LoveIt} from '../../assets/icons/movieCard/loveIt.svg
 
 export const MovieItemContainer = styled.div `
     flex-basis: 16%;
+    display: flex;
+    justify-content: space-around;
 
     @media (max-width: 768px) {
         flex-basis: 21%;
+        display: block;
     }
 `;
 

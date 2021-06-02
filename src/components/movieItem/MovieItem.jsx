@@ -1,4 +1,7 @@
 import React from 'react';
+// redux
+import { connect } from 'react-redux';
+import { addToCartWantToSee } from '../../redux/actions/saveList';
 //* import the stylized  component
 import {
     MovieItemContainer, 
@@ -14,7 +17,8 @@ import {
 
 function MovieItem(props) {
     const {poster, name, year, imdbRating} = props.individualMovie;
-
+    const { addToCartWantToSee } = props;
+    
     return (
         <MovieItemContainer >
             <CardContainer >
@@ -26,7 +30,15 @@ function MovieItem(props) {
                     </CardImdbRating>
                     
                     <CardSaveListButtons>
-                        <ToSeeIcon/>
+                        <ToSeeIcon onClick={() => addToCartWantToSee({
+                            movieElement: {
+                                poster,
+                                name,
+                                year,
+                                imdbRating
+                            }
+                        })}
+                        />
                         <WatchedIcon/> 
                         <LovePlusIcon/> 
                     </CardSaveListButtons>
@@ -37,4 +49,10 @@ function MovieItem(props) {
     )
 }
 
-export default MovieItem;
+function mapDispatchToProps(dispatch) {
+    return {
+        addToCartWantToSee: (payload) => { dispatch(addToCartWantToSee(payload))}
+    }
+  }
+
+export default connect(null, mapDispatchToProps)(MovieItem);

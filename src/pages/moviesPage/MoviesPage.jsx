@@ -3,11 +3,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 // LAYOUT - header & footer
 import Layout from '../../components/layout/Layout';
-//* import the stylized  component
-import { MoviesPageContainer } from './moviesPage.styles';
 // import components
 import MoviesList from '../../components/moviesList/MoviesList';
 import BaseListSidebar from '../../components/baseListSidebar/BaseListSidebar';
+//* import the stylized  component
+import { MoviesPageContainer } from './moviesPage.styles';
 
 function MoviePage(props) {
     const {movies} = props;

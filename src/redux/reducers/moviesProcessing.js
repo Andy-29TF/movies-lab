@@ -3,13 +3,13 @@ const initialState = {
 };
 
 function moviesProcessingReducer(state = initialState, action) {
-    
+
     switch(action.type) {
         case 'SET_RAW_MOVIES':
-            console.log(action)
+            const receivedMovis = action.payload.reverse()
             return {
                 ...state,
-                rawMovies: [...action.payload]
+                rawMovies: [...receivedMovis]
             };
         default:
             return state;
