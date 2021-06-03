@@ -1,6 +1,6 @@
-export function addToCartWantToSee(payload) {
+export function addToMyList(payload) {
     return{
-        type: 'ADD_TO_CART_WANT_TO_SEE',
+        type: 'ADD_TO_MY_LIST',
         payload
     }
 }

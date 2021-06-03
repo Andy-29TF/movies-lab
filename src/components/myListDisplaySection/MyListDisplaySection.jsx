@@ -10,26 +10,38 @@ function MyListDisplaySection(props) {
     const { displayListCategory } = props;
 
 
-    
-    if( displayListCategory === "wantToSee" ) {
-        return (
-            <MyListDisplayContainer>
-                <WantToSeeSection />
-            </MyListDisplayContainer>
-        )
-    }else if(displayListCategory === "watched") {
-        return (
-            <MyListDisplayContainer>
-                <WatchedSection />
-            </MyListDisplayContainer>
-        )
-    }else {
-        return (
-            <MyListDisplayContainer>
-                <LoveItSection />
-            </MyListDisplayContainer>
-        )
-    }
+    return(
+        <MyListDisplayContainer>
+            {
+                displayListCategory === "wantToSee" && <WantToSeeSection />
+            }
+            {
+                displayListCategory === "watched" && <WatchedSection />
+            }
+            {
+                displayListCategory === "loveIt" && <LoveItSection />
+            }
+        </MyListDisplayContainer>
+    )
+    // if( displayListCategory === "wantToSee" ) {
+    //     return (
+    //         <MyListDisplayContainer>
+    //             <WantToSeeSection />
+    //         </MyListDisplayContainer>
+    //     )
+    // }else if(displayListCategory === "watched") {
+    //     return (
+    //         <MyListDisplayContainer>
+    //             <WatchedSection />
+    //         </MyListDisplayContainer>
+    //     )
+    // }else {
+    //     return (
+    //         <MyListDisplayContainer>
+    //             <LoveItSection />
+    //         </MyListDisplayContainer>
+    //     )
+    // }
 }
 
 // function mapStateToProps(state) {

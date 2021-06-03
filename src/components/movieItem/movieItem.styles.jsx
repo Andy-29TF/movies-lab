@@ -121,29 +121,53 @@ const IconstStyle = css `
     width: 1.2rem;
     height: 1.2rem;
     cursor: pointer;
-    fill: #F7F7FF;
 `;
 
 export const ToSeeIcon = styled(ToSee) `
     ${IconstStyle}
-    
+    fill: ${props => props.iconstyled === "true" ? "#084D9B" : "#F7F7FF"};
+
     &:hover{
-        fill: #084D9B;
+        fill: ${props => props.iconstyled === "true" ? "#F7F7FF" : "#084D9B"};
+    }
+
+    /* this prevents the button from remaining active on tablets or phones */
+    @media (max-width: 768px) {
+        &:hover{
+            fill: ${props => props.iconstyled === "true" ? "#084D9B" : "#F7F7FF"};
+        }
     }
 `;
 
 export const WatchedIcon = styled(Watched) `
     ${IconstStyle}
+    fill: ${props => props.iconstyled === "true" ? "#057657" : "#F7F7FF"};
     margin-left: 0.15rem;
+
     &:hover{
-        fill: #057657;
+        fill: ${props => props.iconstyled === "true" ? "#F7F7FF" : "#057657"};
+    }
+
+    /* this prevents the button from remaining active on tablets or phones */
+    @media (max-width: 768px) {
+        &:hover{
+            fill: ${props => props.iconstyled === "true" ? "#057657" : "#F7F7FF"};
+        }
     }
 `;
 
 export const LovePlusIcon = styled(LoveIt) `
     ${IconstStyle}
+    fill: ${props => props.iconstyled === "true" ? "#E33B57" : "#F7F7FF"};
 
     &:hover{
-        fill: #E33B57;
+        fill: ${props => props.iconstyled === "true" ? "#F7F7FF" : "#E33B57"};
+    }
+
+    /* this prevents the button from remaining active on tablets or phones */
+    @media (max-width: 768px) {
+        &:hover{
+            fill: ${props => props.iconstyled === "true" ? "#E33B57" : "#F7F7FF"};
+        }
     }
 `;

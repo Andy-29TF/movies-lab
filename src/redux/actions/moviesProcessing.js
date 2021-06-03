@@ -1,8 +1,22 @@
 import axios from "axios";
+import { addToMyList } from "./saveList";
 
 export function setRawMovies(payload) {
     return {
         type: 'SET_RAW_MOVIES',
+        payload
+    }
+}
+
+export function changeInSaveList(payload) {
+    return {
+        type: 'CHANGE_IN_SAVE_LIST',
+        payload
+    }
+}
+export function takeOutOfSaveList(payload) {
+    return {
+        type: 'TAKE_OUT_OF_SAVE_LIST',
         payload
     }
 }
@@ -19,3 +33,10 @@ export function fetchRawMovies() {
             })
     }
   }
+
+export function handleAddToSaveList(payload) {
+        return ( dispatch ) => {
+            dispatch(changeInSaveList(payload))
+            dispatch(addToMyList(payload))
+        }
+}

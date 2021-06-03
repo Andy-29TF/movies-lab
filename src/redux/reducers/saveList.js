@@ -7,14 +7,32 @@ const initialState = {
 function saveListReducer(state = initialState, action) {
     
     switch(action.type) {
-        case 'ADD_TO_CART_WANT_TO_SEE':
-            return {
-                ...state,
-                wantToSee: [
-                    ...state.wantToSee,
-                    action.payload.movieElement
-                ]
-            };
+        case 'ADD_TO_MY_LIST':
+            if(action.payload.instructionsForMovieElement.instructions === "addToWantToSeeInstruction"){
+                return {
+                    ...state,
+                    wantToSee: [
+                        ...state.wantToSee,
+                        action.payload.movieElement
+                    ]
+                };
+            }else if(action.payload.instructionsForMovieElement.instructions === "addToWatchedInstruction") {
+                return {
+                    ...state,
+                    watched: [
+                        ...state.watched,
+                        action.payload.movieElement
+                    ]
+                };
+            }else {
+                return {
+                    ...state,
+                    loveIt: [
+                        ...state.loveIt,
+                        action.payload.movieElement
+                    ]
+                };
+            }
         default:
             return state;
     }
