@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // redux
 import { connect } from 'react-redux';
-import { handleAddToSaveList } from '../../redux/actions/moviesProcessing';
+import { handleAddToOrRemoveFromSaveList } from '../../redux/actions/moviesProcessing';
 //* import the stylized  component
 import {
     MovieItemContainer, 
@@ -17,66 +17,83 @@ import {
 
 function MovieItem(props) {
     const { id, poster, name, year, saveList, imdbRating } = props.individualMovie;
-    const { handleAddToSaveList } = props;
+    const { handleAddToOrRemoveFromSaveList } = props;
+    const defaultPayload = {id, poster, name, year, imdbRating}
 
-    const [movieAddedToAList, setMovieAddedToAList] = useState("")
+    const [addedInWantToSee, setAddedInWantToSee] = useState(false);
+    const [addedInWatched, setAddedInWatched] = useState(false);
+    const [addedInLoveIt, setAddedInLoveIt] = useState(false);
      
-    function theOptionToAddToMyList(instructions) {
-        if( instructions === "addToWantToSeeInstruction" ) {
-            handleAddToSaveList({
-                movieElement: {
-                    id,
-                    poster,
-                    name,
-                    year,
-                    imdbRating,
-                    saveList: {wantToSee: true, watched: false, loveIt: false}
-                },
-                instructionsForMovieElement: {
-                    instructions
-                }
-            })
+    function triggerAddToMyList(instructions) {
+       if(instructions === "add to want to see") {
+        triggerRemoveFromMyList("remove movie from MyList")
+        setAddedInWantToSee(true);
+        setAddedInWatched(false);
+        setAddedInLoveIt(false);
+        handleAddToOrRemoveFromSaveList({
+            movieElement: {
+                ...defaultPayload,
+                saveList: {wantToSee: true, watched: false, loveIt: false}
+            },
+            instructionsForMovieElement: {
+                instructions
+            }
+        });
 
-            if(movieAddedToAList === "" || movieAddedToAList !== "addToWantToSeeInstruction") { setMovieAddedToAList(instructions); }
+       }else if(instructions === "add to watched") {
+        triggerRemoveFromMyList("remove movie from MyList")
+        setAddedInWantToSee(false);
+        setAddedInWatched(true);
+        setAddedInLoveIt(false);
+        handleAddToOrRemoveFromSaveList({
+            movieElement: {
+                ...defaultPayload,
+                saveList: {wantToSee: false, watched: true, loveIt: false}
+            },
+            instructionsForMovieElement: {
+                instructions
+            }
+        });
+       }else if(instructions === "add to love it"){
+        triggerRemoveFromMyList("remove movie from MyList")
+        setAddedInWantToSee(false);
+        setAddedInWatched(false);
+        setAddedInLoveIt(true);
+        handleAddToOrRemoveFromSaveList({
+            movieElement: {
+                ...defaultPayload,
+                saveList: {wantToSee: false, watched: false, loveIt: true}
+            },
+            instructionsForMovieElement: {
+                instructions
+            }
+        });
+       }
+    }
 
-        }else if( instructions === "addToWatchedInstruction" ) {
-            handleAddToSaveList({
-                movieElement: {
-                    id,
-                    poster,
-                    name,
-                    year,
-                    imdbRating,
-                    saveList: {wantToSee: false, watched: true, loveIt: false}
-                },
-                instructionsForMovieElement: {
-                    instructions
-                }
-            })
-
-            if(movieAddedToAList === "" || movieAddedToAList !== "addToWatchedInstruction") { setMovieAddedToAList(instructions); }
-        }else {
-            handleAddToSaveList({
-                movieElement: {
-                    id,
-                    poster,
-                    name,
-                    year,
-                    imdbRating,
-                    saveList: {wantToSee: false, watched: false, loveIt: true}
-                },
-                instructionsForMovieElement: {
-                    instructions
-                }
-            })
-
-            if(movieAddedToAList === "" || movieAddedToAList !== "addToLoveItInstruction") { setMovieAddedToAList(instructions); }
-        }
+    function triggerRemoveFromMyList(instructions) {
+        setAddedInWantToSee(false);
+        setAddedInWatched(false);
+        setAddedInLoveIt(false);
+        handleAddToOrRemoveFromSaveList({
+            movieElement: {
+                id
+            },
+            instructionsForMovieElement: {
+                instructions
+            }
+        });
     }
 
     useEffect(() => {
-        // if the component is added in a list the component will update the status
-    }, [movieAddedToAList])
+        if(saveList.wantToSee) {
+            setAddedInWantToSee(true);
+        }else if(saveList.watched) {
+            setAddedInWatched(true);
+        }else if(saveList.loveIt){
+            setAddedInLoveIt(true);
+        }
+    }, [addedInWantToSee, addedInWatched, addedInLoveIt])
 
     return (
         <MovieItemContainer >
@@ -89,9 +106,24 @@ function MovieItem(props) {
                     </CardImdbRating>
                     
                     <CardSaveListButtons>
-                        <ToSeeIcon iconstyled={saveList.wantToSee.toString()} onClick={() => {if(movieAddedToAList === "" || movieAddedToAList !== "addToWantToSeeInstruction") { theOptionToAddToMyList("addToWantToSeeInstruction")}}}/>
-                        <WatchedIcon iconstyled={saveList.watched.toString()} onClick={() => {if(movieAddedToAList === "" || movieAddedToAList !== "addToWatchedInstruction") { theOptionToAddToMyList("addToWatchedInstruction")}}}/> 
-                        <LovePlusIcon iconstyled={saveList.loveIt.toString()} onClick={() => {if(movieAddedToAList === "" || movieAddedToAList !== "addToLoveItInstruction") { theOptionToAddToMyList("addToLoveItInstruction")}}}/> 
+                        <ToSeeIcon 
+                            iconstyled={saveList.wantToSee.toString()} 
+                            onClick={() => {
+                                !addedInWantToSee ? triggerAddToMyList("add to want to see") : triggerRemoveFromMyList("remove movie from MyList")
+                            }}
+                            />
+                        <WatchedIcon 
+                            iconstyled={saveList.watched.toString()} 
+                            onClick={() => {
+                                !addedInWatched ? triggerAddToMyList("add to watched") : triggerRemoveFromMyList("remove movie from MyList")
+                            }}
+                            /> 
+                        <LovePlusIcon 
+                            iconstyled={saveList.loveIt.toString()} 
+                            onClick={() => {
+                                !addedInLoveIt ? triggerAddToMyList("add to love it") : triggerRemoveFromMyList("remove movie from MyList")
+                            }}
+                            /> 
                     </CardSaveListButtons>
                 </CardMediaContainer>
                 <div className="movie-title">{name} <br/>({year})</div>
@@ -102,7 +134,7 @@ function MovieItem(props) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        handleAddToSaveList: (payload) => dispatch(handleAddToSaveList(payload))
+        handleAddToOrRemoveFromSaveList: (payload) => dispatch(handleAddToOrRemoveFromSaveList(payload))
     }
   }
 

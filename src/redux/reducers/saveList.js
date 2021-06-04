@@ -12,6 +12,13 @@ function saveListReducer(state = initialState, action) {
                     {...action.payload.movieElement}
                 ]
             }
+        case 'REMOVE_FROM_MY_LIST':
+            const newListWithTheSelectedItemRemoved = state.listOfAllSavedMovies.filter( elem => elem.id !== action.payload.movieElement.id)
+            return {
+                listOfAllSavedMovies: [
+                    ...newListWithTheSelectedItemRemoved
+                ]
+            }
         default:
             return state;
     }

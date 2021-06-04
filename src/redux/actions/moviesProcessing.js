@@ -1,5 +1,7 @@
 import axios from "axios";
+// actions from saveList
 import { addToMyList } from "./saveList";
+import { removeFromMyList } from './saveList';
 
 export function setRawMovies(payload) {
     return {
@@ -8,9 +10,9 @@ export function setRawMovies(payload) {
     }
 }
 
-export function changeInSaveList(payload) {
+export function changesInSaveList(payload) {
     return {
-        type: 'CHANGE_IN_SAVE_LIST',
+        type: 'CHANGES_IN_SAVE_LIST',
         payload
     }
 }
@@ -34,9 +36,16 @@ export function fetchRawMovies() {
     }
   }
 
-export function handleAddToSaveList(payload) {
-        return ( dispatch ) => {
-            dispatch(changeInSaveList(payload))
+export function handleAddToOrRemoveFromSaveList(payload) {
+    if(payload.instructionsForMovieElement.instructions !== "remove movie from MyList") {
+        return (dispatch) => {
+            dispatch(changesInSaveList(payload))
             dispatch(addToMyList(payload))
         }
+    }else {
+        return (dispatch) => {
+            dispatch(takeOutOfSaveList(payload))
+            dispatch(removeFromMyList(payload))
+        }
+    }
 }

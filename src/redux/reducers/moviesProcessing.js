@@ -11,13 +11,13 @@ function moviesProcessingReducer(state = initialState, action) {
                 ...state,
                 rawMovies: [...receivedMovis]
             };
-        case 'CHANGE_IN_SAVE_LIST':
+        case 'CHANGES_IN_SAVE_LIST':
             const findIndexForAdd = state.rawMovies.findIndex( elem => elem.id === action.payload.movieElement.id);
             const newRawMoviesForAdd = [...state.rawMovies];
 
-            if(action.payload.instructionsForMovieElement.instructions === "addToWantToSeeInstruction"){
+            if(action.payload.instructionsForMovieElement.instructions === "add to want to see"){
                 newRawMoviesForAdd[findIndexForAdd].saveList = {wantToSee: true, watched: false, loveIt: false};
-            }else if(action.payload.instructionsForMovieElement.instructions === "addToWatchedInstruction") {
+            }else if(action.payload.instructionsForMovieElement.instructions === "add to watched") {
                 newRawMoviesForAdd[findIndexForAdd].saveList = {wantToSee: false, watched: true, loveIt: false};
             }else {
                 newRawMoviesForAdd[findIndexForAdd].saveList = {wantToSee: false, watched: false, loveIt: true};

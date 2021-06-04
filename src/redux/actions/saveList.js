@@ -4,3 +4,10 @@ export function addToMyList(payload) {
         payload
     }
 }
+
+export function removeFromMyList(payload) {
+    return{
+        type: 'REMOVE_FROM_MY_LIST',
+        payload
+    }
+}
