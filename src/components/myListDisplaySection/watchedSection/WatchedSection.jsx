@@ -8,18 +8,19 @@ import { ItemsListContainer, EmptyListContainer } from '../myListDisplaySection.
 import { WatchedContainer } from './watchedSection.styles';
 
 function WatchedSection(props) {
-    const {watchedMoviesList} = props;
+    const {watchedRawMoviesList} = props;
+    const watchedMoviesDisplayed = watchedRawMoviesList.filter( elem => elem.saveList.watched)
 
     return (
         <WatchedContainer>
             {
-                watchedMoviesList.length <= 0 
+                watchedMoviesDisplayed.length <= 0 
                     ?<EmptyListContainer>
                         <p>this list is empty...</p>
                      </EmptyListContainer>
                     :<ItemsListContainer>
                         {
-                            watchedMoviesList.map(elem => <MovieItem className="movie-item" individualMovie={elem} key={`${elem.name} ${elem.id}`}/>)
+                            watchedMoviesDisplayed.map(elem => <MovieItem className="movie-item" individualMovie={elem} key={`${elem.name} ${elem.id}`}/>)
                         }
                      </ItemsListContainer>
             }
@@ -29,7 +30,7 @@ function WatchedSection(props) {
 
 function mapStateToProps(state) {
     return {
-        watchedMoviesList: state.saveList.watched
+        watchedRawMoviesList: state.saveList.listOfAllSavedMovies
     }
 }
 
