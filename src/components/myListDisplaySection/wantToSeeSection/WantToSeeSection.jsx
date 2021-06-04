@@ -8,18 +8,19 @@ import { ItemsListContainer, EmptyListContainer } from '../myListDisplaySection.
 import { WantToSeeContainer } from './wantTooSeeSection.styles';
 
 function WantToSeeSection(props) {
-    const {wantToSeeMoviesList} = props;
+    const {wantToSeeRawMoviesList} = props;
+    const wantToSeeMoviesDisplayed = wantToSeeRawMoviesList.filter( elem => elem.saveList.wantToSee)
 
     return (
         <WantToSeeContainer>
             {
-                wantToSeeMoviesList.length <= 0 
+                wantToSeeMoviesDisplayed.length <= 0 
                     ?<EmptyListContainer>
                         <p>this list is empty...</p>
                      </EmptyListContainer>
                     :<ItemsListContainer>
                         {
-                            wantToSeeMoviesList.map(elem => <MovieItem className="movie-item" individualMovie={elem} key={`${elem.name} ${elem.id}`}/>)
+                            wantToSeeMoviesDisplayed.map(elem => <MovieItem className="movie-item" individualMovie={elem} key={`${elem.name} ${elem.id}`}/>)
                         }
                      </ItemsListContainer>
             }
@@ -29,7 +30,7 @@ function WantToSeeSection(props) {
 
 function mapStateToProps(state) {
     return {
-        wantToSeeMoviesList: state.saveList.wantToSee
+        wantToSeeRawMoviesList: state.saveList.listOfAllSavedMovies
     }
 }
 

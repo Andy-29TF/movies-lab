@@ -8,18 +8,19 @@ import { ItemsListContainer, EmptyListContainer } from '../myListDisplaySection.
 import { LoveItContainer } from './loveItSection.styles';
 
 function LoveItSection(props) {
-    const {loveItMoviesList} = props;
+    const {loveItRawMoviesList} = props;
+    const loveItMoviesDisplayed = loveItRawMoviesList.filter( elem => elem.saveList.loveIt)
 
     return (
         <LoveItContainer>
             {
-                loveItMoviesList.length <= 0 
+                loveItMoviesDisplayed.length <= 0 
                     ?<EmptyListContainer>
                         <p>this list is empty...</p>
                      </EmptyListContainer>
                     :<ItemsListContainer>
                         {
-                            loveItMoviesList.map(elem => <MovieItem className="movie-item" individualMovie={elem} key={`${elem.name} ${elem.id}`}/>)
+                            loveItMoviesDisplayed.map(elem => <MovieItem className="movie-item" individualMovie={elem} key={`${elem.name} ${elem.id}`}/>)
                         }
                      </ItemsListContainer>
             }
@@ -29,7 +30,7 @@ function LoveItSection(props) {
 
 function mapStateToProps(state) {
     return {
-        loveItMoviesList: state.saveList.loveIt
+        loveItRawMoviesList: state.saveList.listOfAllSavedMovies
     }
 }
 
