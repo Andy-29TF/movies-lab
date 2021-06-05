@@ -93,7 +93,7 @@ function MovieItem(props) {
         }else if(saveList.loveIt){
             setAddedInLoveIt(true);
         }
-    }, [addedInWantToSee, addedInWatched, addedInLoveIt])
+    }, [addedInWantToSee, addedInWatched, addedInLoveIt, saveList.wantToSee, saveList.watched, saveList.loveIt])
 
     return (
         <MovieItemContainer >
