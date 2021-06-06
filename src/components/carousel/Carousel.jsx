@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 //* import the stylized  component
-import { CarouselContainer, CarouselElement } from './carousel.styles';
+import { CarouselContainer, CarouselElement, MediaContainer, ImdbRating, ImdbRatingStar } from './carousel.styles';
 
 function Carousel(props) {
     const { moviesForTheCarousel } = props;
@@ -35,20 +35,17 @@ function Carousel(props) {
                   borderRadius: "10rem"
               }}
             >
-              <ul style={{ margin: "0", padding: "0",height: "1rem" }}> 
-                <button 
-                    style={{ 
-                        margin:"0", 
-                        padding: "0", 
-                        border: "none", 
-                        background: "transparent",
-                        transform: "translateY(-30%)"
-                    }}>
-                    {dots} 
-                </button>
-              </ul>
+              <ul style={{ margin: "0", padding: "0",height: "1rem" }}> {dots}</ul>
             </div>
-          )
+          ),
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                dots: false
+              }
+            }
+          ]
       };
 
       function CustomNextArrow(props) {
@@ -75,13 +72,18 @@ function Carousel(props) {
 
     return (
         <CarouselContainer >
-                <span className="frame-title">the most viewed</span>
+                <span className="frame-title">most popular movies</span>
                 <Slider {...settings} className="carousel-slider">
                     {
                         moviesForTheCarousel.map( elem => {
                             return(
-                                <CarouselElement>
+                                <CarouselElement key={elem.id}>
                                     <img src={elem.landscapeCover} alt={`Cover for ${elem.name}`}></img>
+                                    <MediaContainer>
+                                      <ImdbRating><ImdbRatingStar/> <span className="imdb-rating">{elem.imdbRating}</span></ImdbRating>
+                                      <p>{elem.name}</p>
+                                      <span className="elem-year">{`(${elem.year})`}</span>
+                                    </MediaContainer>
                                 </CarouselElement>
                             )
                         })
@@ -92,7 +94,8 @@ function Carousel(props) {
 }
 
 function mapStateToProps(state) {
-    const idsForFiltering = [35, 38, 37, 48, 51];
+    const idsForFiltering = [35, 38, 37, 24, 56];
+    // , 38, 37, 48, 56
     return {
         moviesForTheCarousel: state.moviesProcessing.rawMovies.filter(elem => idsForFiltering.includes(elem.id) )
     }
