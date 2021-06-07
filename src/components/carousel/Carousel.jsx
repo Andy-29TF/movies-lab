@@ -95,7 +95,6 @@ function Carousel(props) {
 
 function mapStateToProps(state) {
     const idsForFiltering = [35, 38, 37, 24, 56];
-    // , 38, 37, 48, 56
     return {
         moviesForTheCarousel: state.moviesProcessing.rawMovies.filter(elem => idsForFiltering.includes(elem.id) )
     }

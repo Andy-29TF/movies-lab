@@ -33,8 +33,13 @@ export const HomeMovieRecommendedContainer = styled.div `
     }
 
     @media (max-width: 768px) {
-        width: 50%;
-        margin: 2.5rem auto;
+        width: 90%;
+        margin: 2rem auto;
+        & .frame-title {
+            top: -1.2rem;
+            right: .8rem;
+            font-size: 1.4rem;
+        }
     }
 `;
 
@@ -48,7 +53,7 @@ export const TopRatedMovie = styled.div `
         object-fit: fill;
     }
 
-    & p {
+    & .movie-name {
         color: #F7F7FF;
         text-align: center;
         font-size: 1.3rem;
@@ -56,17 +61,72 @@ export const TopRatedMovie = styled.div `
         margin: .7rem 0 .67rem 0;
     }
 
+    .movie-storyline {
+        display: none;
+    }
+
+
+    & .poster-container{
+        position: relative;
+    }
+
     @media (max-width: 1200px) {
         width: 88.95%;
 
-        & p {
+        & .movie-name {
             font-size: 1.15rem;
             margin: .52rem 0 .36rem 0;
         }
     }
 
-    & .poster-container{
-        position: relative;
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+
+        .movie-container {
+            width: 50%;
+        }
+        .movie-storyline{
+            display: block;
+            width: 45%;
+            font-size: 1rem;
+            max-height: 25rem;
+            color: #F7F7FF;
+            margin: 1rem 0 1rem 2.5rem;
+            overflow: scroll;
+            text-align: center;
+
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+        }
+    }
+
+    @media (max-width: 650px) {
+        .movie-storyline{
+            font-size: .9rem;
+            max-height: 19.5rem;
+            margin: 1rem 0 .2rem 2rem;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .movie-storyline{
+            font-size: .8rem;
+            max-height: 17rem;
+            margin: .5rem 0 .2rem 1.5rem;
+        }
+    }
+
+    @media (max-width: 350px) {
+        display: block;
+        .movie-storyline{
+            display: none;
+        }
+        .movie-container {
+            width: 90%;
+            margin: auto;
+        }
     }
 `;
 
