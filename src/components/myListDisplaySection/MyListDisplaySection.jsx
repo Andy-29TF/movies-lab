@@ -23,31 +23,6 @@ function MyListDisplaySection(props) {
             }
         </MyListDisplayContainer>
     )
-    // if( displayListCategory === "wantToSee" ) {
-    //     return (
-    //         <MyListDisplayContainer>
-    //             <WantToSeeSection />
-    //         </MyListDisplayContainer>
-    //     )
-    // }else if(displayListCategory === "watched") {
-    //     return (
-    //         <MyListDisplayContainer>
-    //             <WatchedSection />
-    //         </MyListDisplayContainer>
-    //     )
-    // }else {
-    //     return (
-    //         <MyListDisplayContainer>
-    //             <LoveItSection />
-    //         </MyListDisplayContainer>
-    //     )
-    // }
-}
-
-// function mapStateToProps(state) {
-//     return {
-//         globalStoreMoviesList: state.saveList
-//     };
-// }
+ }
 
 export default MyListDisplaySection;

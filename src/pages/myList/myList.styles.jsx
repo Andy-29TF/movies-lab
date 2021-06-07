@@ -18,7 +18,7 @@ export const SectionBar = styled.div `
 
     & .selected-category {
         background-color: #F7F7FF;
-        transform: scaleY(1.10) scaleX(1.05);
+        transform: scaleY(1.10) scaleX(1.06);
         transform-origin: bottom center;
         letter-spacing: .2rem;
     }
@@ -37,13 +37,13 @@ export const SectionBar = styled.div `
         margin: 1.5rem .2rem 0 .2rem;
 
         & .selected-category {
-            transform: scaleY(1.1) scaleX(1.05);
+            transform: scaleY(1.1) scaleX(1.06);
             letter-spacing: .15rem;
         }
     }
     @media (max-width: 545px) {
         & .selected-category {
-            transform: scaleY(1.1) scaleX(1.05);
+            transform: scaleY(1.1) scaleX(1.06);
             letter-spacing: .05rem;
         }
     }
@@ -95,8 +95,9 @@ export const SectionSelectorUnselected = css `
         }
 
         &:hover {
-            transform: scaleY(1.1) scaleX(1.05);
-            letter-spacing: .15rem;
+            letter-spacing: 0;
+            background-color: #F7F7FF;
+            transform: scaleY(1.10) scaleX(1.06);
         }
 
     }
@@ -113,14 +114,11 @@ export const SectionSelectorUnselected = css `
         }
 
         &:hover {
-            transform: scaleY(1) scaleX(1);
             letter-spacing: 0;
+            background-color: #F7F7FF;
+            transform: scaleY(1.10) scaleX(1.06);
         }
     }
-`;
-
-export const SectionSelectorSelected = css `
-
 `;
 
 export const SectionSelectorWantToSee = styled.div `

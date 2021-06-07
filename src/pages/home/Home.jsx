@@ -10,9 +10,7 @@ function Home() {
     return (
         <Layout>
             <HomeContainer className="container-min-max-width">
-                <HomeRecommendationsSection>
-                    
-                </HomeRecommendationsSection>
+                <HomeRecommendationsSection/>
                 
             </HomeContainer>
         </Layout>

@@ -23,9 +23,10 @@ export const MyListDisplayContainer = styled.div `
 export const EmptyListContainer = styled.div `
     width: 100%;
     text-align: center;
+    padding: 20%;
 
     & p {
-        margin-top: 12rem;
+        margin: auto;
         font-size: 5rem;
         text-transform: uppercase;
         color: #F7F7FF;
@@ -33,8 +34,8 @@ export const EmptyListContainer = styled.div `
 
     @media (max-width: 768px) {
         & p {
-        font-size: 3rem;
-    }
+            font-size: 3rem;
+        }
     }
 `;
 export const ItemsListContainer = styled.div `

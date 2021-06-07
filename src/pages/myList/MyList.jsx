@@ -11,7 +11,7 @@ import {
         SectionSelectorWatched, 
         SectionSelectorLoveIt,
     } from './myList.styles';
-// 
+// icons
 import { ReactComponent as ToSee } from '../../assets/icons/movieCard/wantToSee.svg';
 import { ReactComponent as Watched } from '../../assets/icons/movieCard/watched.svg';
 import { ReactComponent as LoveIt } from '../../assets/icons/movieCard/loveIt.svg';

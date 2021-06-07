@@ -53,7 +53,7 @@ function Carousel(props) {
         return (
           <div
             className={className}
-            style={{ ...style, display: "absolute", top: "50%", right: "0", marginRight: ".5rem"}}
+            style={{ ...style, display: "absolute", top: "50%", right: "0", marginRight: ".3rem"}}
             onClick={onClick}
           />
         );
@@ -63,7 +63,7 @@ function Carousel(props) {
         return (
           <div
             className={className}
-            style={{ ...style, display: "absolute", zIndex: "1", top: "50%", left: "0", marginLeft: ".5rem"}}
+            style={{ ...style, display: "absolute", zIndex: "1", top: "50%", left: "0", marginLeft: ".3rem"}}
             onClick={onClick}
           />
         );
