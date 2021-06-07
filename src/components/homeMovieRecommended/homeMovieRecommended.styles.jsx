@@ -75,7 +75,7 @@ export const TopRatedMovie = styled.div `
 
         & .movie-name {
             font-size: 1.15rem;
-            margin: .52rem 0 .36rem 0;
+            margin: .55rem 0 .36rem 0;
         }
     }
 

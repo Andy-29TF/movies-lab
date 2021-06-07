@@ -83,6 +83,7 @@ export const NavbarSearchIcon = styled(SearchIcon)`
     &:hover{
         transform: rotate(-45deg) scale(1.2);
         fill: #F7CE3E;
+        margin: 0 1.2rem 0 1rem;
     }
 
     @media (max-width: 768px) {

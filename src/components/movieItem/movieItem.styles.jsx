@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 // import icons
 import { ReactComponent as Star} from '../../assets/icons/movieCard/star.svg';
-
 import { ReactComponent as ToSee} from '../../assets/icons/movieCard/wantToSee.svg';
 import { ReactComponent as Watched} from '../../assets/icons/movieCard/watched.svg';
 import { ReactComponent as LoveIt} from '../../assets/icons/movieCard/loveIt.svg';
@@ -132,9 +131,9 @@ export const ToSeeIcon = styled(ToSee) `
     }
 
     /* this prevents the button from remaining active on tablets or phones */
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         &:hover{
-            fill: ${props => props.iconstyled === "true" ? "#084D9B" : "#084D9B9d"};
+            fill: ${props => props.iconstyled === "true" ? "#084D9B" : "#F7F7FF"};
         }
     }
 `;
@@ -149,9 +148,9 @@ export const WatchedIcon = styled(Watched) `
     }
 
     /* this prevents the button from remaining active on tablets or phones */
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         &:hover{
-            fill: ${props => props.iconstyled === "true" ? "#057657" : "#0576589d"};
+            fill: ${props => props.iconstyled === "true" ? "#057657" : "#F7F7FF"};
         }
     }
 `;
@@ -165,9 +164,9 @@ export const LovePlusIcon = styled(LoveIt) `
     }
 
     /* this prevents the button from remaining active on tablets or phones */
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
         &:hover{
-            fill: ${props => props.iconstyled === "true" ? "#E33B57" : "#e33b579d"};
+            fill: ${props => props.iconstyled === "true" ? "#E33B57" : "#F7F7FF"};
         }
     }
 `;

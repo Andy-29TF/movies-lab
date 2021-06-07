@@ -39,7 +39,7 @@ export const CarouselContainer = styled.div `
     }
 
     @media (max-width: 1200px) {
-        margin: 1rem .8rem 1rem .8rem;
+        margin: 1rem .8rem .5rem .8rem;
 
         & .carousel-slider{
             margin: 1.1rem 0 .1rem 0;
