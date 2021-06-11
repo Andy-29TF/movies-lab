@@ -26,7 +26,7 @@ function Navbar() {
                     <img src={logo} alt="logo"></img>
                 </Link>
                 <NavbarLink to='/news' onClick={(event) => handleCleanup(event)}>News</NavbarLink>
-                <NavbarLink to='/movies' onClick={(event) => handleCleanup(event)}>Movies</NavbarLink>
+                <NavbarLink to='/movies/unfiltered' onClick={(event) => handleCleanup(event)}>Movies</NavbarLink>
             </div>
             <div className="navbar-right-side">
                 <NavbarLink to='/my-list' onClick={(event) => handleCleanup(event)}>My List</NavbarLink>

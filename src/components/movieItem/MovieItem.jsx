@@ -18,7 +18,7 @@ import {
 function MovieItem(props) {
     const { id, poster, name, year, saveList, imdbRating } = props.individualMovie;
     const { handleAddToOrRemoveFromSaveList } = props;
-    const defaultPayload = {id, poster, name, year, imdbRating}
+    const defaultPayload = {id, poster, name, year, imdbRating};
 
     const [addedInWantToSee, setAddedInWantToSee] = useState(false);
     const [addedInWatched, setAddedInWatched] = useState(false);

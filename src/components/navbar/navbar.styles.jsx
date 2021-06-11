@@ -31,7 +31,7 @@ export const NavbarContainer = styled.div`
 
 export const NavbarLink = styled(Link)`
     position: relative;
-    color: #F7F7FF;
+    color: ${ props => props.theme.header.navbar.link.color};
     font-size: 1.5rem;
     text-decoration: none;
     padding: 0 0.5rem;
@@ -43,7 +43,7 @@ export const NavbarLink = styled(Link)`
         content: "";
         height: 1.5rem;
         width: 0;
-        background-color: #F7F7FF;
+        background-color: ${ props => props.theme.header.navbar.link.hover.background};
         right: 0;
         top: -1.25rem;
         transition: all 0.5s;
@@ -53,15 +53,15 @@ export const NavbarLink = styled(Link)`
         content: "";
         height: 1.5rem;
         width: 0;
-        background-color: #F7F7FF;
+        background-color: ${ props => props.theme.header.navbar.link.hover.background};
         left: 0;
         bottom: -1.27rem;
         transition: all 0.4s;
     }
 
     &:hover {
-        color: #0A1612;
-        background-color: #F7F7FF;
+        color: ${ props => props.theme.header.navbar.link.hover.color};
+        background-color: ${ props => props.theme.header.navbar.link.hover.background};
     }
 
 
@@ -75,14 +75,14 @@ export const NavbarLink = styled(Link)`
 export const NavbarSearchIcon = styled(SearchIcon)`
     width: 2.5rem;
     height: auto;
-    fill: #F7F7FF;
+    fill: ${ props => props.theme.header.navbar.searchIcon.fill};
     cursor: pointer;
     margin: 0 0.2rem 0 1rem;
     transition: all 0.4s;
 
     &:hover{
         transform: rotate(-45deg) scale(1.2);
-        fill: #F7CE3E;
+        fill: ${ props => props.theme.header.navbar.searchIcon.hover.fill};
         margin: 0 1.2rem 0 1rem;
     }
 

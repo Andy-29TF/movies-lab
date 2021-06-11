@@ -5,15 +5,15 @@ export const MyListDisplayContainer = styled.div `
     max-width: 100%;
     min-height: 70vh;
     box-sizing: border-box;
-    border: .4rem solid #F7CE3E;
+    border: .4rem solid ${ props => props.theme.pages.myListPage.displaySection.border};
     margin: 0 2rem 1.5rem 2rem;
     display: flex;
-    background: #0a161281;
+    background: ${ props => props.theme.pages.myListPage.displaySection.background};
 
     @media (max-width: 768px) {
         min-height: 73vh;
         margin: 0 0 1rem 0;
-        border: .2rem solid #F7CE3E;
+        border: .2rem solid ${ props => props.theme.pages.myListPage.displaySection.border};
     }
 
 `;
@@ -29,7 +29,7 @@ export const EmptyListContainer = styled.div `
         margin: auto;
         font-size: 5rem;
         text-transform: uppercase;
-        color: #F7F7FF;
+        color: ${ props => props.theme.pages.myListPage.displaySection.color};
     }
 
     @media (max-width: 768px) {

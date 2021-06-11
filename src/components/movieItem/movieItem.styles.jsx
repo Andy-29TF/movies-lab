@@ -31,7 +31,7 @@ export const CardContainer = styled.div `
     }
 
     & .movie-title {
-        color: #F7F7FF;
+        color: ${ props => props.theme.components.movieItem.title.color};
         margin: .5rem 0;
         text-align: center;
         height: 3rem;
@@ -71,11 +71,10 @@ export const CardImdbRating = styled.span `
     width: 2.6rem;
     display: flex;
     flex-direction: row;
-    background-color: black;
-    border-radius: 30rem;
+    background-color: #060E0B;
 
     & p {
-        color: #FFD700;
+        color: ${ props => props.theme.components.movieItem.imdb.rating};
         margin: auto .1rem;
         padding: 0;
         font-size: .85rem;
@@ -92,7 +91,7 @@ export const CardImdbRating = styled.span `
 
 export const ImdbRatingStar = styled(Star) `
     width: .75rem;
-    fill: #FFD700;
+    fill: ${ props => props.theme.components.movieItem.imdb.star};
     margin: 0 0 .1rem .35rem;
 
     @media (max-width: 768px) {
@@ -112,7 +111,7 @@ export const CardSaveListButtons = styled.div `
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background: #0A1612;
+    background: ${ props => props.theme.components.movieItem.imdb.background};
     border-radius: 20rem;
 `;
 
@@ -124,49 +123,76 @@ const IconstStyle = css `
 
 export const ToSeeIcon = styled(ToSee) `
     ${IconstStyle}
-    fill: ${props => props.iconstyled === "true" ? "#084D9B" : "#F7F7FF"};
+    fill: ${props => props.iconstyled === "true" 
+                ? props.theme.components.movieItem.saveButtons.wantToSee.second 
+                : props.theme.components.movieItem.saveButtons.wantToSee.first
+            };
 
     &:hover{
-        fill: ${props => props.iconstyled === "true" ? "#084D9B9d" : "#084D9B"};
+        fill: ${props => props.iconstyled === "true" 
+                    ? props.theme.components.movieItem.saveButtons.wantToSee.third 
+                    : props.theme.components.movieItem.saveButtons.wantToSee.second 
+                };
     }
 
     /* this prevents the button from remaining active on tablets or phones */
     @media (max-width: 900px) {
         &:hover{
-            fill: ${props => props.iconstyled === "true" ? "#084D9B" : "#F7F7FF"};
+            fill: ${props => props.iconstyled === "true" 
+                        ? props.theme.components.movieItem.saveButtons.wantToSee.second  
+                        : props.theme.components.movieItem.saveButtons.wantToSee.first
+                    };
         }
     }
 `;
 
 export const WatchedIcon = styled(Watched) `
     ${IconstStyle}
-    fill: ${props => props.iconstyled === "true" ? "#057657" : "#F7F7FF"};
+    fill: ${props => props.iconstyled === "true" 
+                ? props.theme.components.movieItem.saveButtons.watched.second
+                : props.theme.components.movieItem.saveButtons.watched.first
+            };
     margin-left: 0.15rem;
 
     &:hover{
-        fill: ${props => props.iconstyled === "true" ? "#0576589d" : "#057657"};
+        fill: ${props => props.iconstyled === "true" 
+                    ? props.theme.components.movieItem.saveButtons.watched.third 
+                    : props.theme.components.movieItem.saveButtons.watched.second
+                };
     }
 
     /* this prevents the button from remaining active on tablets or phones */
     @media (max-width: 900px) {
         &:hover{
-            fill: ${props => props.iconstyled === "true" ? "#057657" : "#F7F7FF"};
+            fill: ${props => props.iconstyled === "true" 
+                        ? props.theme.components.movieItem.saveButtons.watched.second
+                        : props.theme.components.movieItem.saveButtons.watched.first
+                    };
         }
     }
 `;
 
 export const LovePlusIcon = styled(LoveIt) `
     ${IconstStyle}
-    fill: ${props => props.iconstyled === "true" ? "#E33B57" : "#F7F7FF"};
+    fill: ${props => props.iconstyled === "true" 
+                ? props.theme.components.movieItem.saveButtons.loveIt.second
+                : props.theme.components.movieItem.saveButtons.loveIt.first 
+            };
 
     &:hover{
-        fill: ${props => props.iconstyled === "true" ? "#e33b579d" : "#E33B57"};
+        fill: ${props => props.iconstyled === "true" 
+                    ? props.theme.components.movieItem.saveButtons.loveIt.third
+                    : props.theme.components.movieItem.saveButtons.loveIt.second
+                };
     }
 
     /* this prevents the button from remaining active on tablets or phones */
     @media (max-width: 900px) {
         &:hover{
-            fill: ${props => props.iconstyled === "true" ? "#E33B57" : "#F7F7FF"};
+            fill: ${props => props.iconstyled === "true" 
+                        ? props.theme.components.movieItem.saveButtons.loveIt.second 
+                        : props.theme.components.movieItem.saveButtons.loveIt.first
+                    };
         }
     }
 `;

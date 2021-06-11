@@ -8,7 +8,6 @@ import { HomeLatestMoviesContainer, SectionTitleContainer, ScrollIcon, WrapperCo
 
 function HomeLatestMoviesSection(props) {
     const { moviesForLatestMoviesSection } = props;
-    console.log(moviesForLatestMoviesSection)
 
     return (
         <HomeLatestMoviesContainer>

@@ -10,8 +10,8 @@ export const HomeMovieRecommendedContainer = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #0A1612;
-    filter: drop-shadow(.5rem .5rem 2px #0a1612bc);
+    border: 2px solid ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.border};
+    filter: drop-shadow(.5rem .5rem 2px ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.dropShadow});
 
     & .frame-title {
         position: absolute;
@@ -20,7 +20,7 @@ export const HomeMovieRecommendedContainer = styled.div `
         text-transform: uppercase;
         font-size: 1.9rem;
         font-weight: 600;
-        color: #F7F7FF;
+        color: ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.frameTitle};
     }
 
     @media (max-width: 1200px) {
@@ -54,7 +54,7 @@ export const TopRatedMovie = styled.div `
     }
 
     & .movie-name {
-        color: #F7F7FF;
+        color: ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.movieName};
         text-align: center;
         font-size: 1.3rem;
         padding: 0;
@@ -91,7 +91,7 @@ export const TopRatedMovie = styled.div `
             width: 45%;
             font-size: 1rem;
             max-height: 25rem;
-            color: #F7F7FF;
+            color: ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.movieStoryline};
             margin: 1rem 0 1rem 2.5rem;
             overflow: scroll;
             text-align: center;
@@ -137,11 +137,11 @@ export const ImdbRating = styled.div `
     width: 3.25rem;
     display: flex;
     flex-direction: row;
-    background-color: #0A1612;
+    background-color: ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.imdb.background};
     border-radius: 30rem;
 
     & p {
-        color: #FFD700;
+        color: ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.imdb.rating};
         margin: auto .3rem;
         padding: 0;
         font-size: 1rem;
@@ -159,7 +159,7 @@ export const ImdbRating = styled.div `
 
 export const ImdbRatingStar = styled(Star) `
     width: .85rem;
-    fill: #FFD700;
+    fill: ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.imdb.star};
     margin: 0 0 .1rem .35rem;
 
     @media (max-width: 1200px) {

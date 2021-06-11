@@ -10,8 +10,8 @@ export const CarouselContainer = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #0A1612;
-    filter: drop-shadow(.5rem .5rem 2px #0a1612bc);
+    border: 2px solid ${ props => props.theme.pages.home.homeRecommendationsSection.carousel.border};
+    filter: drop-shadow(.5rem .5rem 2px ${ props => props.theme.pages.home.homeRecommendationsSection.carousel.dropShadow});
 
     & .carousel-slider{
         width: 96.5%;
@@ -25,7 +25,7 @@ export const CarouselContainer = styled.div `
         text-transform: uppercase;
         font-size: 2rem;
         font-weight: 600;
-        color: #F7F7FF;
+        color: ${ props => props.theme.pages.home.homeRecommendationsSection.carousel.frameTitle};
     }
 
     & .slick-dots {
@@ -86,7 +86,7 @@ export const MediaContainer = styled.div `
     & p {
         text-transform: uppercase;
         font-size: 2rem;
-        color: #F7F7FF;
+        color: ${ props => props.theme.pages.home.homeRecommendationsSection.carousel.movieName};
         text-decoration: underline;
         margin: 0 0 0 .4rem;
         padding: 0;
@@ -94,7 +94,7 @@ export const MediaContainer = styled.div `
 
     & .elem-year {
         font-size: 2rem;
-        color: #F7F7FF;
+        color: ${ props => props.theme.pages.home.homeRecommendationsSection.carousel.movieYear};
         margin-left: .3rem;
     }
 
@@ -131,13 +131,13 @@ export const ImdbRating = styled.div `
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #0A1612;
+    background-color: ${ props => props.theme.pages.home.homeRecommendationsSection.carousel.imdb.background};
     border-radius: 10rem;
 
     & .imdb-rating {
         margin: 0;
         padding: 0;
-        color: #FFD700;
+        color: ${ props => props.theme.pages.home.homeRecommendationsSection.carousel.imdb.rating};
         margin: 0 .35rem 0 .4rem;
         font-size: 1rem;
     }
@@ -162,7 +162,7 @@ export const ImdbRating = styled.div `
 
 export const ImdbRatingStar = styled(Star) `
     width: .88rem;
-    fill: #FFD700;
+    fill: ${ props => props.theme.pages.home.homeRecommendationsSection.carousel.imdb.star};
     margin: 0 0 .1rem .4rem;
 
     @media (max-width: 1200px) {

@@ -17,7 +17,7 @@ export const ModalContainer = styled.div`
     left: 0;
     width: 100%;
     height: calc(100vh - 4.3rem);
-    background-color: #0A1612;
+    background-color: ${ props => props.theme.header.mobileNavbar.modal.background};
     z-index: 1;
     display: ${(props)=> props.displayModal ? "flex" : "none"};
     flex-direction: column;
@@ -26,7 +26,7 @@ export const ModalContainer = styled.div`
 `;
 
 export const ModalLink = styled(Link)`
-    color: #F7F7FF;
+    color: ${ props => props.theme.header.mobileNavbar.modal.link.color};
     font-size: 1.5rem;
     text-decoration: none;
     margin: 0;
@@ -37,6 +37,6 @@ export const ModalLink = styled(Link)`
     &:visited,
     &:active {
         text-decoration: none;
-        color: #F7F7FF;
+        color: ${ props => props.theme.header.mobileNavbar.modal.link.color};
     }
 `;

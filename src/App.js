@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
-// css for max/min-width and background
+// css for max/min-width
 import './utils/utility-classes.css';
-import './App.css'
 // Router
 import { Route, Switch} from 'react-router-dom';
 // redux
@@ -12,7 +11,13 @@ import Home from './pages/home/Home';
 import MoviesPage from './pages/moviesPage/MoviesPage';
 import MyList from './pages/myList/MyList';
 import News from './pages/news/News';
-import Page404 from './pages/page404/Page404'; 
+import Page404 from './pages/page404/Page404';
+// Background
+import DarkBackground from './assets/backgroung-img/bg-img.svg'
+// //* import styled-components
+import { AppContainer } from './app.styles';
+import { ThemeProvider } from 'styled-components';
+import { darkTheme } from './utils/themes';
 
 function App(props) {
   const { fetchRawMovies } = props;
@@ -21,17 +26,21 @@ function App(props) {
     fetchRawMovies();
   }, [fetchRawMovies])
 
-  return (
-    <div className="App">
-      <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route path='/movies' component={MoviesPage}/>
-        <Route path='/my-list' component={MyList}/>
-        <Route path='/news' component={News}/>
-        <Route path='*' component={Page404} />
 
-      </Switch>
-    </div>
+  return (
+    <ThemeProvider theme={darkTheme}>
+      {/* <GlobalStyles/> */}
+      <AppContainer darkBackground={DarkBackground}>
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route path='/movies/:filteringRules' component={MoviesPage}/>
+          <Route path='/my-list' component={MyList}/>
+          <Route path='/news' component={News}/>
+          <Route path='*' component={Page404} />
+
+        </Switch>
+      </AppContainer>
+    </ThemeProvider>
   );
 }
 

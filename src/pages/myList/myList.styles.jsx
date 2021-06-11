@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const MyListContainer = styled.div `
    width: 100%;
    height: 100%;
-   background-color: #243942;
+   background-color: ${ props => props.theme.pages.background};
    flex-grow: 1;
 `;
 
@@ -17,7 +17,7 @@ export const SectionBar = styled.div `
     margin: 3rem 2rem 0 2rem;
 
     & .selected-category {
-        background-color: #F7F7FF;
+        background-color: ${ props => props.theme.pages.myListPage.sectionBar.selector.selected.background};
         transform: scaleY(1.10) scaleX(1.06);
         transform-origin: bottom center;
         letter-spacing: .2rem;
@@ -30,9 +30,9 @@ export const SectionBar = styled.div `
         position: absolute;
         bottom: -.4rem;
         left: 0;
-        background-color: #F7CE3E;
-
+        background-color: ${ props => props.theme.pages.myListPage.sectionBar.borderBottom};
     }
+
     @media (max-width: 768px) {
         margin: 1.5rem .2rem 0 .2rem;
 
@@ -58,7 +58,7 @@ export const SectionSelectorUnselected = css `
     margin:  0 .1rem;
     cursor: pointer;
     border-radius: 1.5rem 1.5rem 0 0;
-    background-color: #c5c1c0;
+    background-color: ${ props => props.theme.pages.myListPage.sectionBar.selector.unselected.background};
     transition: all ease .4s;
 
     & .section-bar-icon {
@@ -75,7 +75,7 @@ export const SectionSelectorUnselected = css `
 
     &:hover {
         
-        background-color: #0A1612;
+        background-color: ${ props => props.theme.pages.myListPage.sectionBar.selector.unselected.hover.background};
         transform: scaleY(1.20) scaleX(1.1);
         transform-origin: bottom center;
         letter-spacing: .3rem;
@@ -96,7 +96,7 @@ export const SectionSelectorUnselected = css `
 
         &:hover {
             letter-spacing: 0;
-            background-color: #F7F7FF;
+            background-color: ${ props => props.theme.pages.myListPage.sectionBar.selector.unselected.hover.mobile.background};
             transform: scaleY(1.10) scaleX(1.06);
         }
 
@@ -115,7 +115,7 @@ export const SectionSelectorUnselected = css `
 
         &:hover {
             letter-spacing: 0;
-            background-color: #F7F7FF;
+            background-color: ${ props => props.theme.pages.myListPage.sectionBar.selector.unselected.hover.mobile.background};
             transform: scaleY(1.10) scaleX(1.06);
         }
     }
@@ -125,31 +125,31 @@ export const SectionSelectorWantToSee = styled.div `
     ${SectionSelectorUnselected}
 
     & .section-bar-icon{
-        fill: #084D9B;
+        fill: ${ props => props.theme.pages.myListPage.sectionBar.selector.wantToSee.colorAndFill};
     }
     & p {
-        color: #084D9B;
+        color: ${ props => props.theme.pages.myListPage.sectionBar.selector.wantToSee.colorAndFill};
     }
 `;
 export const SectionSelectorWatched = styled.div `
     ${SectionSelectorUnselected}
 
     & .section-bar-icon{
-        fill: #057657;
+        fill: ${ props => props.theme.pages.myListPage.sectionBar.selector.watched.colorAndFill};
     }
 
     & p {
-        color: #057657;
+        color: ${ props => props.theme.pages.myListPage.sectionBar.selector.watched.colorAndFill};
     }
 `;
 export const SectionSelectorLoveIt = styled.div `
     ${SectionSelectorUnselected}
 
     & .section-bar-icon{
-        fill: #E33B57;
+        fill: ${ props => props.theme.pages.myListPage.sectionBar.selector.loveIt.colorAndFill};
     }
 
     & p {
-        color: #E33B57;
+        color: ${ props => props.theme.pages.myListPage.sectionBar.selector.loveIt.colorAndFill};
     }
 `;

@@ -10,10 +10,10 @@ export const MoviesListContainer = styled.div `
 
     & button {
         width: 90%;
-        color: #0A1612 ;
+        color: ${ props => props.theme.pages.moviesPage.moviesList.button.color};
         text-transform: uppercase;
         text-decoration: none;
-        background: #F7CE3E; 
+        background: ${ props => props.theme.pages.moviesPage.moviesList.button.background}; 
         padding: 1.1rem;
         border-radius: .3rem;
         display: inline-block;
@@ -22,8 +22,8 @@ export const MoviesListContainer = styled.div `
 
         &:hover {
             width: 96%;
-            color: #F7CE3E ;
-            background: #0A1612;
+            color: ${ props => props.theme.pages.moviesPage.moviesList.button.hover.color};
+            background: ${ props => props.theme.pages.moviesPage.moviesList.button.hover.background};
             letter-spacing: .3rem;
             box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
             box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);

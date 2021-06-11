@@ -21,8 +21,8 @@ export const HomeLatestMoviesContainer = styled.div `
 
 export const SectionTitleContainer = styled.div `
     width: 100%;
-    border-bottom: 3px solid #0A1612;
-    filter: drop-shadow(.5rem .5rem 2px #0a1612bc);
+    border-bottom: 3px solid ${ props => props.theme.pages.home.homeLatestMoviesSection.border};
+    filter: drop-shadow(.5rem .5rem 2px ${ props => props.theme.pages.home.homeLatestMoviesSection.dropShadow});
     display: flex;
     justify-content: space-between;
 
@@ -30,7 +30,7 @@ export const SectionTitleContainer = styled.div `
         text-transform: uppercase;
         font-size: 1.9rem;
         font-weight: 600;
-        color: #F7F7FF;
+        color: ${ props => props.theme.pages.home.homeLatestMoviesSection.sectionTitle};
         margin: 0 2rem;
     }
 
@@ -53,7 +53,7 @@ export const ScrollIcon = styled(Scroll) `
     width: 1.8rem;
     padding: .2rem;
     border-radius: .5rem;
-    background-color: #F7F7FF;
+    background-color: ${ props => props.theme.pages.home.homeLatestMoviesSection.scrollIcon.fill};
 
     @media (max-width: 768px) {
         margin: auto .8rem;
@@ -73,18 +73,18 @@ export const  WrapperContainer = styled.div `
     margin: .5rem 0;
 
     &::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        box-shadow: inset 0 0 6px ${ props => props.theme.pages.home.homeLatestMoviesSection.wrapperContainer.scrollbarTrack.boxShadow};
         border-radius: 100px;
-        background-color: #c5c1c0;
+        background-color: ${ props => props.theme.pages.home.homeLatestMoviesSection.wrapperContainer.scrollbarTrack.background};
     }
     &::-webkit-scrollbar {
         height: 11px;
         cursor: pointer;
     }
     &::-webkit-scrollbar-thumb {
-        background: #0A1612;
+        background: ${ props => props.theme.pages.home.homeLatestMoviesSection.wrapperContainer.scrollbarThumb.background};
         border-radius: 10px;
-	    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	    box-shadow: inset 0 0 6px ${ props => props.theme.pages.home.homeLatestMoviesSection.wrapperContainer.scrollbarThumb.boxShadow};
     }
 
     @media (max-width: 768px) {

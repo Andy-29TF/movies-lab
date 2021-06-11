@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-//? import link from router to stylize the link
-// import { Link } from 'react-router-dom';
 // import icons
 import { ReactComponent as MenuIcon} from '../../assets/icons/navbar/menu.svg';
 import { ReactComponent as SearchIcon} from '../../assets/icons/navbar/search.svg';
@@ -37,7 +35,7 @@ export const MobileNavbarContainer = styled.div`
 
 export const NavbarMenuIcon = styled(MenuIcon)`
     display: none;
-    fill: #F7F7FF;
+    fill: ${ props => props.theme.header.mobileNavbar.menuIcon.fill};
     cursor: pointer;
     height: 100%;
     
@@ -51,9 +49,9 @@ export const NavbarSearchIcon = styled(SearchIcon)`
     display: none;
     width: 2.5rem;
     height: auto;
-    fill: #F7F7FF;
+    fill: ${ props => props.theme.header.mobileNavbar.searchIcon.fill};
     cursor: pointer;
-    margin: 0 .2rem 0 .5rem;
+    margin: 0 .2rem 0 .55rem;
 
     @media (max-width: 768px) {
         display: inline;
