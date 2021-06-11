@@ -6,20 +6,35 @@ import { ReactComponent as Watched} from '../../assets/icons/movieCard/watched.s
 import { ReactComponent as LoveIt} from '../../assets/icons/movieCard/loveIt.svg';
 
 export const MovieItemContainer = styled.div `
-    flex-basis: 16%;
-    display: flex;
-    justify-content: space-around;
+    flex-basis: 16.66%;
 
+    @media (max-width: 1385px) {
+        flex-basis: 20%;
+    }
+    @media (max-width: 1190px) {
+        flex-basis: 25%;
+    }
+    @media (max-width: 990px) {
+        flex-basis: 33.33%;
+    }
     @media (max-width: 768px) {
-        flex-basis: 21%;
-        display: block;
+        flex-basis: 25%;
+    }
+    @media (max-width: 740px) {
+        flex-basis: 33.33%;
+    }
+    @media (max-width: 575px) {
+        flex-basis: 50%;
+    }
+    @media (max-width: 370px) {
+        flex-basis: 100%;
     }
 `;
 
 export const CardContainer = styled.div `
     width: 11rem;
     height: auto;
-    margin: 1.5rem .5rem;
+    margin: 1.5rem auto;
     overflow: hidden;
     text-align: center;
     
@@ -43,7 +58,7 @@ export const CardContainer = styled.div `
     @media (max-width: 768px) {
         width: 11rem;
         height: auto;
-        margin: .3rem .1rem;
+        margin: .3rem auto;
         flex-basis: 50%;
 
         & img {

@@ -136,6 +136,6 @@ function mapDispatchToProps(dispatch) {
     return {
         handleAddToOrRemoveFromSaveList: (payload) => dispatch(handleAddToOrRemoveFromSaveList(payload))
     }
-  }
+}
 
 export default connect(null, mapDispatchToProps)(MovieItem);

@@ -41,7 +41,6 @@ export const EmptyListContainer = styled.div `
 export const ItemsListContainer = styled.div `
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
 
     @media (max-width: 768px) {
         margin: .8rem 0;

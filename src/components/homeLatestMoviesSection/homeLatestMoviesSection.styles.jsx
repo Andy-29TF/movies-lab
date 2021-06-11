@@ -70,7 +70,7 @@ export const ScrollIcon = styled(Scroll) `
 export const  WrapperContainer = styled.div `
     display: flex;
     overflow-x: auto;
-    margin: .5rem 0;
+    margin: 1rem 0;
 
     &::-webkit-scrollbar-track {
         box-shadow: inset 0 0 6px ${ props => props.theme.pages.home.homeLatestMoviesSection.wrapperContainer.scrollbarTrack.boxShadow};
@@ -85,6 +85,9 @@ export const  WrapperContainer = styled.div `
         background: ${ props => props.theme.pages.home.homeLatestMoviesSection.wrapperContainer.scrollbarThumb.background};
         border-radius: 10px;
 	    box-shadow: inset 0 0 6px ${ props => props.theme.pages.home.homeLatestMoviesSection.wrapperContainer.scrollbarThumb.boxShadow};
+    }
+    & div {
+        margin: 0 .23rem;
     }
 
     @media (max-width: 768px) {
