@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // route
 import { Link } from 'react-router-dom';
 // importlogo 
@@ -11,16 +11,6 @@ import ModalMobileNavbar from './modalMobileNavbar/ModalMobileNavbar';
 
 function MobileNavbar() {
     const [displayModal, setDisplayModal] = useState(false);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    // If you open the modal menu when the viewport is less than 768px 
-    // and then return to a viewport greater than 768 the modal will close automatically
-    useEffect(() => {
-        const handleResize = () => setWindowWidth(window.innerWidth);
-        window.addEventListener("resize", handleResize);
-        if(windowWidth > 768 && displayModal === true) {
-            setDisplayModal(false);
-        }
-    }, [windowWidth, displayModal]);
 
     const handleCleanup = function(event) {
         if (window.location.href === event.target.href) {

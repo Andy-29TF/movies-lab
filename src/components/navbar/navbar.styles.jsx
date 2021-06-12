@@ -14,18 +14,13 @@ export const NavbarContainer = styled.div`
 
     & img {
         width: 11rem;
-        margin: 0 0.5rem 0 0.2rem;
+        margin: 0 .5rem 0 .5rem;
     }
 
     & .navbar-left-side, .navbar-right-side {
         height: 100%;
         display: flex;
         align-items: center;
-    }
-
-
-    @media (max-width: 768px) {
-        display: none;
     }
 `;
 
@@ -77,16 +72,12 @@ export const NavbarSearchIcon = styled(SearchIcon)`
     height: auto;
     fill: ${ props => props.theme.header.navbar.searchIcon.fill};
     cursor: pointer;
-    margin: 0 0.2rem 0 1rem;
+    margin: 0 .5rem 0 1rem;
     transition: all 0.4s;
 
     &:hover{
         transform: rotate(-45deg) scale(1.2);
         fill: ${ props => props.theme.header.navbar.searchIcon.hover.fill};
         margin: 0 1.2rem 0 1rem;
-    }
-
-    @media (max-width: 768px) {
-        width: 2rem;
     }
 `;

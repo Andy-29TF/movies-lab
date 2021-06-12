@@ -15,21 +15,12 @@ export const MobileNavbarContainer = styled.div`
 
     & img {
         width: 9rem;
-        display: none;
     }
 
     & .div-menu-icon {
         width: 4rem;
         height: 100%;
         text-align: center;    
-    }
-
-    @media (max-width: 768px) {
-        display: flex;
-
-        & img {
-            display: block;
-        }
     }
 `;
 
@@ -38,11 +29,8 @@ export const NavbarMenuIcon = styled(MenuIcon)`
     fill: ${ props => props.theme.header.mobileNavbar.menuIcon.fill};
     cursor: pointer;
     height: 100%;
-    
-    @media (max-width: 768px) {
-        display: inline;
-        width: 50% ;
-    }
+    display: inline;
+    width: 50%;
 `;
 
 export const NavbarSearchIcon = styled(SearchIcon)`
@@ -51,23 +39,15 @@ export const NavbarSearchIcon = styled(SearchIcon)`
     height: auto;
     fill: ${ props => props.theme.header.mobileNavbar.searchIcon.fill};
     cursor: pointer;
-    margin: 0 .2rem 0 .55rem;
-
-    @media (max-width: 768px) {
-        display: inline;
-        width: 2rem;
-    }
+    margin: 0 .2rem 0 .6rem;
+    display: inline;
+    width: 2.1rem;
 `;
 
 export const NavbarCloseIcon = styled(CloseIcon)`
     display: none;  
     cursor: pointer;
     height: 100%;
-
-
-    @media (max-width: 768px) {
-        display: inline;
-        width: 50% ;
-    }
-
+    display: inline;
+    width: 50%;
 `;
