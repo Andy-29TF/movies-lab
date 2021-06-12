@@ -59,7 +59,6 @@ export const NavbarLink = styled(Link)`
         background-color: ${ props => props.theme.header.navbar.link.hover.background};
     }
 
-
     &:hover:before,
     &:hover:after{
         width: 100%;

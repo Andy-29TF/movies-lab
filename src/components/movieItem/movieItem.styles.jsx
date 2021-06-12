@@ -87,6 +87,7 @@ export const CardImdbRating = styled.span `
     display: flex;
     flex-direction: row;
     background-color: #060E0B;
+    border-radius: 1rem;
 
     & p {
         color: ${ props => props.theme.components.movieItem.imdb.rating};

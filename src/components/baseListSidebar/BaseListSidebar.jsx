@@ -1,14 +1,19 @@
 import React from 'react';
 // import for each filter component
-import FilterByYEar from '../filterComponents/filterByYear/FilterByYear';
+import FilterByYear from '../filterComponents/filterByYear/FilterByYear';
+import FilterByGenre from '../filterComponents/filterByGenre/FilterByGenre';
+import FilterByStars from '../filterComponents/filterByStars/FilterByStars';
 //* import the stylized  component
-import { BaseListSidebarContainer, FilterList } from './baseListSidebar.styles';
+import { BaseListSidebarContainer, FilterList} from './baseListSidebar.styles';
 
 function BaseListSidebar() {
+
     return (
         <BaseListSidebarContainer >
             <FilterList>
-                <FilterByYEar/>
+                <FilterByGenre/>
+                <FilterByYear/>
+                <FilterByStars/>
             </FilterList>
         </BaseListSidebarContainer>
     )

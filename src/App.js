@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 // css for max/min-width
 import './utils/utility-classes.css';
 // Router
-import { Route, Switch} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 // redux
 import { connect } from 'react-redux';
 import { fetchRawMovies } from './redux/actions/moviesProcessing';
@@ -33,9 +33,9 @@ function App(props) {
       <AppContainer darkBackground={DarkBackground}>
         <Switch>
           <Route exact path='/' component={Home}/>
-          <Route path='/movies/:filteringRules' component={MoviesPage}/>
-          <Route path='/my-list' component={MyList}/>
-          <Route path='/news' component={News}/>
+          <Route exact path='/movies/:filteringRules' component={MoviesPage}/>
+          <Route exact path='/my-list' component={MyList}/>
+          <Route exact path='/news' component={News}/>
           <Route path='*' component={Page404} />
 
         </Switch>

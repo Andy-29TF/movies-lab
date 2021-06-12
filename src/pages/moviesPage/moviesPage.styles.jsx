@@ -6,5 +6,4 @@ export const MoviesPageContainer = styled.div `
    background-color: ${ props => props.theme.pages.background};
    flex-grow: 1;
    display: flex;
-   position: relative;
 `;

@@ -12,7 +12,6 @@ import {
 
 
 function Navbar() {
-
     const handleCleanup = function(event) {
         if (window.location.href === event.target.href) {
             event.preventDefault();

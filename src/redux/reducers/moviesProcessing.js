@@ -1,6 +1,5 @@
 const initialState = {
-    rawMovies: [],
-    filteredMovies: []
+    rawMovies: []
 };
 
 function moviesProcessingReducer(state = initialState, action) {

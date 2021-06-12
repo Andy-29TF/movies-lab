@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 // route
 import { Link } from 'react-router-dom';
+// import the modal for the nav
+import ModalMobileNavbar from './modalMobileNavbar/ModalMobileNavbar';
 // importlogo 
 import logo from '../../assets/images/logo.png';
 //* import the stylized  component
 import { MobileNavbarContainer, NavbarMenuIcon, NavbarSearchIcon, NavbarCloseIcon } from './mobileNavbar.styles';
-// import the modal for the nav
-import ModalMobileNavbar from './modalMobileNavbar/ModalMobileNavbar';
 
 
 function MobileNavbar() {

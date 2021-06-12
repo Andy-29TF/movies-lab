@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import icon
 import { ReactComponent as ScrollUpAndDown } from '../../../assets/icons/baseListSidebar/scrollUpAndDown.svg';
 
-export const FilterByYearContainer = styled.div `
+export const FilterByGenreContainer = styled.div `
     margin: 1rem .2rem 0 .2rem;
     background: black;
     padding-bottom: 1rem;
@@ -28,13 +28,14 @@ export const ScrollUpAndDownIcon = styled(ScrollUpAndDown) `
     right: .48rem;
 `;
 
-export const FilterByYearElements = styled.div `
+export const FilterByGenreElements = styled.div `
     width: 90%;
     height: 12rem;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    justify-content: space-around;
     overflow-x: auto;
 
     &::-webkit-scrollbar-track {
@@ -56,9 +57,10 @@ export const FilterByYearElements = styled.div `
 export const LinkElement = styled(Link) `
     text-decoration: none;
     color: white;
-    width: 31%;
-    margin: .4rem .1rem;
+    margin: .35rem .3rem;
+    padding: 0 .2rem;
     border: 1px solid black;
+    text-transform: ${props => props.deletedecorations === "yes" ? null : "lowercase"};
 
     &:hover {
         background: black;

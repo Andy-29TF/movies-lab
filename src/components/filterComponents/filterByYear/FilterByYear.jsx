@@ -2,7 +2,7 @@ import React from 'react';
 // redux
 import { connect } from 'react-redux';
 //* import the stylized  component
-import { FilterByYearContainer, FilterByYearElements, LinkElement } from './filterByYear.styles';
+import { FilterByYearContainer, FilterByYearElements, LinkElement, ScrollUpAndDownIcon  } from './filterByYear.styles';
  
 function FilterByYear(props) {
     const { uniqueYears } = props;
@@ -10,9 +10,11 @@ function FilterByYear(props) {
     return (
         <FilterByYearContainer>
             <p>Filter By Year:</p>
+            <ScrollUpAndDownIcon/>
             <FilterByYearElements>
+                <LinkElement to="/movies/unfiltered" key="01">All</LinkElement>
                 {
-                    uniqueYears.map(elem => <LinkElement>{elem}</LinkElement>)
+                    uniqueYears.map(elem => <LinkElement to={`/movies/year-${elem}`} key={elem}>{elem}</LinkElement>)
                 }
             </FilterByYearElements>
         </FilterByYearContainer>

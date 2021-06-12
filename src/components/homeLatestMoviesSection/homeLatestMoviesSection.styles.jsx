@@ -92,5 +92,9 @@ export const  WrapperContainer = styled.div `
 
     @media (max-width: 768px) {
         margin: 1.1rem 0;
+
+        & div {
+            margin: 0 .15rem;
+        }
     }
 `;  

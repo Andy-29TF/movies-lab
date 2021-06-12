@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
 export const MoviesListContainer = styled.div `
-    margin: 2.5rem 0;
+    margin: 1.5rem 0;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
 
     & button {
         width: 90%;
@@ -19,6 +17,7 @@ export const MoviesListContainer = styled.div `
         display: inline-block;
         border: none;
         transition: all 0.4s ease 0s;
+        margin: 1rem auto 0 auto;
 
         &:hover {
             width: 96%;

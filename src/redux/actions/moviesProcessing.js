@@ -26,7 +26,7 @@ export function takeOutOfSaveList(payload) {
 // thunk function
 export function fetchRawMovies() {
     return (dispatch) => {
-        axios.get('https://gist.githubusercontent.com/Andy-29TF/6ea8139b7bbdce60085f96911b9494f7/raw/9c7542ad4923a7bd8fc7ddab0573d5e7457a6b81/movies.json')
+        axios.get('https://gist.githubusercontent.com/Andy-29TF/6ea8139b7bbdce60085f96911b9494f7/raw/6b7f9be0731e7e14e9e2116ecca5889cd084a327/movies.json')
             .then( resp => {
                 dispatch(setRawMovies(resp.data))
             })
