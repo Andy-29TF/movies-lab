@@ -18,6 +18,21 @@ export const FilterByYearContainer = styled.div `
         padding: .7rem 0 .5rem 1rem;
         margin: 0;
     }
+
+    @media (max-width: 768px) {
+        margin: 1rem 2rem;
+
+        & p {
+            font-size: 1.4rem;
+        }
+    }
+    @media (max-width: 500px) {
+        margin: 1rem .5rem;
+
+        & p {
+            font-size: 1.1rem;
+        }
+    }
 `;
 
 export const ScrollUpAndDownIcon = styled(ScrollUpAndDown) `
@@ -26,6 +41,11 @@ export const ScrollUpAndDownIcon = styled(ScrollUpAndDown) `
     position: absolute;
     top: .8rem;
     right: .48rem;
+
+    @media (max-width: 768px) {
+        right: 1.1rem;
+        top: 1rem;
+    }
 `;
 
 export const FilterByYearElements = styled.div `
@@ -66,5 +86,23 @@ export const LinkElement = styled(Link) `
         border-radius: 1rem;
         color: yellow;
         cursor: pointer;
+    }
+
+    &:hover {
+        border: 1px solid yellow;
+        border-radius: 1rem;
+        color: yellow;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        margin: .65rem .1rem;
+        font-size: 1.2rem;
+        border: none;
+
+        &:hover {
+            border: none;
+            color: white;
+        }
     }
 `;

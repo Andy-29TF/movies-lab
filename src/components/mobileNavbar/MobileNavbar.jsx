@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // route
 import { Link } from 'react-router-dom';
 // import the modal for the nav
@@ -11,6 +11,12 @@ import { MobileNavbarContainer, NavbarMenuIcon, NavbarSearchIcon, NavbarCloseIco
 
 function MobileNavbar() {
     const [displayModal, setDisplayModal] = useState(false);
+
+    useEffect(() => {
+        displayModal 
+            ? document.body.style.overflow = 'hidden' 
+            : document.body.style.overflow = 'unset'
+     }, [ displayModal ]);
 
     const handleCleanup = function(event) {
         if (window.location.href === event.target.href) {

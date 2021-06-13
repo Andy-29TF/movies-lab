@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-//? import the component with the navbar for...
-//? window.width > 768
+// import components
 import Navbar from '../navbar/Navbar';
-//? and window.width < 768
 import MobileNavbar from '../mobileNavbar/MobileNavbar';
 //* import the stylized  component
 import { HeaderContainer } from './header.styles';

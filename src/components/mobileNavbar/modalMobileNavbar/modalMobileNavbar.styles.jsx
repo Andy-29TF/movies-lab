@@ -18,7 +18,7 @@ export const ModalContainer = styled.div`
     width: 100%;
     height: calc(100vh - 4.3rem);
     background-color: ${ props => props.theme.header.mobileNavbar.modal.background};
-    z-index: 1;
+    z-index: 2;
     display: ${(props)=> props.displayModal ? "flex" : "none"};
     flex-direction: column;
     justify-content: space-around;
