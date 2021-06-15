@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 export const FilterByStarsContainer = styled.div `
     margin: 1rem .2rem 0 .2rem;
-    background: black;
+    background: ${ props => props.theme.components.baseListSidebar.black};
     padding-bottom: 1rem;
     border-radius: .4rem;
     position: relative;
 
     & p {
         font-weight: 600;
-        color: white;
+        color: ${ props => props.theme.components.baseListSidebar.white};
         text-transform: uppercase;
         padding: .7rem 0 .5rem 1rem;
         margin: 0;
@@ -48,23 +48,23 @@ export const FilterByStarsElements = styled.div `
 
 export const LinkElement = styled(Link) `
     text-decoration: none;
-    color: white;
+    color: ${ props => props.theme.components.baseListSidebar.white};
     width: 31%;
     margin: .4rem .1rem;
-    border: 1px solid black;
+    border: 1px solid ${ props => props.theme.components.baseListSidebar.black};
 
     &:hover {
-        background: black;
-        border: 1px solid yellow;
+        background: ${ props => props.theme.components.baseListSidebar.black};
+        border: 1px solid ${ props => props.theme.components.baseListSidebar.yellow};
         border-radius: 1rem;
-        color: yellow;
+        color: ${ props => props.theme.components.baseListSidebar.yellow};
         cursor: pointer;
     }
 
     &:hover {
         border: 1px solid yellow;
         border-radius: 1rem;
-        color: yellow;
+        color: ${ props => props.theme.components.baseListSidebar.yellow};
         cursor: pointer;
     }
 
@@ -75,7 +75,7 @@ export const LinkElement = styled(Link) `
 
         &:hover {
             border: none;
-            color: white;
+            color: ${ props => props.theme.components.baseListSidebar.white};
         }
     }
 `;

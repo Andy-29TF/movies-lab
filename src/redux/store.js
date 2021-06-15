@@ -4,10 +4,12 @@ import logger from 'redux-logger';
 // reducers
 import saveListReducer from './reducers/saveList';
 import moviesProcessingReducer from './reducers/moviesProcessing';
+import searchBarReducer from './reducers/searchBar';
 
 const rootReducer = combineReducers({
     saveList: saveListReducer,
-    moviesProcessing: moviesProcessingReducer 
+    moviesProcessing: moviesProcessingReducer,
+    searchBar: searchBarReducer
 });
 const middlewares = [ReduxThunk, logger];
 

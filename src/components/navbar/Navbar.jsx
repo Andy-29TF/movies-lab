@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+// redux
+import { connect } from 'react-redux';
+import { toggleSearchBar } from '../../redux/actions/searchBar'
 // route
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 // importlogo 
 import logo from '../../assets/images/logo.png';
 //* import the stylized  component
@@ -11,8 +14,17 @@ import {
 } from './navbar.styles';
 
 
-function Navbar() {
+function Navbar(props) {
+    const { toggleSearchBar } = props;
+    // router
+    const location = useLocation();
+
+    useEffect(() => {
+        toggleSearchBar({ searchBarInstructions: "close shearch bar" })
+    }, [location, toggleSearchBar])
+
     const handleCleanup = function(event) {
+        toggleSearchBar({ searchBarInstructions: "close shearch bar" })
         if (window.location.href === event.target.href) {
             event.preventDefault();
         }
@@ -30,10 +42,16 @@ function Navbar() {
             <div className="navbar-right-side">
                 <NavbarLink to='/my-list' onClick={(event) => handleCleanup(event)}>My List</NavbarLink>
                 <NavbarLink to='/' onClick={(event) => handleCleanup(event)}>Sign In</NavbarLink>
-                <NavbarSearchIcon/>
+                <NavbarSearchIcon onClick={toggleSearchBar}/>
             </div>
     </NavbarContainer>
     )
 }
 
-export default Navbar;
+function dispatchStateToProps(dispatch) {
+    return {
+        toggleSearchBar: (payload) => dispatch(toggleSearchBar(payload))
+    }
+}
+
+export default connect(null, dispatchStateToProps)(Navbar);

@@ -6,14 +6,14 @@ import { ReactComponent as ScrollUpAndDown } from '../../../assets/icons/baseLis
 
 export const FilterByYearContainer = styled.div `
     margin: 1rem .2rem 0 .2rem;
-    background: black;
+    background: ${ props => props.theme.components.baseListSidebar.black};
     padding-bottom: 1rem;
     border-radius: .4rem;
     position: relative;
 
     & p {
         font-weight: 600;
-        color: white;
+        color: ${ props => props.theme.components.baseListSidebar.white};
         text-transform: uppercase;
         padding: .7rem 0 .5rem 1rem;
         margin: 0;
@@ -36,7 +36,7 @@ export const FilterByYearContainer = styled.div `
 `;
 
 export const ScrollUpAndDownIcon = styled(ScrollUpAndDown) `
-    fill: white;
+    fill: ${ props => props.theme.components.baseListSidebar.white};
     width: 1rem;
     position: absolute;
     top: .8rem;
@@ -58,8 +58,8 @@ export const FilterByYearElements = styled.div `
     overflow-x: auto;
 
     &::-webkit-scrollbar-track {
-        background: rgb(6,14,11);
-        background: linear-gradient(90deg, rgba(6,14,11,1) 35%, rgba(255,215,0,1) 50%, rgba(6,14,11,1) 65%);
+        background: ${ props => props.theme.components.baseListSidebar.scrollbar.black};
+        background: ${ props => props.theme.components.baseListSidebar.scrollbar.track};
         width: 1px;
     }
     &::-webkit-scrollbar {
@@ -67,31 +67,30 @@ export const FilterByYearElements = styled.div `
         cursor: pointer;
     }
     &::-webkit-scrollbar-thumb {
-        background: black;
-        border: 2px solid yellow;
+        background: ${ props => props.theme.components.baseListSidebar.scrollbar.black};
+        border: 2px solid ${ props => props.theme.components.baseListSidebar.scrollbar.yellow};
         border-radius: 1rem;
     }
 `;
 
 export const LinkElement = styled(Link) `
     text-decoration: none;
-    color: white;
+    color: ${ props => props.theme.components.baseListSidebar.white};
     width: 31%;
     margin: .4rem .1rem;
-    border: 1px solid black;
+    border: 1px solid ${ props => props.theme.components.baseListSidebar.black};
 
     &:hover {
-        background: black;
-        border: 1px solid yellow;
+        border: 1px solid ${ props => props.theme.components.baseListSidebar.yellow};
         border-radius: 1rem;
-        color: yellow;
+        color: ${ props => props.theme.components.baseListSidebar.yellow};
         cursor: pointer;
     }
 
     &:hover {
-        border: 1px solid yellow;
+        border: 1px solid ${ props => props.theme.components.baseListSidebar.yellow};
         border-radius: 1rem;
-        color: yellow;
+        color: ${ props => props.theme.components.baseListSidebar.yellow};
         cursor: pointer;
     }
 
@@ -102,7 +101,7 @@ export const LinkElement = styled(Link) `
 
         &:hover {
             border: none;
-            color: white;
+            color: ${ props => props.theme.components.baseListSidebar.white};
         }
     }
 `;

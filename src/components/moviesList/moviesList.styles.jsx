@@ -30,4 +30,15 @@ export const MoviesListContainer = styled.div `
             transition: all 0.4s ease 0s;
         }
     }
+
+    @media (max-width: 768px) {
+        & button {
+            &:hover {
+                width: 90%;
+                letter-spacing: 0;
+                color: ${ props => props.theme.pages.moviesPage.moviesList.button.color};
+                background: ${ props => props.theme.pages.moviesPage.moviesList.button.background}; 
+            }
+        }
+    }
 `;

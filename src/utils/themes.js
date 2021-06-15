@@ -169,6 +169,18 @@ export const darkTheme = {
             background: "#060E0B",
             color: "#F7F7FF",
             spanColor: "#44FFD1"
+        },
+        baseListSidebar: {
+            white: "#F7F7FF",
+            black: "#060E0B",
+            yellow: "yellow",
+            scrollbar: {
+                black: "#060e0b",
+                yellow: "yellow",
+                track: "linear-gradient(90deg, #060e0b 35%, #ffd700 50%, #060e0b 65%)"
+            }
         }
     }
 }
+
+// ${ props => props.theme.components.baseListSidebar.};

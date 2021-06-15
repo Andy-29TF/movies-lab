@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+// redux
+import { connect } from 'react-redux';
+import { toggleSearchBar } from '../../redux/actions/searchBar'
 // route
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 // import the modal for the nav
 import ModalMobileNavbar from './modalMobileNavbar/ModalMobileNavbar';
 // importlogo 
@@ -9,8 +12,15 @@ import logo from '../../assets/images/logo.png';
 import { MobileNavbarContainer, NavbarMenuIcon, NavbarSearchIcon, NavbarCloseIcon } from './mobileNavbar.styles';
 
 
-function MobileNavbar() {
+function MobileNavbar(props) {
+    const { toggleSearchBar } = props;
     const [displayModal, setDisplayModal] = useState(false);
+    // router
+    const location = useLocation();
+
+    useEffect(() => {
+        toggleSearchBar({ searchBarInstructions: "close shearch bar" })
+    }, [location, toggleSearchBar])
 
     useEffect(() => {
         displayModal 
@@ -19,6 +29,7 @@ function MobileNavbar() {
      }, [ displayModal ]);
 
     const handleCleanup = function(event) {
+        toggleSearchBar({ searchBarInstructions: "close shearch bar" })
         if (window.location.href === event.target.href) {
             setDisplayModal(state => !state);
             event.preventDefault();
@@ -27,15 +38,25 @@ function MobileNavbar() {
 
     return (
         <MobileNavbarContainer className="container-min-max-width" >
-            <NavbarSearchIcon onClick={() => setDisplayModal(state => state && false)}/>
-            <Link to='/' onClick={() => setDisplayModal(state => state && false)}>
+            <NavbarSearchIcon onClick={() => {
+                setDisplayModal(state => state && false);
+                toggleSearchBar({})
+            }}/>
+            <Link to='/' onClick={() =>{ 
+                setDisplayModal(state => state && false)
+                toggleSearchBar({ searchBarInstructions: "close shearch bar" })
+            }}>
                 <img src={logo} alt="logo" />
             </Link>
             <div className="div-menu-icon" >
                 {
                     displayModal 
-                        ?<NavbarCloseIcon  onClick={() => setDisplayModal(state => !state)}/>
-                        :<NavbarMenuIcon  onClick={() => setDisplayModal(state => !state)}/>
+                        ?<NavbarCloseIcon  onClick={() =>  setDisplayModal(state => !state)}/>
+                        :<NavbarMenuIcon  onClick={() => {
+                            setDisplayModal(state => !state)
+                            window.scroll(0, 0)
+                            toggleSearchBar({ searchBarInstructions: "close shearch bar" })
+                        }}/>
                 }
             </div>
             <ModalMobileNavbar className="modal-mobile-navbar" displayModal={displayModal}  handleCleanup={handleCleanup}></ModalMobileNavbar>
@@ -43,4 +64,10 @@ function MobileNavbar() {
     )
 }
 
-export default MobileNavbar;
+function dispatchStateToProps(dispatch) {
+    return {
+        toggleSearchBar: (payload) => dispatch(toggleSearchBar(payload))
+    }
+}
+
+export default connect(null, dispatchStateToProps)(MobileNavbar);

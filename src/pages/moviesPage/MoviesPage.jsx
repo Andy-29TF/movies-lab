@@ -64,7 +64,10 @@ function MoviePage(props) {
         <Layout>
             <MoviesPageContainer className="container-min-max-width">
                 <IconWrapper displaySettingsIcon={displayFilterSettings}>
-                    <SettingsIcon onClick={() => handleDisplayFilterSettings()}/>
+                    <SettingsIcon onClick={() => {
+                        handleDisplayFilterSettings()
+                        window.scroll(0, 0)
+                    }}/>
                 </IconWrapper>
                 <MoviesList rawMovies={moviesToBeListed}/>
                 <BaseListSidebar handleDisplayFilterSettings={handleDisplayFilterSettings} displayFilterSettings={displayFilterSettings}/>

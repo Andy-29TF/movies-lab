@@ -8,9 +8,11 @@ export const BaseListSidebarContainer = styled.div `
     color: ${ props => props.theme.pages.moviesPage.baseListSidebar.color};
    
     @media (max-width: 768px) {
+        z-index: 2;
         position: absolute;
         width: 100%;
         top: -4.5rem;
+        right: 0;
         height: 100vh;
         overflow-x: auto;
         display: ${ props => props.displayFilterSettings ? "block" : "none"};
@@ -34,7 +36,7 @@ export const CloseIcon = styled(Close)`
     width: 2rem;
     cursor: pointer;
     margin: .6rem .6rem .4rem auto;
-    fill: black;
+    fill: ${ props => props.theme.components.baseListSidebar.black};
 
     @media (max-width: 768px) {
         display: block;

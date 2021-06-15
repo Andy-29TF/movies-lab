@@ -32,11 +32,11 @@ export const SettingsIcon = styled(Settings) `
     position: -webkit-sticky;
     position: sticky;
     right: 0;
-    top: 65%;
+    top: 68%;
     width: 3rem;
     padding: .4rem;
-    background: black;
-    fill: #F7CE3E;
+    background: ${ props => props.theme.components.baseListSidebar.black};
+    fill: ${ props => props.theme.components.baseListSidebar.yellow};
     border-radius: 1rem;
     cursor: pointer;
 `;

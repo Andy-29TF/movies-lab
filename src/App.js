@@ -13,7 +13,7 @@ import MyList from './pages/myList/MyList';
 import News from './pages/news/News';
 import Page404 from './pages/page404/Page404';
 // Background
-import DarkBackground from './assets/backgroung-img/bg-img.svg'
+import DarkBackground from './assets/backgroung-img/bg-dark-img.svg'
 // //* import styled-components
 import { AppContainer } from './app.styles';
 import { ThemeProvider } from 'styled-components';
@@ -36,8 +36,8 @@ function App(props) {
           <Route exact path='/movies/:filteringRules' component={MoviesPage}/>
           <Route exact path='/my-list' component={MyList}/>
           <Route exact path='/news' component={News}/>
+          <Route path='/page-404' component={Page404} />
           <Route path='*' component={Page404} />
-
         </Switch>
       </AppContainer>
     </ThemeProvider>

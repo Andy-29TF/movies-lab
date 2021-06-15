@@ -8,16 +8,16 @@ import { MessageSlotContainer, SlotPiece } from './messageSlot.styles';
 
 function MessageSlot() {
     const bannerMessages = [
-        { comingSoon: "Fast & Furious 9 (2021)" },
-        { comingSoon: "Black Widow (2021)" },
-        { comingSoon: "The Suicide Squad (2021)" },
-        { comingSoon: "Venom (2021)" },
-        { comingSoon: "No Time to Die (2021)" },
-        { comingSoon: "Eternals (2021)" },
-        { comingSoon: "Top Gun: Maverick (2021)" },
-        { comingSoon: "The Matrix 4 (2021)" },
-        { comingSoon: "The King's Man (2021)" },
-        { comingSoon: "Morbius (2022)" }
+        { id: 1, comingSoon: "Fast & Furious 9 (2021)" },
+        { id: 2, comingSoon: "Black Widow (2021)" },
+        { id: 3, comingSoon: "The Suicide Squad (2021)" },
+        { id: 4, comingSoon: "Venom (2021)" },
+        { id: 5, comingSoon: "No Time to Die (2021)" },
+        { id: 6, comingSoon: "Eternals (2021)" },
+        { id: 7, comingSoon: "Top Gun: Maverick (2021)" },
+        { id: 8, comingSoon: "The Matrix 4 (2021)" },
+        { id: 9, comingSoon: "The King's Man (2021)" },
+        { id: 10, comingSoon: "Morbius (2022)" }
     ];
 
     // carousel settings
@@ -61,7 +61,7 @@ function MessageSlot() {
             <Slider {...settings} className="message-slot-carousel">
                 {
                     bannerMessages.map( elem => {
-                        return(<SlotPiece><p><span>coming soon &#8226;</span> {elem.comingSoon} </p></SlotPiece> )
+                        return(<SlotPiece key={elem.id}><p><span>coming soon &#8226;</span> {elem.comingSoon} </p></SlotPiece> )
                     })
                 }
             </Slider>
