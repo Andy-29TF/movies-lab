@@ -4,3 +4,10 @@ export function toggleSearchBar(payload) {
         payload
     }
 }
+
+export function setTheSearchedTermFromSearchBar(payload) {
+    return{
+        type: 'SET_THE_SEARCHED_TERM_FROM_SEARCH_BAR',
+        payload
+    }
+}

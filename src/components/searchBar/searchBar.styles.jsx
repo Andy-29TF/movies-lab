@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const SearchBarContainer = styled.div `
     display: ${ props => props.displaySearchBar ? "block" : "none"};
     width: 100%;
@@ -30,9 +29,38 @@ export const SearchInput = styled.input `
 `;
 
 export const SearchResultsList = styled.div `
+    width: 100%;
     position: absolute;
     top: 4rem;
     margin: auto;
-    background: red;
+    background: #060e0bf8;
     z-index: 2;
+`;
+
+export const ItemSearched = styled.div`
+    display: flex;
+    margin: .5rem .7rem;
+    text-align: center;
+    & img {
+        width: 5rem;
+    }
+
+    & p{
+        color: white;
+        margin-left: 1.5rem;
+        margin-top: .5rem;
+    }
+`;
+
+export const LinkToSearchedItems = styled.div `
+    margin: .9rem;
+
+    & a {
+        color: white;
+        font-size: 1.2rem;
+
+        &:hover {
+            color: yellow;
+        }
+    }
 `;

@@ -1,6 +1,6 @@
 const initialState = {
-    resultsAfterSearch: [],
-    searchBarIsActivated: false
+    searchBarIsActivated: false,
+    theSearchedTerm: ""
 };
 
 function searchBarReducer(state = initialState, action) {
@@ -18,7 +18,11 @@ function searchBarReducer(state = initialState, action) {
                     searchBarIsActivated: !state.searchBarIsActivated
                 }
             }
-            
+        case 'SET_THE_SEARCHED_TERM_FROM_SEARCH_BAR':
+            return {
+                ...state,
+                theSearchedTerm: action.payload.searchedTerm
+            }
         default:
             return state;
     }

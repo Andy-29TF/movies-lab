@@ -10,7 +10,7 @@ import BaseListSidebar from '../../components/baseListSidebar/BaseListSidebar';
 import { MoviesPageContainer, IconWrapper, SettingsIcon } from './moviesPage.styles';
 
 function MoviePage(props) {
-    const {movies, match, history} = props;
+    const {movies, theSearchedTerm, match, history} = props;
     const [moviesToBeListed, setMoviesToBeListed] = useState("");
     const [displayFilterSettings, setDisplayFilterSettings ] = useState(false);
 
@@ -54,10 +54,20 @@ function MoviePage(props) {
             }else {
                 history.push("/page-404")
             }
+        }else if( filteringRules[0] === "searched" && filteringRules[1] === "term" ) {
+            const listOfSearchedMovies = movies.filter(elem => {
+                const elemTitleAndYear= `${elem.name} ${elem.year}`;
+                if(elemTitleAndYear.toLowerCase().includes(theSearchedTerm.toLowerCase())) {
+                    return elem
+                }else {
+                    return false
+                }
+            })
+            setMoviesToBeListed(listOfSearchedMovies);
         }else {
             history.push("/page-404")
         }
-    }, [match, movies, history])
+    }, [match, movies, history, theSearchedTerm])
 
 
     return (
@@ -78,7 +88,8 @@ function MoviePage(props) {
 
 function mapStateToProps(state) {
     return {
-        movies: state.moviesProcessing.rawMovies
+        movies: state.moviesProcessing.rawMovies,
+        theSearchedTerm: state.searchBar.theSearchedTerm
     };
 }
 export default connect(mapStateToProps)(MoviePage);
