@@ -14,6 +14,7 @@ function Carousel(props) {
     // carousel settings
     const settings = {
         dots: true,
+        lazyLoad: "ondemand",
         dotsClass: "slick-dots",
         draggable: true,
         infinite: true,

@@ -9,6 +9,7 @@ import { fetchRawMovies } from './redux/actions/moviesProcessing';
 // Import pages for router
 import Home from './pages/home/Home';
 import MoviesPage from './pages/moviesPage/MoviesPage';
+import TitlePage from './pages/titlePage/TitlePage'
 import MyList from './pages/myList/MyList';
 import News from './pages/news/News';
 import Page404 from './pages/page404/Page404';
@@ -34,6 +35,7 @@ function App(props) {
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route exact path='/movies/:filteringRules' component={MoviesPage}/>
+          <Route exact path='/title/:id' component={TitlePage}/>
           <Route exact path='/my-list' component={MyList}/>
           <Route exact path='/news' component={News}/>
           <Route path='/page-404' component={Page404} />

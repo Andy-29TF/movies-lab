@@ -22,12 +22,12 @@ function MessageSlot() {
 
     // carousel settings
     const settings = {
+        lazyLoad: "progressive",
         dots: false,
         arrows: false,
         pauseOnHover: false,
         draggable: false,
         infinite: true,
-        lazyLoad: true,
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,

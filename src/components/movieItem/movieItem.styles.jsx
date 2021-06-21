@@ -26,9 +26,6 @@ export const MovieItemContainer = styled.div `
     @media (max-width: 575px) {
         flex-basis: 50%;
     }
-    @media (max-width: 370px) {
-        flex-basis: 100%;
-    }
 `;
 
 export const CardContainer = styled.div `
@@ -55,6 +52,7 @@ export const CardContainer = styled.div `
         white-space: nowrap;
     }
 
+    
     @media (max-width: 768px) {
         width: 11rem;
         height: auto;
@@ -63,6 +61,7 @@ export const CardContainer = styled.div `
 
         & img {
             max-width: 100%;
+            width: 11rem;
             height: 15rem;
             object-fit: fill;
         }
@@ -70,6 +69,12 @@ export const CardContainer = styled.div `
         & .movie-title {
             margin: 0.3rem 0;
             
+        }
+    }
+    @media (max-width: 370px) {
+        & img {
+            width: 10.7rem;
+            height: 14.5rem;
         }
     }
 `;
@@ -120,7 +125,7 @@ export const ImdbRatingStar = styled(Star) `
 export const CardSaveListButtons = styled.div `
     position: absolute;
     top: .03rem;
-    right: .05rem;
+    right: .07rem;
     width: 1.8rem;
     height: 4.8rem;
     display: flex;
@@ -129,16 +134,21 @@ export const CardSaveListButtons = styled.div `
     justify-content: space-around;
     background: ${ props => props.theme.components.movieItem.imdb.background};
     border-radius: 20rem;
+
+    @media (max-width: 370px) {
+        top: .08rem;
+        right: .22rem;
+    }
 `;
 
-const IconstStyle = css `
+const IconStyle = css `
     width: 1.2rem;
     height: 1.2rem;
     cursor: pointer;
 `;
 
 export const ToSeeIcon = styled(ToSee) `
-    ${IconstStyle}
+    ${IconStyle}
     fill: ${props => props.iconstyled === "true" 
                 ? props.theme.components.movieItem.saveButtons.wantToSee.second 
                 : props.theme.components.movieItem.saveButtons.wantToSee.first
@@ -163,7 +173,7 @@ export const ToSeeIcon = styled(ToSee) `
 `;
 
 export const WatchedIcon = styled(Watched) `
-    ${IconstStyle}
+    ${IconStyle}
     fill: ${props => props.iconstyled === "true" 
                 ? props.theme.components.movieItem.saveButtons.watched.second
                 : props.theme.components.movieItem.saveButtons.watched.first
@@ -188,8 +198,8 @@ export const WatchedIcon = styled(Watched) `
     }
 `;
 
-export const LovePlusIcon = styled(LoveIt) `
-    ${IconstStyle}
+export const LoveItIcon = styled(LoveIt) `
+    ${IconStyle}
     fill: ${props => props.iconstyled === "true" 
                 ? props.theme.components.movieItem.saveButtons.loveIt.second
                 : props.theme.components.movieItem.saveButtons.loveIt.first 

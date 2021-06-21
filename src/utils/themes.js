@@ -58,6 +58,7 @@ export const darkTheme = {
                     border: "#060E0B",
                     dropShadow: "#060E0Bbc",
                     frameTitle: "#F7F7FF",
+                    link: "#F7F7FF",
                     movieName: "#F7F7FF",
                     movieStoryline: "#F7F7FF",
                     imdb: {
@@ -179,8 +180,26 @@ export const darkTheme = {
                 yellow: "yellow",
                 track: "linear-gradient(90deg, #060e0b 35%, #ffd700 50%, #060e0b 65%)"
             }
+        },
+        searchBar: {
+            container: {
+                background: "#0e241c",
+                boxShadow: "#000000"
+            },
+            input: {
+                background: "#3d413f",
+                color: "#F7F7FF"
+            },
+            list: {
+                background: "#060e0bf8",
+                color: "#F7F7FF"
+            },
+            link: {
+                color: "#F7F7FF",
+                hoverColor: "yellow"
+            }
         }
     }
 }
 
-// ${ props => props.theme.components.baseListSidebar.};
+// ${ props => props.theme.components.searchBar.};

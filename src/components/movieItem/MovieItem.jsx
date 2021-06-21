@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 // redux
 import { connect } from 'react-redux';
 import { handleAddToOrRemoveFromSaveList } from '../../redux/actions/moviesProcessing';
+// import react-lazyload component
+import LazyLoad from 'react-lazyload';
 //* import the stylized  component
 import {
     MovieItemContainer, 
@@ -12,7 +14,7 @@ import {
     CardSaveListButtons,
     ToSeeIcon, 
     WatchedIcon, 
-    LovePlusIcon,
+    LoveItIcon,
     } from './movieItem.styles';
 
 function MovieItem(props) {
@@ -99,7 +101,9 @@ function MovieItem(props) {
         <MovieItemContainer >
             <CardContainer >
                 <CardMediaContainer>
-                    <img src={poster} alt="poster"></img>
+                    <LazyLoad height={'100%'} offset={500} once >
+                        <img src={poster} alt="poster"></img>
+                    </LazyLoad>
                     <CardImdbRating>
                         <ImdbRatingStar/>
                         <p>{imdbRating}</p>
@@ -111,19 +115,19 @@ function MovieItem(props) {
                             onClick={() => {
                                 !addedInWantToSee ? triggerAddToMyList("add to want to see") : triggerRemoveFromMyList("remove movie from MyList")
                             }}
-                            />
+                        />
                         <WatchedIcon 
                             iconstyled={saveList.watched.toString()} 
                             onClick={() => {
                                 !addedInWatched ? triggerAddToMyList("add to watched") : triggerRemoveFromMyList("remove movie from MyList")
                             }}
-                            /> 
-                        <LovePlusIcon 
+                        /> 
+                        <LoveItIcon 
                             iconstyled={saveList.loveIt.toString()} 
                             onClick={() => {
                                 !addedInLoveIt ? triggerAddToMyList("add to love it") : triggerRemoveFromMyList("remove movie from MyList")
                             }}
-                            /> 
+                        /> 
                     </CardSaveListButtons>
                 </CardMediaContainer>
                 <div className="movie-title">{name} <br/>({year})</div>

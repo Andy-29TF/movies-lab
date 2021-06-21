@@ -50,11 +50,22 @@ export const TopRatedMovie = styled.div `
 
     & img {
         width: 100%;
+        height: auto;
         object-fit: fill;
     }
 
+    & .movie-container {
+        & a {
+            text-decoration: none;
+        }
+        & a:hover {
+            text-decoration: underline;
+            color: ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.movieName};
+        }
+    }
+
     & .movie-name {
-        color: ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.movieName};
+        color: ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.link};
         text-align: center;
         font-size: 1.3rem;
         padding: 0;

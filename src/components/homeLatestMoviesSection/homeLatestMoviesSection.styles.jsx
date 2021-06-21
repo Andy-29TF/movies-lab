@@ -94,7 +94,7 @@ export const  WrapperContainer = styled.div `
         margin: 1.1rem 0;
 
         & div {
-            margin: 0 .15rem;
+            margin: 0 .1rem;
         }
     }
 `;  
