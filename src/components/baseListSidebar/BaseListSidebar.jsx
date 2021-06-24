@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect } from 'react';
+// hook, from react-responsive package.
+import { useMediaQuery } from 'react-responsive';
 // import for each filter component
 import FilterByYear from '../filterComponents/filterByYear/FilterByYear';
 import FilterByGenre from '../filterComponents/filterByGenre/FilterByGenre';
@@ -8,20 +10,15 @@ import { BaseListSidebarContainer, FilterList, CloseIcon} from './baseListSideba
 
 function BaseListSidebar(props) {
     const { handleDisplayFilterSettings, displayFilterSettings} = props;
-    const [ viewportWidth, setViewportWidth ] = useState(window.innerWidth);
+
+    const isMobileBlsb = useMediaQuery({ query: `(min-width: 760px)` });
     // If you open the FilterSettings modal when the viewport is less than 768px 
     // and then return to a viewport greater than 768 the modal will close automatically
     useEffect(() => {
-        const handleViewportResize = () => setViewportWidth(window.innerWidth);
-        window.addEventListener("resize", handleViewportResize);
-        if(viewportWidth >= 768 &&  displayFilterSettings ) {
+        if(isMobileBlsb  &&  displayFilterSettings ) {
             handleDisplayFilterSettings()
         }
-
-        return () => {
-            window.addEventListener("resize", handleViewportResize);
-          };
-    }, [viewportWidth, displayFilterSettings, handleDisplayFilterSettings]);
+    }, [ displayFilterSettings, handleDisplayFilterSettings, isMobileBlsb]);
 
     return (
         <BaseListSidebarContainer displayFilterSettings={displayFilterSettings}>

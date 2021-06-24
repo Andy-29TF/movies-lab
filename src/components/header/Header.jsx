@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+// hook, from react-responsive package.
+import { useMediaQuery } from 'react-responsive';
 // import components
 import Navbar from '../navbar/Navbar';
 import MobileNavbar from '../mobileNavbar/MobileNavbar';
@@ -6,31 +8,13 @@ import MobileNavbar from '../mobileNavbar/MobileNavbar';
 import { HeaderContainer } from './header.styles';
 
 function Header(){
-    const [displayMobileNavbar, setDisplayMobileNavbar] = useState(false);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    // If you open the modal menu when the viewport is less than 768px 
-    // and then return to a viewport greater than 768 the modal will close automatically
-    useEffect(() => {
-        const handleResize = () => setWindowWidth(window.innerWidth);
-        window.addEventListener("resize", handleResize);
-        if(windowWidth <= 768 ) {
-            setDisplayMobileNavbar(true);
-        }else {
-            setDisplayMobileNavbar(false);
-        }
 
-        return () => {
-            window.addEventListener("resize", handleResize);
-          };
-
-    }, [windowWidth]);
-
-    
+    const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
         return (
             <HeaderContainer>
                 {
-                    displayMobileNavbar
+                    isMobile
                         ? <MobileNavbar className="mobile-navbar"/>
                         : <Navbar className="container-min-max-width navbar"/>
                 }
