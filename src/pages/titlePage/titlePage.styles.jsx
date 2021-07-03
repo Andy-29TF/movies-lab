@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from "styled-components/macro";
 // import icons
 import { ReactComponent as ToSee } from "../../assets/icons/movieCard/wantToSee.svg";
 import { ReactComponent as Watched } from "../../assets/icons/movieCard/watched.svg";
@@ -23,13 +23,17 @@ export const HeroWrapper = styled.div`
     height: 20rem;
     margin: 1.8rem 0;
   }
+  @media (max-width: 700px) {
+    height: 18rem;
+    margin: 0 0 1.4rem 0;
+  }
   @media (max-width: 600px) {
     height: 18rem;
-    margin: 1.4rem 0;
+    margin: 0 0 1.4rem 0;
   }
   @media (max-width: 375px) {
     height: 14rem;
-    margin: 1.2rem 0;
+    margin: 0 0 1.2rem 0;
   }
 `;
 
@@ -300,6 +304,9 @@ export const ImdbContainer = styled.div`
       font-size: 0.9rem;
     }
   }
+  @media (max-width: 700px) {
+    margin: 9rem 1rem 0 0;
+  }
   @media (max-width: 600px) {
     display: none;
     font-size: 0.8rem;
@@ -415,5 +422,136 @@ export const MobileImdbContainer = styled.div`
   }
 `;
 
-// Main
+// Main CONTENT
 
+export const ContentWrapper = styled.div`
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas: 
+    "storyline panel"
+    "trailer panel";
+  row-gap: 2rem;
+  column-gap: 1rem;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    row-gap: 1rem;
+  }
+`;
+
+export const StorylineContainer = styled.div `
+  grid-area: storyline;
+  margin: 0 1rem 0 2.5rem;
+  color: white;
+
+  & h2 {
+    text-transform: uppercase;
+    margin: .5rem 2rem;
+    font-weight: 600;
+  }
+
+  & p{
+    text-indent: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    margin: 0 1.5rem 0 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    margin: 3.5rem 1rem 0 1rem;
+
+    & h2 {
+      font-size: 1.6rem;
+    }
+    & p{
+      font-size: .95rem;
+    }
+  }
+`;
+
+export const TrailerContainer = styled.div `
+  grid-area: trailer;
+  margin: 1rem auto;
+
+  @media (max-width: 900px) {
+    margin: 1rem;
+    & iframe {
+      width: 100%;
+      max-height: 25rem;
+    }
+  }
+  @media (max-width: 600px) {
+    margin: .5rem;
+    & iframe {
+      max-height: 20rem;
+    }
+  }
+  @media (max-width: 450px) {
+    margin: .1rem;
+    & iframe {
+      width: 100%;
+      max-height: 15rem;
+    }
+  }
+
+`;
+
+export const DetailsPanel = styled.div `
+  grid-area: panel;
+  margin: .5rem 1rem 0 0;
+  padding-left: 1rem;
+  color: white;
+  border-left: .25rem solid #FFD700;
+
+  @media (max-width: 1200px) {
+    margin: 1rem 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    margin: .6rem .4rem;
+    padding-left: .8rem;
+    border-left: .6rem solid #FFD700;
+  }
+`;
+
+export const SummaryItem = styled.div `
+  margin: 1.2rem 0;
+
+  & h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  & p {
+    margin: 0 .2rem 0 0;
+    display: inline;
+
+    &:after {
+      content: ", ";
+    }
+    &:last-of-type:after {
+      content: "";
+    }
+  }
+
+  @media (max-width: 600px) {
+    margin: 1rem 0;
+    & h4 {
+      font-size: 1.2rem;
+    }
+    & p {
+      font-size: .9rem;
+    }
+  }
+`;      

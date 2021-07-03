@@ -12,6 +12,7 @@ export const CarouselContainer = styled.div `
     justify-content: center;
     border: 2px solid ${ props => props.theme.pages.home.homeRecommendationsSection.carousel.border};
     filter: drop-shadow(.5rem .5rem 2px ${ props => props.theme.pages.home.homeRecommendationsSection.carousel.dropShadow});
+    -webkit-filter: drop-shadow(.5rem .5rem 2px ${ props => props.theme.pages.home.homeRecommendationsSection.carousel.dropShadow});
 
     & .carousel-slider{
         width: 96.5%;

@@ -75,6 +75,7 @@ export const darkTheme = {
                 scrollIcon: {
                     fill: "#F7F7FF"
                 },
+                arrowBtnBg: "#FFD700",
                 wrapperContainer: {
                     scrollbarTrack: {
                         boxShadow: "#0000004c",

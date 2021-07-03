@@ -12,6 +12,7 @@ export const HomeMovieRecommendedContainer = styled.div `
     justify-content: center;
     border: 2px solid ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.border};
     filter: drop-shadow(.5rem .5rem 2px ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.dropShadow});
+    -webkit-filter: drop-shadow(.5rem .5rem 2px ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.dropShadow});
 
     & .frame-title {
         position: absolute;

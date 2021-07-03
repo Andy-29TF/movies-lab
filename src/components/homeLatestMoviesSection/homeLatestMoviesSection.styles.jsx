@@ -1,8 +1,10 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 // import icons
 import { ReactComponent as Scroll} from '../../assets/icons/homePage/scroll.svg';
 
+
 export const HomeLatestMoviesContainer = styled.div `
+    position: relative;
     width: auto;
     margin: 4rem 2rem 2rem 2rem;
 
@@ -23,6 +25,7 @@ export const SectionTitleContainer = styled.div `
     width: 100%;
     border-bottom: 3px solid ${ props => props.theme.pages.home.homeLatestMoviesSection.border};
     filter: drop-shadow(.5rem .5rem 2px ${ props => props.theme.pages.home.homeLatestMoviesSection.dropShadow});
+    -webkit-filter: drop-shadow(.5rem .5rem 2px ${ props => props.theme.pages.home.homeLatestMoviesSection.dropShadow});
     display: flex;
     justify-content: space-between;
 
@@ -69,8 +72,11 @@ export const ScrollIcon = styled(Scroll) `
 
 export const  WrapperContainer = styled.div `
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
     margin: 1rem 0;
+    scroll-snap-type: x mandatory;
 
     &::-webkit-scrollbar-track {
         box-shadow: inset 0 0 6px ${ props => props.theme.pages.home.homeLatestMoviesSection.wrapperContainer.scrollbarTrack.boxShadow};
@@ -87,14 +93,52 @@ export const  WrapperContainer = styled.div `
 	    box-shadow: inset 0 0 6px ${ props => props.theme.pages.home.homeLatestMoviesSection.wrapperContainer.scrollbarThumb.boxShadow};
     }
     & div {
-        margin: 0 .23rem;
+        margin: 0 .10rem;
+        scroll-snap-align: center;
     }
 
     @media (max-width: 768px) {
         margin: 1.1rem 0;
 
         & div {
-            margin: 0 .1rem;
+            margin: 0 .05rem;
         }
     }
-`;  
+    @media (max-width: 375px) {
+        & div {
+            scroll-snap-align: start end;
+        }
+    }
+`;
+
+export const SlideArrow = styled.span `
+    position: absolute;
+    top: 50%;
+    ${props => props.leftD ? "left: 0;" : "right: 0;"}
+    padding: 2.2rem 1.4rem;
+    z-index: 1;
+    transform: translate(0, -50%) scaleX(${props => props.leftD ? "-1" : "1"});
+    background: ${ props => props.theme.pages.home.homeLatestMoviesSection.arrowBtnBg};
+    background-image: url(${props => props.arrow});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: .8;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
+
+
+    @media (max-width: 768px) {
+        opacity: 1;
+        padding: 1.7rem 1.25rem;
+    }
+    @media (max-width: 450px) {
+        padding: 1.5rem 1.05rem;
+    }
+    @media (max-width: 375px) {
+        ${props => props.leftD ? "left: -.2rem;" : "right: -.2rem;"}
+    }
+`;

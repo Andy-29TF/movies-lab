@@ -1,21 +1,30 @@
-import React from 'react';
+import React, { useRef } from 'react';
 // redux
 import { connect } from 'react-redux';
 // import component
 import MovieItem from '../movieItem/MovieItem';
 //* import the stylized  component
-import { HomeLatestMoviesContainer, SectionTitleContainer, ScrollIcon, WrapperContainer } from './homeLatestMoviesSection.styles';
+import { HomeLatestMoviesContainer, SectionTitleContainer, ScrollIcon, WrapperContainer, SlideArrow } from './homeLatestMoviesSection.styles';
+// img
+import Arrow from'../../assets/icons/homePage/right-arrow.png'
 
 function HomeLatestMoviesSection(props) {
     const { moviesForLatestMoviesSection } = props;
+    const wrapperContainer = useRef()
+
+    const scroll = (scrollOffset) => {
+        wrapperContainer.current.scrollLeft += scrollOffset;
+    }
 
     return (
         <HomeLatestMoviesContainer>
+            <SlideArrow arrow={Arrow} leftD={true} onClick={() => scroll(-200)}/>
             <SectionTitleContainer>
                 <p className="section-title">latest movies</p>
                 <ScrollIcon/>
             </SectionTitleContainer>
-            <WrapperContainer>
+            <WrapperContainer ref={wrapperContainer}>
+                
                 {
                     moviesForLatestMoviesSection.map( elem =>{
                         return(
@@ -24,6 +33,7 @@ function HomeLatestMoviesSection(props) {
                     })
                 }
             </WrapperContainer>
+            <SlideArrow arrow={Arrow} onClick={() => scroll(200)}/>
         </HomeLatestMoviesContainer>
     )
 }
