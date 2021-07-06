@@ -164,6 +164,10 @@ export const darkTheme = {
             content: {
                 border: "#F7CE3E"
             }
+        },
+        page404: {
+            color: "#F7F7FF",
+            link: "#ffff00"
         }
 
     },
