@@ -88,7 +88,6 @@ export const darkTheme = {
                 }
             }
         },
-        newsPage: {},
         moviesPage: {
             moviesList: {
                 button: {
@@ -137,7 +136,36 @@ export const darkTheme = {
                 background: "#0a161281",
                 color: "#F7F7FF"
             }
+        },
+        titlePage: {
+            color: "#F7F7FF",
+            hero: {
+                background: "#141414",
+                iconBackground: "#000000",
+                saveButtons: {
+                    wantToSee: {
+                        first: "#F7F7FF",
+                        second: "#084D9B",
+                        third: "#579be9"
+                    },
+                    watched: {
+                        first: "#F7F7FF",
+                        second: "#057657",
+                        third: "#42e6ba"
+                    },
+                    loveIt: {
+                        first: "#F7F7FF",
+                        second: "#E33B57",
+                        third: "#e97e90"
+                    }
+                },
+                imdb: "#FFD700"
+            },
+            content: {
+                border: "#F7CE3E"
+            }
         }
+
     },
     components: {
         movieItem: {
@@ -203,4 +231,4 @@ export const darkTheme = {
     }
 }
 
-// ${ props => props.theme.components.searchBar.};
+// ${ props => props.theme.pages.titlePage.};

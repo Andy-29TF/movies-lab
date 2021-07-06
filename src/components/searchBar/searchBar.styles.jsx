@@ -35,6 +35,15 @@ export const SearchResultsList = styled.div `
     margin: auto;
     background: ${ props => props.theme.components.searchBar.list.background};
     z-index: 2;
+
+    & a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            color: ${ props => props.theme.components.searchBar.list.color};
+        }
+    }
 `;
 
 export const ItemSearched = styled.div`

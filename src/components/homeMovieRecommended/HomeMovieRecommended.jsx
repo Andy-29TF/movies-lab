@@ -21,11 +21,11 @@ function HomeMovieRecommended(props) {
             {
                 movieIsAvailable && <TopRatedMovie>
                                         <div className="movie-container">
-                                            <div className="poster-container">
-                                                <img src={topRatedMovieElement[0].poster} alt={`Poster for ${topRatedMovieElement[0].name}`}></img>
-                                                <ImdbRating><ImdbRatingStar/><p>{topRatedMovieElement[0].imdbRating}</p></ImdbRating>
-                                            </div>
                                             <Link to={`/title/${topRatedMovieElement[0].id}`}>
+                                                <div className="poster-container">
+                                                    <img src={topRatedMovieElement[0].poster} alt={`Poster for ${topRatedMovieElement[0].name}`}></img>
+                                                    <ImdbRating><ImdbRatingStar/><p>{topRatedMovieElement[0].imdbRating}</p></ImdbRating>
+                                                </div>
                                                 <p className="movie-name">{topRatedMovieElement[0].name}<br/>({topRatedMovieElement[0].year})</p>
                                             </Link>
                                         </div>

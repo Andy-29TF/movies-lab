@@ -52,10 +52,12 @@ function SearchBar(props) {
                                 match => `<mark style="background: #FFD700; color: #060E0B; padding: 0;">${match}</mark>`
                             )
                             return (
-                                <ItemSearched key={elem.id}>
-                                    <img src={elem.poster} alt={elem.name}/>
-                                    <p dangerouslySetInnerHTML={createMarkup(titleAndYearHighlighted)}></p>
-                                </ItemSearched>
+                                <Link to={`/title/${elem.id}`} key={elem.id}>
+                                    <ItemSearched >
+                                            <img src={elem.poster} alt={elem.name}/>
+                                            <p dangerouslySetInnerHTML={createMarkup(titleAndYearHighlighted)}></p>
+                                    </ItemSearched>
+                                </Link>
                             )
                         })
                     }

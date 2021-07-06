@@ -34,12 +34,21 @@ export const CardContainer = styled.div `
     margin: 1.5rem auto;
     overflow: hidden;
     text-align: center;
-    
 
     & img {
         width: 11rem;
         height: 16rem;
         object-fit: fill;
+    }
+
+    /* the title anchor */
+    & a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            color: ${ props => props.theme.components.movieItem.title.color};
+        }
     }
 
     & .movie-title {

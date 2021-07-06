@@ -1,6 +1,8 @@
 import React from 'react';
 // redux
 import { connect } from 'react-redux';
+// router
+import { Link } from 'react-router-dom';
 // react-slick
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
@@ -14,9 +16,9 @@ function Carousel(props) {
     // carousel settings
     const settings = {
         dots: true,
-        lazyLoad: "ondemand",
+        lazyLoad: "progressive",
         dotsClass: "slick-dots",
-        draggable: true,
+        draggable: false,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -78,14 +80,16 @@ function Carousel(props) {
                     {
                         moviesForTheCarousel.map( elem => {
                             return(
-                                <CarouselElement key={elem.id}>
-                                    <img src={elem.landscapeCover} alt={`Cover for ${elem.name}`}></img>
-                                    <MediaContainer>
-                                      <ImdbRating><ImdbRatingStar/> <span className="imdb-rating">{elem.imdbRating}</span></ImdbRating>
-                                      <p>{elem.name}</p>
-                                      <span className="elem-year">{`(${elem.year})`}</span>
-                                    </MediaContainer>
-                                </CarouselElement>
+                              <CarouselElement key={elem.id}>
+                                <Link to={`/title/${elem.id}`} >
+                                  <img src={elem.landscapeCover} alt={`Cover for ${elem.name}`}></img>
+                                  <MediaContainer>
+                                    <ImdbRating><ImdbRatingStar/> <span className="imdb-rating">{elem.imdbRating}</span></ImdbRating>
+                                    <p>{elem.name}</p>
+                                    <span className="elem-year">{`(${elem.year})`}</span>
+                                  </MediaContainer>
+                                </Link>
+                              </CarouselElement>
                             )
                         })
                     }

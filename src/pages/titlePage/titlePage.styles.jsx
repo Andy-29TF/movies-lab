@@ -17,7 +17,7 @@ export const HeroWrapper = styled.div`
   width: 100%;
   height: 25.5rem;
   margin: 2rem 0;
-  background-color: #141414;
+  background-color: ${ props => props.theme.pages.titlePage.hero.background};
 
   @media (max-width: 1000px) {
     height: 20rem;
@@ -77,13 +77,13 @@ export const MainInformationContainer = styled.div`
     justify-content: flex-end;
 
     & p {
-      color: white;
+      color: ${ props => props.theme.pages.titlePage.color};
       font-size: 1.7rem;
       margin-bottom: 0.8rem;
 
       & .year-link {
         text-decoration: none;
-        color: white;
+        color: ${ props => props.theme.pages.titlePage.color};
 
         &:hover {
           text-decoration: underline;
@@ -111,7 +111,7 @@ export const MainInformationContainer = styled.div`
 
         & a {
           text-decoration: none;
-          color: white;
+          color: ${ props => props.theme.pages.titlePage.color};
 
           &:hover {
             text-decoration: underline;
@@ -134,7 +134,7 @@ export const MainInformationContainer = styled.div`
 
     & .main-info {
       & p {
-        color: white;
+        color: ${ props => props.theme.pages.titlePage.color};
         font-size: 1.3rem;
         margin-bottom: 0.6rem;
       }
@@ -153,7 +153,7 @@ export const MainInformationContainer = styled.div`
 
     & .main-info {
       & p {
-        color: white;
+        color: ${ props => props.theme.pages.titlePage.color};
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
       }
@@ -172,7 +172,7 @@ export const MainInformationContainer = styled.div`
 
     & .main-info {
       & p {
-        color: white;
+        color: ${ props => props.theme.pages.titlePage.color};
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
       }
@@ -194,7 +194,7 @@ const IconStyle = css`
   width: 3rem;
   height: 3rem;
   padding: 0.5rem 0.7rem;
-  background-color: #000000;
+  background-color: ${ props => props.theme.pages.titlePage.hero.iconBackground};
   cursor: pointer;
 
   @media (max-width: 1000px) {
@@ -213,14 +213,14 @@ export const ToSeeIcon = styled(ToSee)`
   ${IconStyle}
   fill: ${(props) =>
     props.iconstyled === "true"
-      ? props.theme.components.movieItem.saveButtons.wantToSee.second
-      : props.theme.components.movieItem.saveButtons.wantToSee.first};
+      ? props.theme.pages.titlePage.hero.saveButtons.wantToSee.second
+      : props.theme.pages.titlePage.hero.saveButtons.wantToSee.first};
 
   &:hover {
     fill: ${(props) =>
       props.iconstyled === "true"
-        ? props.theme.components.movieItem.saveButtons.wantToSee.third
-        : props.theme.components.movieItem.saveButtons.wantToSee.second};
+        ? props.theme.pages.titlePage.hero.saveButtons.wantToSee.third
+        : props.theme.pages.titlePage.hero.saveButtons.wantToSee.second};
   }
 
   /* this prevents the button from remaining active on tablets or phones */
@@ -228,8 +228,8 @@ export const ToSeeIcon = styled(ToSee)`
     &:hover {
       fill: ${(props) =>
         props.iconstyled === "true"
-          ? props.theme.components.movieItem.saveButtons.wantToSee.second
-          : props.theme.components.movieItem.saveButtons.wantToSee.first};
+          ? props.theme.pages.titlePage.hero.saveButtons.wantToSee.second
+          : props.theme.pages.titlePage.hero.saveButtons.wantToSee.first};
     }
   }
 `;
@@ -238,14 +238,14 @@ export const WatchedIcon = styled(Watched)`
   ${IconStyle}
   fill: ${(props) =>
     props.iconstyled === "true"
-      ? props.theme.components.movieItem.saveButtons.watched.second
-      : props.theme.components.movieItem.saveButtons.watched.first};
+      ? props.theme.pages.titlePage.hero.saveButtons.watched.second
+      : props.theme.pages.titlePage.hero.saveButtons.watched.first};
 
   &:hover {
     fill: ${(props) =>
       props.iconstyled === "true"
-        ? props.theme.components.movieItem.saveButtons.watched.third
-        : props.theme.components.movieItem.saveButtons.watched.second};
+        ? props.theme.pages.titlePage.hero.saveButtons.watched.third
+        : props.theme.pages.titlePage.hero.saveButtons.watched.second};
   }
 
   /* this prevents the button from remaining active on tablets or phones */
@@ -253,8 +253,8 @@ export const WatchedIcon = styled(Watched)`
     &:hover {
       fill: ${(props) =>
         props.iconstyled === "true"
-          ? props.theme.components.movieItem.saveButtons.watched.second
-          : props.theme.components.movieItem.saveButtons.watched.first};
+          ? props.theme.pages.titlePage.hero.saveButtons.watched.second
+          : props.theme.pages.titlePage.hero.saveButtons.watched.first};
     }
   }
 `;
@@ -263,14 +263,14 @@ export const LoveItIcon = styled(LoveIt)`
   ${IconStyle}
   fill: ${(props) =>
     props.iconstyled === "true"
-      ? props.theme.components.movieItem.saveButtons.loveIt.second
-      : props.theme.components.movieItem.saveButtons.loveIt.first};
+      ? props.theme.pages.titlePage.hero.saveButtons.loveIt.second
+      : props.theme.pages.titlePage.hero.saveButtons.loveIt.first};
 
   &:hover {
     fill: ${(props) =>
       props.iconstyled === "true"
-        ? props.theme.components.movieItem.saveButtons.loveIt.third
-        : props.theme.components.movieItem.saveButtons.loveIt.second};
+        ? props.theme.pages.titlePage.hero.saveButtons.loveIt.third
+        : props.theme.pages.titlePage.hero.saveButtons.loveIt.second};
   }
 
   /* this prevents the button from remaining active on tablets or phones */
@@ -278,8 +278,8 @@ export const LoveItIcon = styled(LoveIt)`
     &:hover {
       fill: ${(props) =>
         props.iconstyled === "true"
-          ? props.theme.components.movieItem.saveButtons.loveIt.second
-          : props.theme.components.movieItem.saveButtons.loveIt.first};
+          ? props.theme.pages.titlePage.hero.saveButtons.loveIt.second
+          : props.theme.pages.titlePage.hero.saveButtons.loveIt.first};
     }
   }
 `;
@@ -293,7 +293,7 @@ export const ImdbContainer = styled.div`
   text-align: center;
 
   & p {
-    color: white;
+    color: ${ props => props.theme.pages.titlePage.color};
     margin: 0.3rem 0;
   }
 
@@ -318,9 +318,9 @@ export const ImdbNote = styled.div`
   margin: auto;
 
   & p {
-    color: white;
+    color: ${ props => props.theme.pages.titlePage.color};
     font-size: 1.6rem;
-    border: 0.5rem solid #ffd700;
+    border: 0.5rem solid ${ props => props.theme.pages.titlePage.hero.imdb};
     border-radius: 15rem;
     margin: 0;
     padding: 0.9rem 0;
@@ -328,16 +328,16 @@ export const ImdbNote = styled.div`
 
   &::after {
     content: "IMDB NOTE";
-    color: white;
+    color: ${ props => props.theme.pages.titlePage.color};
   }
 
   @media (max-width: 1000px) {
     & p {
       width: 4rem;
       height: 4rem;
-      color: white;
+      color: ${ props => props.theme.pages.titlePage.color};
       font-size: 1.2rem;
-      border: 0.35rem solid #ffd700;
+      border: 0.35rem solid ${ props => props.theme.pages.titlePage.hero.imdb};
       border-radius: 15rem;
       margin: auto;
     }
@@ -350,7 +350,7 @@ export const ImdbNote = styled.div`
     & p {
       width: 3rem;
       height: 1.8rem;
-      color: white;
+      color: ${ props => props.theme.pages.titlePage.color};
       font-size: 1.2rem;
       border: none;
       padding: 0;
@@ -374,7 +374,7 @@ export const MobileImdbAndSaveListContainer = styled.div`
   display: none;
   width: 100%;
   height: 4.5rem;
-  background-color: #141414;
+  background-color: ${ props => props.theme.pages.titlePage.hero.background};
 
   @media (max-width: 600px) {
     display: flex;
@@ -405,7 +405,7 @@ export const MobileImdbContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: white;
+  color: ${ props => props.theme.pages.titlePage.color};
   margin-right: 1rem;
   text-align: center;
 
@@ -452,7 +452,7 @@ export const ContentWrapper = styled.div`
 export const StorylineContainer = styled.div `
   grid-area: storyline;
   margin: 0 1rem 0 2.5rem;
-  color: white;
+  color: ${ props => props.theme.pages.titlePage.color};
 
   & h2 {
     text-transform: uppercase;
@@ -472,10 +472,12 @@ export const StorylineContainer = styled.div `
     margin: 3.5rem 1rem 0 1rem;
 
     & h2 {
-      font-size: 1.6rem;
+      margin: .5rem 1rem;
+      font-size: 1.4rem;
     }
     & p{
       font-size: .95rem;
+      text-indent: .4rem;
     }
   }
 `;
@@ -511,8 +513,8 @@ export const DetailsPanel = styled.div `
   grid-area: panel;
   margin: .5rem 1rem 0 0;
   padding-left: 1rem;
-  color: white;
-  border-left: .25rem solid #FFD700;
+  color: ${ props => props.theme.pages.titlePage.color};
+  border-left: .25rem solid ${ props => props.theme.pages.titlePage.content.border};
 
   @media (max-width: 1200px) {
     margin: 1rem 1.5rem;
@@ -521,7 +523,7 @@ export const DetailsPanel = styled.div `
   @media (max-width: 600px) {
     margin: .6rem .4rem;
     padding-left: .8rem;
-    border-left: .6rem solid #FFD700;
+    border-left: .6rem solid ${ props => props.theme.pages.titlePage.content.border};
   }
 `;
 
@@ -548,7 +550,7 @@ export const SummaryItem = styled.div `
   @media (max-width: 600px) {
     margin: 1rem 0;
     & h4 {
-      font-size: 1.2rem;
+      font-size: 1.05rem;
     }
     & p {
       font-size: .9rem;

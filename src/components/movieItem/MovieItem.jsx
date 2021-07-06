@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 // redux
 import { connect } from 'react-redux';
 import { handleAddToOrRemoveFromSaveList } from '../../redux/actions/moviesProcessing';
+// router
+import { Link } from 'react-router-dom';
 // import react-lazyload component
 import LazyLoad from 'react-lazyload';
 //* import the stylized  component
@@ -101,7 +103,7 @@ function MovieItem(props) {
         <MovieItemContainer >
             <CardContainer >
                 <CardMediaContainer>
-                    <LazyLoad height={'100%'} offset={500} once >
+                    <LazyLoad className="image-container" height={'100%'} offset={500} once >
                         <img src={poster} alt="poster"></img>
                     </LazyLoad>
                     <CardImdbRating>
@@ -130,7 +132,9 @@ function MovieItem(props) {
                         /> 
                     </CardSaveListButtons>
                 </CardMediaContainer>
-                <div className="movie-title">{name} <br/>({year})</div>
+                <Link to={`/title/${id}`}>
+                    <div className="movie-title">{name} <br/>({year})</div>
+                </Link>
             </CardContainer>
         </MovieItemContainer>
     )

@@ -89,9 +89,12 @@ export const MediaContainer = styled.div `
         text-transform: uppercase;
         font-size: 2rem;
         color: ${ props => props.theme.pages.home.homeRecommendationsSection.carousel.movieName};
-        text-decoration: underline;
         margin: 0 0 0 .4rem;
         padding: 0;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     & .elem-year {
