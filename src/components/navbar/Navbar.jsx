@@ -41,7 +41,6 @@ function Navbar(props) {
             </div>
             <div className="navbar-right-side">
                 <NavbarLink to='/my-list' onClick={(event) => handleCleanup(event)}>My List</NavbarLink>
-                <NavbarLink to='/' onClick={(event) => handleCleanup(event)}>Sign In</NavbarLink>
                 <NavbarSearchIcon onClick={toggleSearchBar}/>
             </div>
     </NavbarContainer>

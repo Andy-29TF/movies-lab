@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 // import icons
 import { ReactComponent as Scroll} from '../../assets/icons/homePage/scroll.svg';
 

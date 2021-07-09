@@ -1,5 +1,6 @@
 const initialState = {
-    rawMovies: []
+    rawMovies: [],
+    loaded: false
 };
 
 function moviesProcessingReducer(state = initialState, action) {
@@ -9,7 +10,8 @@ function moviesProcessingReducer(state = initialState, action) {
             const receivedMovis = action.payload.reverse()
             return {
                 ...state,
-                rawMovies: [...receivedMovis]
+                rawMovies: [...receivedMovis],
+                loaded: true
             };
         case 'CHANGES_IN_SAVE_LIST':
             const findIndexForAdd = state.rawMovies.findIndex( elem => elem.id === action.payload.movieElement.id);
@@ -24,6 +26,7 @@ function moviesProcessingReducer(state = initialState, action) {
             }
 
             return {
+                ...state,
                 rawMovies: [...newRawMoviesForAdd]
             }
         case 'TAKE_OUT_OF_SAVE_LIST':
@@ -31,6 +34,7 @@ function moviesProcessingReducer(state = initialState, action) {
             const newRawMoviesForRemove = [...state.rawMovies];
             newRawMoviesForRemove[findIndexForRemove].saveList = {wantToSee: false, watched: false, loveIt: false};
             return {
+                ...state,
                 rawMovies: [...newRawMoviesForRemove]
             }
         default:

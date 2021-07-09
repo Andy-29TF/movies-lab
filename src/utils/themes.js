@@ -68,6 +68,9 @@ export const darkTheme = {
                     }
                 }
             },
+            // ! Latest Movies
+            // * AND
+            // > Latest News
             homeLatestMoviesSection: {
                 border: "#060E0B",
                 dropShadow: "#0a1612bc",
@@ -198,6 +201,9 @@ export const darkTheme = {
                     third: "#e97e90"
                 }
             }
+        },
+        newsItem: {
+            title:  "#F7F7FF"
         },
         messageSlot: {
             background: "#060E0B",

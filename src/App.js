@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 // redux
 import { connect } from 'react-redux';
 import { fetchRawMovies } from './redux/actions/moviesProcessing';
+import { fetchRawNews } from './redux/actions/newsProcessing'
 // Import pages for router
 import Home from './pages/home/Home';
 import MoviesPage from './pages/moviesPage/MoviesPage';
@@ -21,11 +22,12 @@ import { ThemeProvider } from 'styled-components';
 import { darkTheme } from './utils/themes';
 
 function App(props) {
-  const { fetchRawMovies } = props;
+  const { fetchRawMovies, fetchRawNews } = props;
 
   useEffect(() => {
     fetchRawMovies();
-  }, [fetchRawMovies])
+    fetchRawNews();
+  }, [fetchRawMovies, fetchRawNews])
 
 
   return (
@@ -48,7 +50,8 @@ function App(props) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchRawMovies: () => { dispatch(fetchRawMovies()) }
+    fetchRawMovies: () => { dispatch(fetchRawMovies()) },
+    fetchRawNews: () => { dispatch(fetchRawNews()) }
   }
 }
 

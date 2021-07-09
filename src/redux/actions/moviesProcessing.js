@@ -34,7 +34,7 @@ export function fetchRawMovies() {
                 console.log(err+ "err")
             })
     }
-  }
+}
 
 export function handleAddToOrRemoveFromSaveList(payload) {
     if(payload.instructionsForMovieElement.instructions !== "remove movie from MyList") {
