@@ -16,12 +16,21 @@ export const NewsItemContainer = styled.div `
         flex-basis: 96%;
     }
 
+    & a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            color: ${ props => props.theme.components.newsItem.link};
+        }
+    }
+
     & img {
         width: 100%;
         border-radius: 1.5rem 1.5rem 0 0;
     }
 
-    & p {
+    & #titleContainer {
         font-size: 1.2rem;
         color: ${ props => props.theme.components.newsItem.title};
         margin: .5rem .2rem;

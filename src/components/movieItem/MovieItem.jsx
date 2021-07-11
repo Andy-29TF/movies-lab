@@ -103,7 +103,7 @@ function MovieItem(props) {
         <MovieItemContainer >
             <CardContainer >
                 <CardMediaContainer>
-                    <LazyLoad className="image-container" height={'100%'} offset={500} once >
+                    <LazyLoad className="image-container" height={'100%'} offset={500} >
                         <img src={poster} alt="poster"></img>
                     </LazyLoad>
                     <CardImdbRating>

@@ -165,8 +165,14 @@ export const darkTheme = {
                 imdb: "#FFD700"
             },
             content: {
-                border: "#F7CE3E"
+                border: "#ffff00"
             }
+        },
+        newsPage: {
+            color: "#F7F7FF",
+            borderLeftSection: "#ffff00",
+            borderBottom: "#060E0B",
+            dropShadow: "#060E0Bbc"
         },
         page404: {
             color: "#F7F7FF",
@@ -203,7 +209,8 @@ export const darkTheme = {
             }
         },
         newsItem: {
-            title:  "#F7F7FF"
+            title:  "#F7F7FF",
+            link: "#F7F7FF"
         },
         messageSlot: {
             background: "#060E0B",

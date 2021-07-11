@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 // LAYOUT - header & footer
 import Layout from '../../components/layout/Layout';
 // redux
@@ -30,10 +30,12 @@ import {
 
 
 function TitlePage(props) {
-    const { movieById, handleAddToOrRemoveFromSaveList } = props;
+    const { movieById, handleAddToOrRemoveFromSaveList, availableIds, history } = props;
     const [movieByIdIsAvailable, setMovieByIdIsAvailable] = useState(false);
+    // * control for the first render
+    const firstUpdate = useRef(true);
 
-    // My List features
+    //< My List features
     const [addedInWantToSee, setAddedInWantToSee] = useState(false);
     const [addedInWatched, setAddedInWatched] = useState(false);
     const [addedInLoveIt, setAddedInLoveIt] = useState(false);
@@ -116,15 +118,23 @@ function TitlePage(props) {
             }
     }, [movieById])
 
-// END MyList features
+//< END MyList features
 
     useEffect(() => {
-        
         if(movieById.length > 0) {
             setMovieByIdIsAvailable(true)
             refreshSaveListStatus()
         }
     }, [refreshSaveListStatus, movieById.length])
+
+    // * redirects to page404 if the path does not match
+    useEffect(() => {
+        if (firstUpdate.current) {
+            firstUpdate.current = false;
+        }else if (availableIds.length > 0 && !movieByIdIsAvailable){
+            !availableIds.includes(+props.match.params.id) && history.push("/page-404")
+        }
+    }, [availableIds, history, movieByIdIsAvailable, props.match.params.id])
 
     return (
         <Layout>
@@ -212,7 +222,7 @@ function TitlePage(props) {
                                 <p>{movieById[0].storyline}</p>
                             </StorylineContainer>
                             <TrailerContainer>
-                                <iframe width="854" height="480p" src={movieById[0].trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                <iframe width="854" height="480" src={movieById[0].trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             </TrailerContainer>
                             <DetailsPanel>
                                 <SummaryItem>
@@ -268,7 +278,8 @@ function mapStateToProps(state, props) {
     const movie_id = props.match.params.id;
     
     return {
-        movieById: state.moviesProcessing.rawMovies.filter(elem => elem.id === +movie_id)
+        movieById: state.moviesProcessing.rawMovies.filter( elem => elem.id === +movie_id ),
+        availableIds: state.moviesProcessing.rawMovies.map ( elem => elem.id )
     }
 }
 

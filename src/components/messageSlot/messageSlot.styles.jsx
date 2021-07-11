@@ -8,6 +8,7 @@ export const MessageSlotContainer = styled.div `
     bottom: 0;
     background: ${ props => props.theme.components.messageSlot.background};
     text-align: center;
+    z-index: 1;
 `;
 
 export const SlotPiece = styled.div `

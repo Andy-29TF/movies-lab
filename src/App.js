@@ -11,8 +11,9 @@ import { fetchRawNews } from './redux/actions/newsProcessing'
 import Home from './pages/home/Home';
 import MoviesPage from './pages/moviesPage/MoviesPage';
 import TitlePage from './pages/titlePage/TitlePage'
-import MyList from './pages/myList/MyList';
 import News from './pages/news/News';
+import NewsPage from './pages/newsPage/NewsPage'
+import MyList from './pages/myList/MyList';
 import Page404 from './pages/page404/Page404';
 // Background
 import DarkBackground from './assets/backgroung-img/bg-dark-img.svg'
@@ -38,8 +39,9 @@ function App(props) {
           <Route exact path='/' component={Home}/>
           <Route exact path='/movies/:filteringRules' component={MoviesPage}/>
           <Route exact path='/title/:id' component={TitlePage}/>
+          <Route exact path='/news-list' component={News}/>
+          <Route exact path='/news/:id' component={NewsPage}/>
           <Route exact path='/my-list' component={MyList}/>
-          <Route exact path='/news' component={News}/>
           <Route path='/page-404' component={Page404} />
           <Route path='*' component={Page404} />
         </Switch>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 // redux
 import { connect } from 'react-redux';
 // LAYOUT - header & footer

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components/macro";
+import styled, { css } from "styled-components";
 // import icons
 import { ReactComponent as ToSee } from "../../assets/icons/movieCard/wantToSee.svg";
 import { ReactComponent as Watched } from "../../assets/icons/movieCard/watched.svg";
@@ -368,7 +368,7 @@ export const ImdbNote = styled.div`
   }
 `;
 
-// mobile extension hero
+//> mobile extension hero
 
 export const MobileImdbAndSaveListContainer = styled.div`
   display: none;
@@ -422,7 +422,7 @@ export const MobileImdbContainer = styled.div`
   }
 `;
 
-// Main CONTENT
+//> Main CONTENT
 
 export const ContentWrapper = styled.div`
   width: 100%;
