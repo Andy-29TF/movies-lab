@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 // css for max/min-width
 import './utils/utility-classes.css';
 // Router
@@ -15,15 +15,17 @@ import News from './pages/news/News';
 import NewsPage from './pages/newsPage/NewsPage'
 import MyList from './pages/myList/MyList';
 import Page404 from './pages/page404/Page404';
+//< ThemeProvider and things related to it
+import { ThemeProvider } from 'styled-components';
+import { darkTheme, lightTheme } from './utils/themes';
 // Background
 import DarkBackground from './assets/backgroung-img/bg-dark-img.svg'
+import LightBackground from './assets/backgroung-img/bg-light-img.svg'
 // //* import styled-components
 import { AppContainer } from './app.styles';
-import { ThemeProvider } from 'styled-components';
-import { darkTheme } from './utils/themes';
 
 function App(props) {
-  const { fetchRawMovies, fetchRawNews } = props;
+  const { fetchRawMovies, fetchRawNews, theme } = props;
 
   useEffect(() => {
     fetchRawMovies();
@@ -32,9 +34,8 @@ function App(props) {
 
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      {/* <GlobalStyles/> */}
-      <AppContainer darkBackground={DarkBackground}>
+    <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+      <AppContainer darkBackground={DarkBackground} lightBackground={LightBackground}>
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route exact path='/movies/:filteringRules' component={MoviesPage}/>
@@ -50,6 +51,12 @@ function App(props) {
   );
 }
 
+function mapStateToProps(state) {
+  return {
+      theme: state.theme.themeType
+  }
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     fetchRawMovies: () => { dispatch(fetchRawMovies()) },
@@ -57,4 +64,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

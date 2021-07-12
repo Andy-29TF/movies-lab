@@ -68,7 +68,7 @@ export const FilterByYearElements = styled.div `
     }
     &::-webkit-scrollbar-thumb {
         background: ${ props => props.theme.components.baseListSidebar.scrollbar.black};
-        border: 2px solid ${ props => props.theme.components.baseListSidebar.scrollbar.yellow};
+        border: 2px solid ${ props => props.theme.components.baseListSidebar.scrollbar.secColor};
         border-radius: 1rem;
     }
 `;
@@ -81,16 +81,9 @@ export const LinkElement = styled(Link) `
     border: 1px solid ${ props => props.theme.components.baseListSidebar.black};
 
     &:hover {
-        border: 1px solid ${ props => props.theme.components.baseListSidebar.yellow};
+        border: 1px solid ${ props => props.theme.components.baseListSidebar.linkColor};
         border-radius: 1rem;
-        color: ${ props => props.theme.components.baseListSidebar.yellow};
-        cursor: pointer;
-    }
-
-    &:hover {
-        border: 1px solid ${ props => props.theme.components.baseListSidebar.yellow};
-        border-radius: 1rem;
-        color: ${ props => props.theme.components.baseListSidebar.yellow};
+        color: ${ props => props.theme.components.baseListSidebar.linkColor};
         cursor: pointer;
     }
 

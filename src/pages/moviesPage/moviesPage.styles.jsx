@@ -36,7 +36,7 @@ export const SettingsIcon = styled(Settings) `
     width: 3rem;
     padding: .4rem;
     background: ${ props => props.theme.components.baseListSidebar.black};
-    fill: ${ props => props.theme.components.baseListSidebar.yellow};
+    fill: ${ props => props.theme.components.baseListSidebar.iconFill};
     border-radius: 1rem;
     cursor: pointer;
 `;

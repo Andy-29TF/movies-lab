@@ -6,6 +6,8 @@ import { toggleSearchBar } from '../../redux/actions/searchBar'
 import { Link, useLocation } from 'react-router-dom';
 // importlogo 
 import logo from '../../assets/images/logo.png';
+// import Toggle Theme Button
+import ToggleThemeBtn from '../toggleThemeBtn/ToggleThemeBtn'
 //* import the stylized  component
 import {
     NavbarContainer,
@@ -38,9 +40,10 @@ function Navbar(props) {
                 </Link>
                 <NavbarLink to='/news-list' onClick={(event) => handleCleanup(event)}>News</NavbarLink>
                 <NavbarLink to='/movies/unfiltered' onClick={(event) => handleCleanup(event)}>Movies</NavbarLink>
+                <NavbarLink to='/my-list' onClick={(event) => handleCleanup(event)}>My List</NavbarLink>
             </div>
             <div className="navbar-right-side">
-                <NavbarLink to='/my-list' onClick={(event) => handleCleanup(event)}>My List</NavbarLink>
+                <ToggleThemeBtn/>
                 <NavbarSearchIcon onClick={toggleSearchBar}/>
             </div>
     </NavbarContainer>

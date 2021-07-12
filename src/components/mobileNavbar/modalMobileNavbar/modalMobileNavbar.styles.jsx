@@ -12,7 +12,18 @@ export const ModalContainer = styled.div`
     z-index: 2;
     display: ${(props)=> props.displayModal ? "flex" : "none"};
     flex-direction: column;
-    justify-content: space-around;
+
+    & #container-for-links {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    & > button {
+        margin: .5rem .5rem .5rem auto;
+    }
 `;
 
 export const ModalLink = styled(Link)`

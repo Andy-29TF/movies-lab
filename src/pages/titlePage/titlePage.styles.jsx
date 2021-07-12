@@ -77,13 +77,13 @@ export const MainInformationContainer = styled.div`
     justify-content: flex-end;
 
     & p {
-      color: ${ props => props.theme.pages.titlePage.color};
+      color: ${ props => props.theme.pages.titlePage.hero.color};
       font-size: 1.7rem;
       margin-bottom: 0.8rem;
 
       & .year-link {
         text-decoration: none;
-        color: ${ props => props.theme.pages.titlePage.color};
+        color: ${ props => props.theme.pages.titlePage.hero.color};
 
         &:hover {
           text-decoration: underline;
@@ -111,7 +111,7 @@ export const MainInformationContainer = styled.div`
 
         & a {
           text-decoration: none;
-          color: ${ props => props.theme.pages.titlePage.color};
+          color: ${ props => props.theme.pages.titlePage.hero.color};
 
           &:hover {
             text-decoration: underline;
@@ -134,7 +134,7 @@ export const MainInformationContainer = styled.div`
 
     & .main-info {
       & p {
-        color: ${ props => props.theme.pages.titlePage.color};
+        color: ${ props => props.theme.pages.titlePage.hero.color};
         font-size: 1.3rem;
         margin-bottom: 0.6rem;
       }
@@ -153,7 +153,7 @@ export const MainInformationContainer = styled.div`
 
     & .main-info {
       & p {
-        color: ${ props => props.theme.pages.titlePage.color};
+        color: ${ props => props.theme.pages.titlePage.hero.color};
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
       }
@@ -172,7 +172,7 @@ export const MainInformationContainer = styled.div`
 
     & .main-info {
       & p {
-        color: ${ props => props.theme.pages.titlePage.color};
+        color: ${ props => props.theme.pages.titlePage.hero.color};
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
       }
@@ -293,7 +293,7 @@ export const ImdbContainer = styled.div`
   text-align: center;
 
   & p {
-    color: ${ props => props.theme.pages.titlePage.color};
+    color: ${ props => props.theme.pages.titlePage.hero.color};
     margin: 0.3rem 0;
   }
 
@@ -318,7 +318,7 @@ export const ImdbNote = styled.div`
   margin: auto;
 
   & p {
-    color: ${ props => props.theme.pages.titlePage.color};
+    color: ${ props => props.theme.pages.titlePage.hero.color};
     font-size: 1.6rem;
     border: 0.5rem solid ${ props => props.theme.pages.titlePage.hero.imdb};
     border-radius: 15rem;
@@ -328,14 +328,14 @@ export const ImdbNote = styled.div`
 
   &::after {
     content: "IMDB NOTE";
-    color: ${ props => props.theme.pages.titlePage.color};
+    color: ${ props => props.theme.pages.titlePage.hero.color};
   }
 
   @media (max-width: 1000px) {
     & p {
       width: 4rem;
       height: 4rem;
-      color: ${ props => props.theme.pages.titlePage.color};
+      color: ${ props => props.theme.pages.titlePage.hero.color};
       font-size: 1.2rem;
       border: 0.35rem solid ${ props => props.theme.pages.titlePage.hero.imdb};
       border-radius: 15rem;
@@ -350,7 +350,7 @@ export const ImdbNote = styled.div`
     & p {
       width: 3rem;
       height: 1.8rem;
-      color: ${ props => props.theme.pages.titlePage.color};
+      color: ${ props => props.theme.pages.titlePage.hero.color};
       font-size: 1.2rem;
       border: none;
       padding: 0;
@@ -374,7 +374,7 @@ export const MobileImdbAndSaveListContainer = styled.div`
   display: none;
   width: 100%;
   height: 4.5rem;
-  background-color: ${ props => props.theme.pages.titlePage.hero.background};
+  background-color: ${ props => props.theme.pages.titlePage.hero.mobileBackground};
 
   @media (max-width: 600px) {
     display: flex;
@@ -405,7 +405,7 @@ export const MobileImdbContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: ${ props => props.theme.pages.titlePage.color};
+  color: ${ props => props.theme.pages.titlePage.hero.color};
   margin-right: 1rem;
   text-align: center;
 

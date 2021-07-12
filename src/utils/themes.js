@@ -1,3 +1,260 @@
+export const lightTheme = {
+    body: {
+        background: "light"
+    },
+    header: {
+        background: "#77A6F7",
+        navbar: {
+            link: {
+                color: "#FFFFFF",
+                hover: {
+                    color: "#1C2222",
+                    background: "#D3E3FC"
+                }
+            },
+            searchIcon: {
+                fill: "#FFFFFF",
+                hover: {
+                    fill: "#1C2222"
+                }
+            }
+        },
+        mobileNavbar: {
+            menuIcon: {
+                fill: "#FFFFFF"
+            },
+            searchIcon: {
+                fill: "#FFFFFF"
+            },
+            modal: {
+                background: "#77A6F7",
+                link: {
+                    color: "#FFFFFF"
+                }
+            }
+        }
+    },
+    footer: {
+        background: "#77A6F7",
+        color: "#FFFFFF"
+    },
+    pages: {
+        background: "#FFFFFF",
+        home: {
+            homeRecommendationsSection: {
+                carousel: {
+                    border: "#0D5DE7",
+                    dropShadow: "#1C222288",
+                    frameTitle: "#0A0A0A",
+                    movieName: "#FFFFFF",
+                    movieYear: "#FFFFFF",
+                    imdb: {
+                        rating: "#FFD700",
+                        star: "#FFD700",
+                        background: "#060E0B"
+                    }
+                },
+                topRatedMovie: {
+                    border: "#0D5DE7",
+                    dropShadow: "#1C222288",
+                    frameTitle: "#1C2222",
+                    link: "#0A0A0A",
+                    movieName: "#0A0A0A",
+                    movieStoryline: "#0A0A0A",
+                    imdb: {
+                        rating: "#FFD700",
+                        star: "#FFD700",
+                        background: "#060E0B"
+                    }
+                }
+            },
+            // ! Latest Movies
+            // * AND
+            // > Latest News
+            homeLatestMoviesSection: {
+                border: "#0D5DE7",
+                dropShadow: "#1C222277",
+                sectionTitle: "#0A0A0A",
+                scrollIcon: {
+                    fill: "#D3E3FC"
+                },
+                arrowBtnBg: "#FFCCBC",
+                wrapperContainer: {
+                    scrollbarTrack: {
+                        boxShadow: "#0000004c",
+                        background: "#c5c1c0"
+                    },
+                    scrollbarThumb: {
+                        boxShadow: "#0000004c",
+                        background: "#060E0B"
+                    }
+                }
+            }
+        },
+        moviesPage: {
+            moviesList: {
+                button: {
+                    color: "#1C2222",
+                    background: "#FFCCBC",
+                    hover: {
+                        color: "#FFCCBC",
+                        background: "#0A0A0A"
+                    }
+                }
+            },
+            baseListSidebar: {
+                background: "#FFCCBC",
+            }
+        },
+        myListPage: {
+            sectionBar: {
+                borderBottom: "#003D37",
+                selector: {
+                    selected: {
+                        background: "#1C2222"
+                    },
+                    unselected: {
+                        background: "#D3E3FC",
+                        hover: {
+                            background: "#0A0A0A",
+                            mobile: {
+                                background: "#FFFFFF"
+                            }
+                        }
+                    },
+                    wantToSee: {
+                        colorAndFill: "#084D9B"
+                    },
+                    watched: {
+                        colorAndFill: "#057657"
+                    },
+                    loveIt: {
+                        colorAndFill: "#E33B57"
+                    }
+                }
+            },
+            displaySection: {
+                border: "#003D37",
+                background: "#D3E3FC81",
+                color: "#1C2222"
+            }
+        },
+        titlePage: {
+            color: "#1C2222",
+            hero: {
+                color: "#FFFFFF",
+                background: "#D3E3FC",
+                mobileBackground: "#1C2222",
+                iconBackground: "#0A0A0A",
+                saveButtons: {
+                    wantToSee: {
+                        first: "#FFFFFF",
+                        second: "#084D9B",
+                        third: "#579be9"
+                    },
+                    watched: {
+                        first: "#FFFFFF",
+                        second: "#057657",
+                        third: "#42e6ba"
+                    },
+                    loveIt: {
+                        first: "#FFFFFF",
+                        second: "#E33B57",
+                        third: "#e97e90"
+                    }
+                },
+                imdb: "#FFD700"
+            },
+            content: {
+                border: "#FFCCBC"
+            }
+        },
+        newsPage: {
+            color: "#1C2222",
+            textDecorationColor: "#D3E3FC",
+            borderLeftSection: "#FFCCBC",
+            borderBottom: "#1C2222",
+            dropShadow: "#1C2222bc"
+        },
+        page404: {
+            color: "#1C2222",
+            link: "#FFCCBC"
+        }
+
+    },
+    components: {
+        movieItem: {
+            title: {
+                color: "#1C2222"
+            },
+            imdb: {
+                rating: "#FFD700",
+                star: "#FFD700",
+                background: "#0A0A0A"
+            },
+            saveButtons: {
+                wantToSee: {
+                    first: "#FFFFFF",
+                    second: "#084D9B",
+                    third: "#579be9"
+                },
+                watched: {
+                    first: "#FFFFFF",
+                    second: "#057657",
+                    third: "#42e6ba"
+                },
+                loveIt: {
+                    first: "#FFFFFF",
+                    second: "#E33B57",
+                    third: "#e97e90"
+                }
+            }
+        },
+        newsItem: {
+            title:  "#1C2222",
+            link: "#1C2222"
+        },
+        messageSlot: {
+            background: "#060E0B",
+            color: "#FFFFFF",
+            spanColor: "#44FFD1"
+        },
+        baseListSidebar: {
+            white: "#FFFFFF",
+            black: "#060E0B",
+            iconFill: "#FFCCBC",
+            linkColor: "#FFCCBC",
+            scrollbar: {
+                black: "#060e0b",
+                secColor: "#FFCCBC",
+                track: "linear-gradient(90deg, #060e0b 35%, #FFCCBC 50%, #060e0b 65%)"
+            }
+        },
+        searchBar: {
+            container: {
+                background: "#D3E3FC",
+                boxShadow: "#0A0A0A"
+            },
+            input: {
+                background: "#374343",
+                color: "#FFFFFF"
+            },
+            list: {
+                background: "#D3E3FCf8",
+                color: "#1C2222"
+            },
+            link: {
+                color: "#1C2222",
+                hoverColor: "#003D37"
+            }
+        },
+        toggleThemeBtn: {
+            toggleBorder: '#FFFFFF',
+            gradient: "linear-gradient(#39598A, #79D7ED)"
+        }
+    }
+}
+
 export const darkTheme = {
     body: {
         background: "dark"
@@ -143,7 +400,9 @@ export const darkTheme = {
         titlePage: {
             color: "#F7F7FF",
             hero: {
+                color: "#F7F7FF",
                 background: "#141414",
+                mobileBackground: "#141414",
                 iconBackground: "#000000",
                 saveButtons: {
                     wantToSee: {
@@ -170,6 +429,7 @@ export const darkTheme = {
         },
         newsPage: {
             color: "#F7F7FF",
+            textDecorationColor: "#c5c1c0",
             borderLeftSection: "#ffff00",
             borderBottom: "#060E0B",
             dropShadow: "#060E0Bbc"
@@ -220,10 +480,11 @@ export const darkTheme = {
         baseListSidebar: {
             white: "#F7F7FF",
             black: "#060E0B",
-            yellow: "yellow",
+            iconFill: "yellow",
+            linkColor: "yellow",
             scrollbar: {
                 black: "#060e0b",
-                yellow: "yellow",
+                secColor: "yellow",
                 track: "linear-gradient(90deg, #060e0b 35%, #ffd700 50%, #060e0b 65%)"
             }
         },
@@ -244,8 +505,10 @@ export const darkTheme = {
                 color: "#F7F7FF",
                 hoverColor: "yellow"
             }
+        },
+        toggleThemeBtn: {
+            toggleBorder: '#F7F7FF',
+            gradient: "linear-gradient(#091236, #1E215D)"
         }
     }
 }
-
-// ${ props => props.theme.pages.titlePage.};

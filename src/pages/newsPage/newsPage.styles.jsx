@@ -45,7 +45,7 @@ export const Headline = styled.div `
         color: ${(props) => props.theme.pages.newsPage.color};
         line-height: 1.3;
         text-decoration: underline;
-        text-decoration-color: #c5c1c0;
+        text-decoration-color: ${(props) => props.theme.pages.newsPage.textDecorationColor};
         font-weight: bold;
         font-family: Para Supreme Regular,serif;
     }

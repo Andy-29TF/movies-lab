@@ -55,16 +55,9 @@ export const LinkElement = styled(Link) `
 
     &:hover {
         background: ${ props => props.theme.components.baseListSidebar.black};
-        border: 1px solid ${ props => props.theme.components.baseListSidebar.yellow};
+        border: 1px solid ${ props => props.theme.components.baseListSidebar.linkColor};
         border-radius: 1rem;
-        color: ${ props => props.theme.components.baseListSidebar.yellow};
-        cursor: pointer;
-    }
-
-    &:hover {
-        border: 1px solid yellow;
-        border-radius: 1rem;
-        color: ${ props => props.theme.components.baseListSidebar.yellow};
+        color: ${ props => props.theme.components.baseListSidebar.linkColor};
         cursor: pointer;
     }
 
