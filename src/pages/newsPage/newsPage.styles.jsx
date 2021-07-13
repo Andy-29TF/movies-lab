@@ -30,9 +30,9 @@ export const NewsSection = styled.section `
 `;
 
 export const Headline = styled.div `
-    width: 100%;
+    width: 96%;
     height: auto;
-    padding: 0 1rem 0 1.5rem;
+    margin: 0 auto;
 
     & img {
         width: 100%;
@@ -51,7 +51,6 @@ export const Headline = styled.div `
     }
 
     @media (max-width: 1000px) {
-        padding: 0 1rem;
         & img {
             height: 22rem;
         }
@@ -66,14 +65,14 @@ export const Headline = styled.div `
         }
     }
     @media (max-width: 450px) {
-        padding: 0 .5rem;
-
+        width: 100%;
         & img {
             height: 10rem;
         }
 
         & h1 {
             font-size: 1.5rem;
+            margin: .5rem .7rem ;
         }
     }
 `;
@@ -125,9 +124,9 @@ export const ArticleContent = styled.div `
 `;
 
 export const TrailerContainer = styled.div `
-    width: 100%;
+    width: 96%;
+    margin: 0 auto;
     height: auto;
-    padding: 1rem 1rem 0 1.5rem;
     display: flex;
     flex-direction: column;
 
@@ -153,7 +152,7 @@ export const TrailerContainer = styled.div `
         padding-top: 56.25%;
 
         & iframe {
-            padding: 1.3rem 1rem;
+            padding: 1.3rem 0;
             position: absolute;
             top: 0;
             left: 0;
@@ -162,10 +161,6 @@ export const TrailerContainer = styled.div `
             width: 100%;
             height: 100%;
         }
-    }
-
-    @media (max-width: 1000px) {
-        padding: 0 1rem;
     }
 
     @media (max-width: 650px) {
@@ -177,12 +172,16 @@ export const TrailerContainer = styled.div `
     }
 
     @media (max-width: 450px) {
-        padding: 0 .5rem;
+        width: 99%;
 
-        & #title-container h3{
-            font-size: 1.4rem;
-            margin: 0 1.1rem;
-        }
+        & #title-container{
+            width: 98%;
+            margin: 0 auto;
+            & h3{
+                font-size: 1.4rem;
+                margin: 0 1.1rem;
+            }
+        } 
 
         & iframe {
             padding: 1rem 0;

@@ -28,6 +28,7 @@ export const MoviesListContainer = styled.div `
             box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
             box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
             transition: all 0.4s ease 0s;
+            cursor: pointer;
         }
     }
 

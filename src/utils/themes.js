@@ -43,7 +43,7 @@ export const lightTheme = {
         home: {
             homeRecommendationsSection: {
                 carousel: {
-                    border: "#0D5DE7",
+                    border: "#2E4A76",
                     dropShadow: "#1C222288",
                     frameTitle: "#0A0A0A",
                     movieName: "#FFFFFF",
@@ -55,7 +55,7 @@ export const lightTheme = {
                     }
                 },
                 topRatedMovie: {
-                    border: "#0D5DE7",
+                    border: "#2E4A76",
                     dropShadow: "#1C222288",
                     frameTitle: "#1C2222",
                     link: "#0A0A0A",
@@ -72,7 +72,7 @@ export const lightTheme = {
             // * AND
             // > Latest News
             homeLatestMoviesSection: {
-                border: "#0D5DE7",
+                border: "#2E4A76",
                 dropShadow: "#1C222277",
                 sectionTitle: "#0A0A0A",
                 scrollIcon: {
@@ -111,7 +111,7 @@ export const lightTheme = {
                 borderBottom: "#003D37",
                 selector: {
                     selected: {
-                        background: "#1C2222"
+                        background: "#8EA8C3"
                     },
                     unselected: {
                         background: "#D3E3FC",
@@ -236,7 +236,7 @@ export const lightTheme = {
                 boxShadow: "#0A0A0A"
             },
             input: {
-                background: "#374343",
+                background: "#474847",
                 color: "#FFFFFF"
             },
             list: {
@@ -260,68 +260,68 @@ export const darkTheme = {
         background: "dark"
     },
     header: {
-        background: "#0A1612",
+        background: "#19171A",
         navbar: {
             link: {
-                color: "#F7F7FF",
+                color: "#FFFFFF",
                 hover: {
-                    color: "#060E0B",
-                    background: "#F7F7FF"
+                    color: "#010101",
+                    background: "#FFFFFF"
                 }
             },
             searchIcon: {
-                fill: "#F7F7FF",
+                fill: "#FFFFFF",
                 hover: {
-                    fill: "#F7CE3E"
+                    fill: "#FCF201"
                 }
             }
         },
         mobileNavbar: {
             menuIcon: {
-                fill: "#F7F7FF"
+                fill: "#FFFFFF"
             },
             searchIcon: {
-                fill: "#F7F7FF"
+                fill: "#FFFFFF"
             },
             modal: {
-                background: "#0A1612",
+                background: "#19171A",
                 link: {
-                    color: "#F7F7FF"
+                    color: "#FFFFFF"
                 }
             }
         }
     },
     footer: {
-        background: "#0A1612",
-        color: "#F7F7FF"
+        background: "#19171A",
+        color: "#FFFFFF"
     },
     pages: {
-        background: "#243942",
+        background: "#2C2B30",
         home: {
             homeRecommendationsSection: {
                 carousel: {
-                    border: "#060E0B",
-                    dropShadow: "#060E0Bbc",
-                    frameTitle: "#F7F7FF",
-                    movieName: "#F7F7FF",
-                    movieYear: "#F7F7FF",
+                    border: "#45433E",
+                    dropShadow: "#010101bc",
+                    frameTitle: "#FFFFFF",
+                    movieName: "#FFFFFF",
+                    movieYear: "#FFFFFF",
                     imdb: {
                         rating: "#FFD700",
                         star: "#FFD700",
-                        background: "#060E0B"
+                        background: "#010101"
                     }
                 },
                 topRatedMovie: {
-                    border: "#060E0B",
-                    dropShadow: "#060E0Bbc",
-                    frameTitle: "#F7F7FF",
-                    link: "#F7F7FF",
-                    movieName: "#F7F7FF",
-                    movieStoryline: "#F7F7FF",
+                    border: "#45433E",
+                    dropShadow: "#010101bc",
+                    frameTitle: "#FFFFFF",
+                    link: "#FFFFFF",
+                    movieName: "#FFFFFF",
+                    movieStoryline: "#FFFFFF",
                     imdb: {
                         rating: "#FFD700",
                         star: "#FFD700",
-                        background: "#060E0B"
+                        background: "#010101"
                     }
                 }
             },
@@ -329,21 +329,21 @@ export const darkTheme = {
             // * AND
             // > Latest News
             homeLatestMoviesSection: {
-                border: "#060E0B",
-                dropShadow: "#0a1612bc",
-                sectionTitle: "#F7F7FF",
+                border: "#45433E",
+                dropShadow: "#010101bc",
+                sectionTitle: "#FFFFFF",
                 scrollIcon: {
-                    fill: "#F7F7FF"
+                    fill: "#FFFFFF"
                 },
-                arrowBtnBg: "#FFD700",
+                arrowBtnBg: "#FCF201",
                 wrapperContainer: {
                     scrollbarTrack: {
-                        boxShadow: "#0000004c",
-                        background: "#c5c1c0"
+                        boxShadow: "#9597944c",
+                        background: "#959794"
                     },
                     scrollbarThumb: {
-                        boxShadow: "#0000004c",
-                        background: "#060E0B"
+                        boxShadow: "#0101014c",
+                        background: "#010101"
                     }
                 }
             }
@@ -351,32 +351,32 @@ export const darkTheme = {
         moviesPage: {
             moviesList: {
                 button: {
-                    color: "#060E0B",
-                    background: "#F7CE3E",
+                    color: "#010101",
+                    background: "#FCF201",
                     hover: {
-                        color: "#F7CE3E",
-                        background: "#060E0B"
+                        color: "#FCF201",
+                        background: "#010101"
                     }
                 }
             },
             baseListSidebar: {
-                color: "#060E0B",
-                background: "#F7CE3E",
+                color: "#010101",
+                background: "#FCF201",
             }
         },
         myListPage: {
             sectionBar: {
-                borderBottom: "#F7CE3E",
+                borderBottom: "#FCF201",
                 selector: {
                     selected: {
-                        background: "#F7F7FF"
+                        background: "#FFFFFF"
                     },
                     unselected: {
-                        background: "#c5c1c0",
+                        background: "#C1C2C1",
                         hover: {
-                            background: "#060E0B",
+                            background: "#010101",
                             mobile: {
-                                background: "#F7F7FF"
+                                background: "#FFFFFF"
                             }
                         }
                     },
@@ -392,15 +392,15 @@ export const darkTheme = {
                 }
             },
             displaySection: {
-                border: "#F7CE3E",
-                background: "#0a161281",
-                color: "#F7F7FF"
+                border: "#FCF201",
+                background: "#95979424",
+                color: "#FFFFFF"
             }
         },
         titlePage: {
-            color: "#F7F7FF",
+            color: "#FFFFFF",
             hero: {
-                color: "#F7F7FF",
+                color: "#FFFFFF",
                 background: "#141414",
                 mobileBackground: "#141414",
                 iconBackground: "#000000",
@@ -424,31 +424,31 @@ export const darkTheme = {
                 imdb: "#FFD700"
             },
             content: {
-                border: "#ffff00"
+                border: "#FCF201"
             }
         },
         newsPage: {
-            color: "#F7F7FF",
-            textDecorationColor: "#c5c1c0",
-            borderLeftSection: "#ffff00",
-            borderBottom: "#060E0B",
-            dropShadow: "#060E0Bbc"
+            color: "#FFFFFF",
+            textDecorationColor: "#45433E",
+            borderLeftSection: "#FCF201",
+            borderBottom: "#010101",
+            dropShadow: "#010101bc"
         },
         page404: {
-            color: "#F7F7FF",
-            link: "#ffff00"
+            color: "#FFFFFF",
+            link: "#FCF201"
         }
 
     },
     components: {
         movieItem: {
             title: {
-                color: "#F7F7FF"
+                color: "#FFFFFF"
             },
             imdb: {
                 rating: "#FFD700",
                 star: "#FFD700",
-                background: "#060E0B"
+                background: "#010101"
             },
             saveButtons: {
                 wantToSee: {
@@ -469,45 +469,45 @@ export const darkTheme = {
             }
         },
         newsItem: {
-            title:  "#F7F7FF",
-            link: "#F7F7FF"
+            title:  "#FFFFFF",
+            link: "#FFFFFF"
         },
         messageSlot: {
             background: "#060E0B",
-            color: "#F7F7FF",
+            color: "#FFFFFF",
             spanColor: "#44FFD1"
         },
         baseListSidebar: {
-            white: "#F7F7FF",
-            black: "#060E0B",
-            iconFill: "yellow",
-            linkColor: "yellow",
+            white: "#FFFFFF",
+            black: "#010101",
+            iconFill: "#FCF201",
+            linkColor: "#FCF201",
             scrollbar: {
-                black: "#060e0b",
-                secColor: "yellow",
+                black: "#010101",
+                secColor: "#FCF201",
                 track: "linear-gradient(90deg, #060e0b 35%, #ffd700 50%, #060e0b 65%)"
             }
         },
         searchBar: {
             container: {
-                background: "#0e241c",
-                boxShadow: "#000000"
+                background: "#3B3A41",
+                boxShadow: "#010101"
             },
             input: {
-                background: "#3d413f",
-                color: "#F7F7FF"
+                background: "#CBCDCB",
+                color: "#010101"
             },
             list: {
-                background: "#060e0bf8",
-                color: "#F7F7FF"
+                background: "#010101f8",
+                color: "#FFFFFF"
             },
             link: {
-                color: "#F7F7FF",
-                hoverColor: "yellow"
+                color: "#FFFFFF",
+                hoverColor: "#FCF201"
             }
         },
         toggleThemeBtn: {
-            toggleBorder: '#F7F7FF',
+            toggleBorder: '#FFFFFF',
             gradient: "linear-gradient(#091236, #1E215D)"
         }
     }

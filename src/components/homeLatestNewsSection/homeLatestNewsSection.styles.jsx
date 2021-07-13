@@ -97,6 +97,10 @@ export const  WrapperContainer = styled.div `
         width: 19.85rem;
         margin: 0 .5rem;
         scroll-snap-align: center;
+
+        &.image-container {
+            margin: 0;
+        }
         
         & #titleContainer {
             display: -webkit-box;
@@ -104,6 +108,7 @@ export const  WrapperContainer = styled.div `
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+            margin: .5rem 0;
         }
     }
 
@@ -111,6 +116,7 @@ export const  WrapperContainer = styled.div `
         margin: 1.1rem 0;
 
         & div {
+            width: 20rem;
             margin: 0 .65rem;
         }
     }

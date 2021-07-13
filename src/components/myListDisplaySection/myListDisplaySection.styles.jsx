@@ -23,7 +23,7 @@ export const MyListDisplayContainer = styled.div `
 export const EmptyListContainer = styled.div `
     width: 100%;
     text-align: center;
-    padding: 20%;
+    padding: 20% 0;
 
     & p {
         margin: auto;

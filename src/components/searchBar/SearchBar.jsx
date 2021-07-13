@@ -49,7 +49,7 @@ function SearchBar(props) {
                             const elemTitleAndYear= `${elem.name} (${elem.year})`
                             const titleAndYearHighlighted = elemTitleAndYear.replace(
                                 new RegExp (searchTerm, 'gi'),
-                                match => `<mark style="background: #FFD700; color: #060E0B; padding: 0;">${match}</mark>`
+                                match => `<mark style="background: #FCF201; color: #060E0B; padding: 0;">${match}</mark>`
                             )
                             return (
                                 <Link to={`/title/${elem.id}`} key={elem.id}>

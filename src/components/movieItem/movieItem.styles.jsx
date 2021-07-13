@@ -26,6 +26,9 @@ export const MovieItemContainer = styled.div `
     @media (max-width: 575px) {
         flex-basis: 50%;
     }
+    @media (max-width: 358px) {
+        flex-basis: 100%;
+    }
 `;
 
 export const CardContainer = styled.div `
