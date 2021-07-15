@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'
 // reducers
@@ -23,7 +23,8 @@ const rootReducer = combineReducers({
     newsProcessing: newsProcessingReducer,
     theme: themeReducer
 });
-const middlewares = [ReduxThunk, logger];
+// const middlewares = [ReduxThunk, logger];
+const middlewares = [ReduxThunk];
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
