@@ -37,8 +37,8 @@ export const HomeMovieRecommendedContainer = styled.div `
         width: 90%;
         margin: 2rem auto;
         & .frame-title {
-            top: -1.2rem;
-            right: .8rem;
+            top: -1.35rem;
+            right: .7rem;
             font-size: 1.4rem;
         }
     }
@@ -104,7 +104,7 @@ export const TopRatedMovie = styled.div `
             font-size: 1rem;
             max-height: 25rem;
             color: ${ props => props.theme.pages.home.homeRecommendationsSection.topRatedMovie.movieStoryline};
-            margin: 1rem 0 1rem 2.5rem;
+            margin: 1rem 2.5rem 1rem 0;
             overflow: scroll;
             text-align: center;
 
@@ -118,7 +118,7 @@ export const TopRatedMovie = styled.div `
         .movie-storyline{
             font-size: .9rem;
             max-height: 19.5rem;
-            margin: 1rem 0 .2rem 2rem;
+            margin: 1rem 2rem .2rem 0;
         }
     }
 
@@ -126,7 +126,7 @@ export const TopRatedMovie = styled.div `
         .movie-storyline{
             font-size: .8rem;
             max-height: 17rem;
-            margin: .5rem 0 .2rem 1.5rem;
+            margin: .5rem 1.5rem .2rem 0;
         }
     }
 

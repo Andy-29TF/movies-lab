@@ -9,12 +9,12 @@ function ModalMobileNavbar(props) {
 
     return (
         <ModalContainer displayModal={props.displayModal}>
+            <ToggleThemeBtn />
             <div id="container-for-links">
                 <ModalLink to='/news-list' onClick={(event) => props.handleCleanup(event)}>News</ModalLink>
                 <ModalLink to='/movies/unfiltered' onClick={(event) => props.handleCleanup(event)}>Movies</ModalLink>
                 <ModalLink to='/my-list' onClick={(event) => props.handleCleanup(event)}>My List</ModalLink>
             </div>
-            <ToggleThemeBtn/>
         </ModalContainer>
     )
 }

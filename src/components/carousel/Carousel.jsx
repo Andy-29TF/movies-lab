@@ -45,7 +45,7 @@ function Carousel(props) {
             {
               breakpoint: 768,
               settings: {
-                dots: false
+                dots: false,
               }
             }
           ]
@@ -56,7 +56,7 @@ function Carousel(props) {
         return (
           <div
             className={className}
-            style={{ ...style, display: "absolute", top: "50%", right: "0", marginRight: ".3rem"}}
+            style={{ ...style, display: "absolute", top: "50%", right: "0", padding: ".6rem .3rem .6rem .5rem"}}
             onClick={onClick}
           />
         );
@@ -66,7 +66,7 @@ function Carousel(props) {
         return (
           <div
             className={className}
-            style={{ ...style, display: "absolute", zIndex: "1", top: "50%", left: "0", marginLeft: ".3rem"}}
+            style={{ ...style, display: "absolute", zIndex: "1", top: "50%", left: "0", padding: ".6rem .6rem .5rem .3rem"}}
             onClick={onClick}
           />
         );

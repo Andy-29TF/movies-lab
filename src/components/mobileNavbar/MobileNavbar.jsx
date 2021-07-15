@@ -13,7 +13,7 @@ import { MobileNavbarContainer, NavbarMenuIcon, NavbarSearchIcon, NavbarCloseIco
 
 
 function MobileNavbar(props) {
-    const { toggleSearchBar } = props;
+    const { toggleSearchBar, searchBarIsActivated} = props;
     const [displayModal, setDisplayModal] = useState(false);
     // router
     const location = useLocation();
@@ -41,7 +41,9 @@ function MobileNavbar(props) {
             <NavbarSearchIcon onClick={() => {
                 setDisplayModal(state => state && false);
                 toggleSearchBar({})
-            }}/>
+            }}
+            searchbarstatus={`${searchBarIsActivated}`}
+            />
             <Link to='/' onClick={() =>{ 
                 setDisplayModal(state => state && false)
                 toggleSearchBar({ searchBarInstructions: "close shearch bar" })
@@ -64,10 +66,16 @@ function MobileNavbar(props) {
     )
 }
 
+function mapStateToProps(state) {
+    return {
+        searchBarIsActivated: state.searchBar.searchBarIsActivated
+    }
+}
+
 function dispatchStateToProps(dispatch) {
     return {
         toggleSearchBar: (payload) => dispatch(toggleSearchBar(payload))
     }
 }
 
-export default connect(null, dispatchStateToProps)(MobileNavbar);
+export default connect(mapStateToProps, dispatchStateToProps)(MobileNavbar);

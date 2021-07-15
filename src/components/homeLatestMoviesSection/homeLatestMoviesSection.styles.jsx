@@ -53,19 +53,19 @@ export const SectionTitleContainer = styled.div `
 
 export const ScrollIcon = styled(Scroll) `
     margin: auto 1rem;
-    width: 1.8rem;
+    width: 1.4rem;
     padding: .2rem;
     border-radius: .5rem;
     background-color: ${ props => props.theme.pages.home.homeLatestMoviesSection.scrollIcon.fill};
 
     @media (max-width: 768px) {
         margin: auto .8rem;
-        width: 1.8rem;
+        width: 1.6rem;
         padding: .1rem;
     }
     @media (max-width: 450px) {
-        margin: auto .5rem;
-        width: 1.7rem;
+        margin: auto .3rem;
+        width: 1.5rem;
         padding: .1rem;
     }
 `;
@@ -95,6 +95,11 @@ export const  WrapperContainer = styled.div `
     & div {
         margin: 0 .10rem;
         scroll-snap-align: center;
+
+        & .image-container {
+            width: 100%;
+            height: 100%;
+        }
     }
 
     @media (max-width: 768px) {

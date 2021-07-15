@@ -1,4 +1,6 @@
 import React from 'react';
+// router
+import { Link } from 'react-router-dom';
 // LAYOUT - header & footer
 import Layout from '../../components/layout/Layout';
 //* import the stylized  component
@@ -12,7 +14,7 @@ function Page404() {
                 <h4>404 Page Not Found</h4>
                 <img src="https://i.imgur.com/ttP0sEJ.gif" alt="page404"/>
                 <h2>Looks like this page went on vacation.</h2>
-                <p>Try our <a href="/">homepage</a> or <a href="/movies/unfiltered">movies</a> instead.</p>
+                <p>Try our <Link to="/">homepage</Link> or <Link to="/movies/unfiltered">movies</Link> instead.</p>
             </ErrorPageContainer>
         </Layout>
     );

@@ -43,7 +43,7 @@ export const ScrollUpAndDownIcon = styled(ScrollUpAndDown) `
     right: .48rem;
 
     @media (max-width: 768px) {
-        right: 1.1rem;
+        right: .95rem;
         top: 1rem;
     }
 `;

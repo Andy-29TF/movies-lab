@@ -7,7 +7,6 @@ import { ToggleContainer } from './toggleThemeBtn.styles';
 
 function ToggleThemeBtn(props) {
     const { theme, toggleTheme } = props;
-    console.log(theme)
 
     return (
         <ToggleContainer theTypeOfTheCurrentTheme={theme} onClick={ () => toggleTheme()}>

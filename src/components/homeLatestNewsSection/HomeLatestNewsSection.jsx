@@ -36,7 +36,7 @@ function HomeLatestNewsSection(props) {
 
 function mapStateToProps(state) {
     return {
-        newsForLatestNewsSection: state.newsProcessing.news
+        newsForLatestNewsSection: state.newsProcessing.news.slice(0, 6)
     }
 }
 

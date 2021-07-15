@@ -38,11 +38,13 @@ export const Headline = styled.div `
         width: 100%;
         height: 25rem;
         object-fit: cover;
+        object-position: 50% 20%;
     }
 
     & h1 {
         margin: .5rem .2rem;
         color: ${(props) => props.theme.pages.newsPage.color};
+        font-size: 2rem;
         line-height: 1.3;
         text-decoration: underline;
         text-decoration-color: ${(props) => props.theme.pages.newsPage.textDecorationColor};
@@ -84,6 +86,7 @@ export const ArticleContent = styled.div `
         font-size: 1.3rem;
         text-indent: .7rem;
         color: ${(props) => props.theme.pages.newsPage.color};
+        margin: 0 0 1rem 0;
     }
 
     & img {
@@ -106,6 +109,7 @@ export const ArticleContent = styled.div `
         & img {
             float: none;
             width: 100%;
+            margin: 0 0rem .5rem 0;
         }
     }
     @media (max-width: 450px) {
@@ -125,13 +129,15 @@ export const ArticleContent = styled.div `
 
 export const TrailerContainer = styled.div `
     width: 96%;
-    margin: 0 auto;
     height: auto;
+    margin: 2rem auto 0 auto;
     display: flex;
     flex-direction: column;
 
     & #title-container{
         width: 100%;
+        height: 100%;
+        margin-bottom: 1.3rem;
         border-bottom: 3px solid ${(props) => props.theme.pages.newsPage.borderBottom};
         filter: drop-shadow(.5rem .5rem 2px ${(props) => props.theme.pages.newsPage.dropShadow});
         -webkit-filter: drop-shadow(.5rem .5rem 2px ${(props) => props.theme.pages.newsPage.dropShadow});
@@ -152,7 +158,6 @@ export const TrailerContainer = styled.div `
         padding-top: 56.25%;
 
         & iframe {
-            padding: 1.3rem 0;
             position: absolute;
             top: 0;
             left: 0;
@@ -164,7 +169,8 @@ export const TrailerContainer = styled.div `
     }
 
     @media (max-width: 650px) {
-        
+        margin: 1rem auto 0 auto;
+
         & #title-container h3{
             font-size: 1.5rem;
             margin: 0 1.3rem;
@@ -177,15 +183,13 @@ export const TrailerContainer = styled.div `
         & #title-container{
             width: 98%;
             margin: 0 auto;
+            margin-bottom: 1rem;
+
             & h3{
                 font-size: 1.4rem;
                 margin: 0 1.1rem;
             }
         } 
-
-        & iframe {
-            padding: 1rem 0;
-        }
     }
 `;
 

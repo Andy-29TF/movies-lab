@@ -94,6 +94,41 @@ export const CardContainer = styled.div `
 // ? IMDB media
 export const CardMediaContainer = styled.div `
     position: relative;
+
+    & .image-container {
+        position: relative;
+
+        & span {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 98.5%;
+            background-color: #a3a2a29d;
+
+            & a {
+                margin: auto;
+                width: 30%;
+                
+                & img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        &:hover span {
+            display: flex;
+            
+        }
+    }
+
+    @media (max-width: 768px) {
+        & .image-container:hover  span{
+            display: none;
+        }
+    }
 `;
 
 export const CardImdbRating = styled.span `

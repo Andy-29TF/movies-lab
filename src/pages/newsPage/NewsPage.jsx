@@ -78,12 +78,11 @@ function NewsPage(props) {
 
 function mapStateToProps(state, props) {
     const news_id = props.match.params.id;
-    const rndInt = Math.floor(Math.random() * state.newsProcessing.news.length) + 1;
 
     return {
         newsById: state.newsProcessing.news.filter( elem => elem.id === +news_id ),
         availableIds: state.newsProcessing.news.map( elem => elem.id ),
-        rndNews: state.newsProcessing.news.filter( elem => elem.id === rndInt)
+        rndNews: state.newsProcessing.news.filter( elem => elem.id === 4 )
     }
 }
 

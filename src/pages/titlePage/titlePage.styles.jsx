@@ -191,15 +191,15 @@ export const SaveListContainer = styled.div`
 `;
 
 const IconStyle = css`
-  width: 3rem;
-  height: 3rem;
+  width: 2.2rem;
+  height: 2.2rem;
   padding: 0.5rem 0.7rem;
   background-color: ${ props => props.theme.pages.titlePage.hero.iconBackground};
   cursor: pointer;
 
   @media (max-width: 1000px) {
-    width: 2.7rem;
-    height: 2.7rem;
+    width: 2rem;
+    height: 2rem;
     padding: 0.3rem 0.6rem;
   }
   @media (max-width: 600px) {
@@ -318,12 +318,15 @@ export const ImdbNote = styled.div`
   margin: auto;
 
   & p {
+    height: 3.75rem;
+    width: 3.75rem;
+    line-height: 3.75rem;
     color: ${ props => props.theme.pages.titlePage.hero.color};
     font-size: 1.6rem;
-    border: 0.5rem solid ${ props => props.theme.pages.titlePage.hero.imdb};
-    border-radius: 15rem;
-    margin: 0;
-    padding: 0.9rem 0;
+    border: 0.4rem solid ${ props => props.theme.pages.titlePage.hero.imdb};
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin: .25rem auto;
   }
 
   &::after {
@@ -333,13 +336,14 @@ export const ImdbNote = styled.div`
 
   @media (max-width: 1000px) {
     & p {
-      width: 4rem;
-      height: 4rem;
+      height: 3.2rem;
+      width: 3.2rem;
+      line-height: 3.2rem;
       color: ${ props => props.theme.pages.titlePage.hero.color};
       font-size: 1.2rem;
       border: 0.35rem solid ${ props => props.theme.pages.titlePage.hero.imdb};
       border-radius: 15rem;
-      margin: auto;
+      margin: .15rem auto;
     }
 
     &::after {
@@ -348,22 +352,32 @@ export const ImdbNote = styled.div`
   }
   @media (max-width: 600px) {
     & p {
-      width: 3rem;
-      height: 1.8rem;
+      height: 1rem;
+      line-height: 1rem;
       color: ${ props => props.theme.pages.titlePage.hero.color};
       font-size: 1.2rem;
       border: none;
-      padding: 0;
     }
-
     &::after {
       font-size: 0.8rem;
+    }
+
+    & img {
+      width: .9rem;
+      height: .9rem;
+      float: right;
+      padding-right: .5rem;
     }
   }
   @media (max-width: 450px) {
     & p {
-      height: 1.3rem;
       font-size: 0.9rem;
+    }
+    & img {
+      width: .75rem;
+      height: .75rem;
+      padding-right: .7rem;
+      padding-top: .1rem;
     }
   }
 `;
@@ -528,11 +542,12 @@ export const DetailsPanel = styled.div `
 `;
 
 export const SummaryItem = styled.div `
-  margin: 1.2rem 0;
+  margin: 1.8rem 0;
 
   & h4 {
     text-transform: uppercase;
     font-weight: 600;
+    margin: 0 0 .7rem 0;
   }
 
   & p {
@@ -548,9 +563,11 @@ export const SummaryItem = styled.div `
   }
 
   @media (max-width: 600px) {
-    margin: 1rem 0;
+    margin: 1.3rem 0;
+
     & h4 {
       font-size: 1.05rem;
+      margin: 0 0 .5rem 0;
     }
     & p {
       font-size: .9rem;

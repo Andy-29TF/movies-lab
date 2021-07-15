@@ -69,14 +69,13 @@ export const NavbarLink = styled(Link)`
 export const NavbarSearchIcon = styled(SearchIcon)`
     width: 2.5rem;
     height: auto;
-    fill: ${ props => props.theme.header.navbar.searchIcon.fill};
+    fill: ${ props => props.searchbarstatus === "true" ? props.theme.header.navbar.searchIcon.hover.fill :  props.theme.header.navbar.searchIcon.fill};
     cursor: pointer;
-    margin: 0 .5rem 0 1rem;
+    margin: ${ props => props.searchbarstatus === "true" ? "0 1.5rem 0 1rem" : "0 .5rem 0 1rem"};
     transition: all 0.4s;
+    transform: ${ props => props.searchbarstatus === "true" ? "rotate(-45deg) scale(1.2)" : "rotate(0deg) scale(1)"};
 
     &:hover{
-        transform: rotate(-45deg) scale(1.2);
-        fill: ${ props => props.theme.header.navbar.searchIcon.hover.fill};
-        margin: 0 1.2rem 0 1rem;
+        fill: ${ props => props.searchbarstatus === "true" ? props.theme.header.navbar.searchIcon.fill : props.theme.header.navbar.searchIcon.hover.fill};
     }
 `;

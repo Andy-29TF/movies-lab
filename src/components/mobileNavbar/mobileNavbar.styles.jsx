@@ -37,11 +37,13 @@ export const NavbarSearchIcon = styled(SearchIcon)`
     display: none;
     width: 2.5rem;
     height: auto;
-    fill: ${ props => props.theme.header.mobileNavbar.searchIcon.fill};
+    fill: ${ props => props.searchbarstatus === "true" ? props.theme.header.navbar.searchIcon.hover.fill :  props.theme.header.mobileNavbar.searchIcon.fill};
     cursor: pointer;
-    margin: 0 .2rem 0 .6rem;
+    margin: 0 .2rem 0 .75rem;
     display: inline;
     width: 2.1rem;
+    transition: all 0.4s;
+    transform: ${ props => props.searchbarstatus === "true" ? "rotate(-45deg)" : "rotate(0deg)"};
 `;
 
 export const NavbarCloseIcon = styled(CloseIcon)`

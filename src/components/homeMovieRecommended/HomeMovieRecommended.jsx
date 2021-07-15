@@ -20,6 +20,7 @@ function HomeMovieRecommended(props) {
             <span className="frame-title">top rated</span>
             {
                 movieIsAvailable && <TopRatedMovie>
+                                        <p className="movie-storyline">{topRatedMovieElement[0].storyline}</p>
                                         <div className="movie-container">
                                             <Link to={`/title/${topRatedMovieElement[0].id}`}>
                                                 <div className="poster-container">
@@ -29,7 +30,6 @@ function HomeMovieRecommended(props) {
                                                 <p className="movie-name">{topRatedMovieElement[0].name}<br/>({topRatedMovieElement[0].year})</p>
                                             </Link>
                                         </div>
-                                        <p className="movie-storyline">{topRatedMovieElement[0].storyline}</p>
                                     </TopRatedMovie>
 
             }

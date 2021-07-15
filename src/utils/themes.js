@@ -43,7 +43,7 @@ export const lightTheme = {
         home: {
             homeRecommendationsSection: {
                 carousel: {
-                    border: "#2E4A76",
+                    border: "#4688D8",
                     dropShadow: "#1C222288",
                     frameTitle: "#0A0A0A",
                     movieName: "#FFFFFF",
@@ -55,7 +55,7 @@ export const lightTheme = {
                     }
                 },
                 topRatedMovie: {
-                    border: "#2E4A76",
+                    border: "#4688D8",
                     dropShadow: "#1C222288",
                     frameTitle: "#1C2222",
                     link: "#0A0A0A",
@@ -72,7 +72,7 @@ export const lightTheme = {
             // * AND
             // > Latest News
             homeLatestMoviesSection: {
-                border: "#2E4A76",
+                border: "#4688D8",
                 dropShadow: "#1C222277",
                 sectionTitle: "#0A0A0A",
                 scrollIcon: {
@@ -118,7 +118,7 @@ export const lightTheme = {
                         hover: {
                             background: "#0A0A0A",
                             mobile: {
-                                background: "#FFFFFF"
+                                background: "#8EA8C3"
                             }
                         }
                     },
@@ -173,7 +173,7 @@ export const lightTheme = {
             color: "#1C2222",
             textDecorationColor: "#D3E3FC",
             borderLeftSection: "#FFCCBC",
-            borderBottom: "#1C2222",
+            borderBottom: "#4688D8",
             dropShadow: "#1C2222bc"
         },
         page404: {
@@ -232,7 +232,7 @@ export const lightTheme = {
         },
         searchBar: {
             container: {
-                background: "#D3E3FC",
+                background: "#B7CECE",
                 boxShadow: "#0A0A0A"
             },
             input: {

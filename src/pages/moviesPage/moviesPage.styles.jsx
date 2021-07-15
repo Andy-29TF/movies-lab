@@ -33,7 +33,8 @@ export const SettingsIcon = styled(Settings) `
     position: sticky;
     right: 0;
     top: 68%;
-    width: 3rem;
+    width: 2.3rem;
+    height: 2.3rem;
     padding: .4rem;
     background: ${ props => props.theme.components.baseListSidebar.black};
     fill: ${ props => props.theme.components.baseListSidebar.iconFill};

@@ -17,7 +17,7 @@ import {
 
 
 function Navbar(props) {
-    const { toggleSearchBar } = props;
+    const { toggleSearchBar, searchBarIsActivated } = props;
     // router
     const location = useLocation();
 
@@ -44,10 +44,16 @@ function Navbar(props) {
             </div>
             <div className="navbar-right-side">
                 <ToggleThemeBtn/>
-                <NavbarSearchIcon onClick={toggleSearchBar}/>
+                <NavbarSearchIcon onClick={toggleSearchBar} searchbarstatus={`${searchBarIsActivated}`}/>
             </div>
     </NavbarContainer>
     )
+}
+
+function mapStateToProps(state) {
+    return {
+        searchBarIsActivated: state.searchBar.searchBarIsActivated
+    }
 }
 
 function dispatchStateToProps(dispatch) {
@@ -56,4 +62,4 @@ function dispatchStateToProps(dispatch) {
     }
 }
 
-export default connect(null, dispatchStateToProps)(Navbar);
+export default connect(mapStateToProps, dispatchStateToProps)(Navbar);

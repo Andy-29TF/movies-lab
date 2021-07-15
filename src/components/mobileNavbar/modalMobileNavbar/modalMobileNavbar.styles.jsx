@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 
 export const ModalContainer = styled.div`
     position: absolute;
-    top: 4.3rem;
+    top: 0;
     left: 0;
     width: 100%;
     height: calc(100vh - 4.3rem);
+    padding: 0 0 5rem 0;
+    margin-top : 4.3rem;
     background-color: ${ props => props.theme.header.mobileNavbar.modal.background};
     z-index: 2;
     display: ${(props)=> props.displayModal ? "flex" : "none"};
@@ -22,7 +24,7 @@ export const ModalContainer = styled.div`
     }
 
     & > button {
-        margin: .5rem .5rem .5rem auto;
+        margin: .5rem auto .5rem .5rem;
     }
 `;
 

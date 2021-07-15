@@ -11,7 +11,7 @@ export function setNews(payload) {
 // thunk function
 export function fetchRawNews() {
     return (dispatch) => {
-        axios.get('https://gist.githubusercontent.com/Andy-29TF/f2e56a1310a349c612c51b4bc6182740/raw/362f840811f05988372e9733cbb167ddb82800f5/news.json')
+        axios.get('https://gist.githubusercontent.com/Andy-29TF/f2e56a1310a349c612c51b4bc6182740/raw/a2b14557b70b5568f1f21809bfe08a856b8b487d/news.json')
             .then( resp => {
                 dispatch(setNews(resp.data))
             })

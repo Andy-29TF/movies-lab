@@ -54,14 +54,14 @@ export const CarouselContainer = styled.div `
 
     @media (max-width: 768px) {
         width: 93%;
-        margin: .8rem auto;
+        margin: .95rem auto;
 
         & .carousel-slider{
             margin: 1rem 0 .1rem 0;
         }
         & .frame-title{
-            top: -1.2rem;
-            left: 1.2rem;
+            top: -1.35rem;
+            left: 1.15rem;
             font-size: 1.4rem;
         }
     }
