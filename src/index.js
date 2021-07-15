@@ -9,13 +9,17 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
 // redux
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import {store, persistor} from "./redux/store";
+// redux-persist
+import { PersistGate } from 'redux-persist/integration/react'
 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
         <ScrollToTop />
-        <App />
+        <PersistGate persistor={persistor}>
+          <App />
+        </PersistGate>
     </Router>
   </Provider>,
   document.getElementById('root')

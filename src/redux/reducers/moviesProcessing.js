@@ -7,12 +7,16 @@ function moviesProcessingReducer(state = initialState, action) {
 
     switch(action.type) {
         case 'SET_RAW_MOVIES':
-            const receivedMovis = action.payload.reverse()
-            return {
-                ...state,
-                rawMovies: [...receivedMovis],
-                loaded: true
-            };
+            if(state.rawMovies.length > 0){
+                return state;
+            }else {
+                const receivedMovis = action.payload.reverse()
+                return {
+                    ...state,
+                    rawMovies: [...receivedMovis],
+                    loaded: true
+                };
+            }
         case 'CHANGES_IN_SAVE_LIST':
             const findIndexForAdd = state.rawMovies.findIndex( elem => elem.id === action.payload.movieElement.id);
             const newRawMoviesForAdd = [...state.rawMovies];
