@@ -49,7 +49,7 @@ export const FilterByStarsElements = styled.div `
 export const LinkElement = styled(Link) `
     text-decoration: none;
     color: ${ props => props.theme.components.baseListSidebar.white};
-    width: 31%;
+    width: 30%;
     margin: .4rem .1rem;
     border: 1px solid ${ props => props.theme.components.baseListSidebar.black};
 
