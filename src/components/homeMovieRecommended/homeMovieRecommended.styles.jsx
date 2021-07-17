@@ -125,7 +125,7 @@ export const TopRatedMovie = styled.div `
     @media (max-width: 450px) {
         .movie-storyline{
             font-size: .8rem;
-            max-height: 17rem;
+            max-height: 15rem;
             margin: .5rem 1.5rem .2rem 0;
         }
     }
@@ -160,6 +160,7 @@ export const ImdbRating = styled.div `
     }
 
     @media (max-width: 1200px) {
+        bottom: 2.5%;
         width: 2.7rem;
 
         & p {
