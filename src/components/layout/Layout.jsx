@@ -3,7 +3,7 @@ import React from 'react';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import SearchBar from '../searchBar/SearchBar';
-import MessageSlot from '../messageSlot/MessageSlot';
+// import MessageSlot from '../messageSlot/MessageSlot';
 //* import the stylized  component
 import { LayoutContainer } from './layout.styles';
 
@@ -16,7 +16,7 @@ function Layout(props) {
             <SearchBar/>
                 { props.children }
             <Footer/>
-            <MessageSlot/>
+            {/* <MessageSlot/> */}
         </LayoutContainer>
     )
 }
