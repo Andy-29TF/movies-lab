@@ -5,7 +5,7 @@ import { ReactComponent as Scroll } from "../../assets/icons/homePage/scroll.svg
 export const HomeLatestNewsContainer = styled.div`
 	position: relative;
 	width: auto;
-	height: 24.5rem;
+	height: 19.5rem;
 	margin: 4rem 2rem 2rem 2rem;
 
 	@media (max-width: 1200px) {
@@ -14,7 +14,7 @@ export const HomeLatestNewsContainer = styled.div`
 
 	@media (max-width: 768px) {
 		margin: 3rem 0.5rem 2rem 0.5rem;
-		height: 22.7rem;
+		height: 19.25rem;
 	}
 
 	@media (max-width: 360px) {
