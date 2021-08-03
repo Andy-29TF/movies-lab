@@ -133,7 +133,7 @@ export const CardImdbRating = styled.span`
 	bottom: 0.3rem;
 	right: 0.25rem;
 	width: 2.6rem;
-	height: auto;
+	height: 0.9rem;
 	display: flex;
 	flex-direction: row;
 	background-color: #060e0b;
